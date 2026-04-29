@@ -5,7 +5,7 @@ const services = [
     icon: Globe,
     title: "Website Design & Development",
     outcome: "A site that loads fast, looks great on any phone, and turns visitors into paying customers.",
-    featured: true,
+    featured: false,
   },
   {
     icon: Search,

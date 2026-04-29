@@ -2,98 +2,94 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Star, CheckCircle } from "lucide-react";
 
+const stats = [
+  { value: "80+", label: "Businesses launched" },
+  { value: "14 days", label: "Average turnaround" },
+  { value: "3.4×", label: "More leads in 90 days" },
+  { value: "4.9★", label: "Client satisfaction" },
+];
+
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden pt-xxxl pb-xxl px-lg bg-snow">
-      <div className="max-w-container-max mx-auto grid lg:grid-cols-2 items-center gap-xl">
+    <section className="relative overflow-hidden bg-snow">
+      <div className="max-w-container-max mx-auto px-lg pt-xxl pb-0 grid lg:grid-cols-2 items-end gap-xl">
 
         {/* Left: Copy */}
-        <div className="z-10">
+        <div className="pb-xxl">
+          {/* Social proof badge */}
+          <div className="inline-flex items-center gap-sm bg-white border border-fog rounded-full px-md py-sm mb-xl shadow-sm">
+            <span className="flex">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-3 h-3 fill-primary text-primary" />
+              ))}
+            </span>
+            <span className="text-eyebrow text-ink">4.9 · 80+ local businesses</span>
+          </div>
+
           <h1 className="text-h1 text-ink mb-lg">
             Get a Website That Actually{" "}
-            <span className="text-primary italic">Brings You Customers</span>
-            {" "}— Without the Tech Headache.
+            <span className="text-primary italic">Brings You Customers.</span>
           </h1>
 
-          <p className="text-body-lg text-slate max-w-lg mb-xl">
-            Most small businesses lose customers every day to competitors who show up first on Google. We build simple, beautiful websites for local businesses — so the phone rings, the bookings come in, and you can get back to running the business you love.
+          <p className="text-body-lg text-slate max-w-md mb-xl leading-relaxed">
+            Most local businesses lose customers every day to competitors who show up first on Google. We fix that — fast, simply, and without the tech headache.
           </p>
 
-          <div className="flex flex-wrap items-center gap-md mb-xl">
+          <div className="flex flex-wrap items-center gap-md mb-xxl">
             <Link
               href="#audit"
-              className="bg-primary text-on-primary px-xl py-md rounded-lg font-semibold shadow-md hover:opacity-90 hover:-translate-y-px transition-all active:scale-95 inline-flex items-center gap-sm"
+              className="inline-flex items-center gap-sm bg-primary text-white px-xl py-md rounded-full font-semibold shadow-md hover:opacity-90 hover:-translate-y-px transition-all active:scale-95"
             >
               Book a Free Discovery Call
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
               href="#process"
-              className="text-ink font-semibold hover:text-primary transition-colors inline-flex items-center gap-xs"
+              className="text-body-sm font-semibold text-ink hover:text-primary transition-colors"
             >
-              See How It Works →
+              See how it works →
             </Link>
           </div>
 
-          {/* Trust strip */}
-          <div className="flex flex-wrap items-center gap-md pt-lg border-t border-fog">
-            <div className="flex items-center gap-xs">
-              <span className="flex">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-3.5 h-3.5 fill-primary text-primary" />
-                ))}
-              </span>
-              <span className="text-body-sm text-slate font-medium">4.9/5 from 80+ local businesses</span>
-            </div>
-            <span className="text-fog hidden sm:block">|</span>
-            <div className="flex items-center gap-xs">
-              <CheckCircle className="w-3.5 h-3.5 text-mint" />
-              <span className="text-body-sm text-slate font-medium">No long-term contracts</span>
-            </div>
-            <span className="text-fog hidden sm:block">|</span>
-            <div className="flex items-center gap-xs">
-              <CheckCircle className="w-3.5 h-3.5 text-mint" />
-              <span className="text-body-sm text-slate font-medium">Sites live in 14 days</span>
-            </div>
+          {/* Trust checks */}
+          <div className="flex flex-wrap gap-lg">
+            {["No long-term contracts", "Sites live in 14 days", "No tech skills needed"].map((t) => (
+              <div key={t} className="flex items-center gap-xs">
+                <CheckCircle className="w-4 h-4 text-mint shrink-0" />
+                <span className="text-body-sm text-slate">{t}</span>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Right: Visual */}
-        <div className="relative">
-          <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl purple-glow relative">
+        {/* Right: Image — flush to bottom, no floating clutter */}
+        <div className="relative h-full min-h-[420px] lg:min-h-[540px]">
+          <div className="absolute inset-0 rounded-tl-3xl rounded-tr-3xl overflow-hidden">
             <Image
-              alt="Small business owner seeing their new website"
-              className="w-full h-full object-cover"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDa639eI2IWpe9bgLlrazPLPLKtvOx7quSn5lOVYZltri3x5mziKw9rdZ0nh2rYXCPezuHZt8uO5dAo2iel9sn7tw0hbd5gNQntFxxqf5oHvJh4C6B2Za6PSvjesrSNZ6MzZ6vMhIisKe6OehP-wmBhMW5Pt1uiU-xsUZTIIiWFLyI-jmuCB81UEjkZcP2DsVrpgXVD5xLluX3FUcRbuQP1D1Kk5tvWsf9mrKvFGU7_DW96Kx88XCi7sqlTnIN7B4e1tug_ZGaQaC0"
+              alt="Local business owner with their new website"
+              className="w-full h-full object-cover object-top"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeAeqwgMd8qgzbTT0TUQCeVgiS5VXHSWjGSKXGPrCpU09LHAbYij3jibBzV8osmkr7pnPTFENxAxpSnil41OaxD6_Tx5VJRecpzKMhteN-FeS5JqKNtbI4icLGVztsw6uThFNVFdgjzyVZq9GnnNgSPYqj3Xx9KcKGEmIkuDcfSSIpB9dO0FWM0544q5pzo5rXYws7-0EegV9md6IGCdA063fmQufX92rMzXKANVcUv5yTm65n0y6eYPnIMwS-d9Pc5Dd70JbqLAI"
               fill
               unoptimized
             />
-          </div>
-
-          {/* Floating testimonial */}
-          <div className="absolute -bottom-sm -left-sm bg-surface p-lg rounded-xl shadow-xl border border-fog max-w-[230px]">
-            <div className="flex gap-xs mb-xs">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-3 h-3 fill-mint text-mint" />
-              ))}
-            </div>
-            <p className="text-body-sm text-ink font-medium leading-snug">
-              "We went from invisible online to fully booked in 60 days."
-            </p>
-            <p className="text-eyebrow text-slate mt-xs">— Maria R., Local Salon Owner</p>
-          </div>
-
-          {/* Floating stat */}
-          <div className="absolute -top-sm -right-sm bg-primary p-md rounded-xl shadow-xl text-center min-w-[120px]">
-            <p className="text-h2 text-white font-bold leading-none">+340%</p>
-            <p className="text-eyebrow text-purple-pale mt-xs">MORE LEADS</p>
+            {/* Subtle gradient fade at bottom */}
+            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-snow to-transparent" />
           </div>
         </div>
       </div>
 
-      {/* Background glow */}
-      <div className="absolute top-0 right-0 -z-0 opacity-10 pointer-events-none">
-        <div className="w-[800px] h-[800px] bg-primary rounded-full blur-[120px] -mr-40 -mt-40" />
+      {/* Stats strip */}
+      <div className="border-t border-fog bg-white">
+        <div className="max-w-container-max mx-auto px-lg">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-fog">
+            {stats.map((s) => (
+              <div key={s.value} className="px-xl py-lg text-center">
+                <p className="text-h3 text-primary font-bold leading-none mb-xs">{s.value}</p>
+                <p className="text-eyebrow text-slate">{s.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

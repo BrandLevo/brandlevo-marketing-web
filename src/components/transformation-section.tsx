@@ -29,7 +29,7 @@ export default function TransformationSection() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-md max-w-3xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-xl max-w-4xl mx-auto">
 
           {/* Before */}
           <div className="bg-surface border border-fog rounded-2xl p-xl">
