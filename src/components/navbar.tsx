@@ -13,8 +13,9 @@ export default function Navbar() {
   return (
     <nav className="bg-surface/95 backdrop-blur-sm border-b border-fog sticky top-0 z-50">
       <div className="max-w-container-max mx-auto px-lg h-20 flex justify-between items-center w-full">
-        <Link href="/" className="text-2xl font-bold text-primary font-display tracking-tight">
-          BrandLevo
+        <Link href="/" className="shrink-0">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/Original.svg" alt="BrandLevo" className="h-10 w-auto" />
         </Link>
 
         <div className="hidden md:flex items-center gap-xl">

@@ -42,8 +42,9 @@ export default function Footer() {
 
           {/* Brand column */}
           <div className="lg:col-span-1">
-            <Link href="/" className="text-2xl font-bold text-white font-display tracking-tight block mb-lg">
-              BrandLevo
+            <Link href="/" className="block mb-lg">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/White.svg" alt="BrandLevo" className="h-10 w-auto" />
             </Link>
             <p className="text-body-sm text-mist mb-xl leading-relaxed">
               We help local businesses turn 5-star reputations into high-performance digital presences. Design, development, SEO, AEO, and digital marketing — all under one roof.
