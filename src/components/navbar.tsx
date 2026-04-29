@@ -1,54 +1,51 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Menu } from "lucide-react";
+
+const links = [
+  { label: "Services", href: "#services" },
+  { label: "Process", href: "#process" },
+  { label: "Case Studies", href: "#case-studies" },
+  { label: "Insights", href: "#insights" },
+  { label: "About", href: "#about" },
+];
 
 export default function Navbar() {
   return (
-    <nav className="bg-surface border-b border-fog shadow-sm sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-6 lg:px-20 h-20 flex justify-between items-center w-full">
-        <div className="text-2xl font-bold text-violet-600 dark:text-violet-400 font-['Syne'] tracking-tight">
+    <nav className="bg-surface/95 backdrop-blur-sm border-b border-fog sticky top-0 z-50">
+      <div className="max-w-container-max mx-auto px-lg h-20 flex justify-between items-center w-full">
+        <Link href="/" className="text-2xl font-bold text-primary font-display tracking-tight">
           BrandLevo
+        </Link>
+
+        <div className="hidden md:flex items-center gap-xl">
+          {links.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              className="text-slate hover:text-primary font-body text-body-sm font-medium transition-colors"
+            >
+              {l.label}
+            </Link>
+          ))}
         </div>
-        <div className="hidden md:flex items-center gap-8">
+
+        <div className="flex items-center gap-md">
           <Link
-            className="text-violet-600 dark:text-violet-400 border-b-2 border-violet-600 dark:border-violet-400 pb-1 font-bold font-['Syne'] tracking-tight"
-            href="#"
+            href="#contact"
+            className="hidden md:block text-body-sm font-medium text-ink hover:text-primary transition-colors"
           >
-            Home
+            Contact
           </Link>
           <Link
-            className="text-slate-600 dark:text-slate-400 hover:text-violet-600 dark:hover:text-violet-300 font-medium font-['Syne'] tracking-tight transition-opacity hover:opacity-80"
-            href="#"
+            href="#audit"
+            className="bg-primary text-on-primary px-lg py-sm rounded-lg font-bold hover:opacity-90 transition-opacity active:scale-95"
           >
-            About Us
+            Free Audit
           </Link>
-          <Link
-            className="text-slate-600 dark:text-slate-400 hover:text-violet-600 dark:hover:text-violet-300 font-medium font-['Syne'] tracking-tight transition-opacity hover:opacity-80"
-            href="#"
-          >
-            Services
-          </Link>
-          <Link
-            className="text-slate-600 dark:text-slate-400 hover:text-violet-600 dark:hover:text-violet-300 font-medium font-['Syne'] tracking-tight transition-opacity hover:opacity-80"
-            href="#"
-          >
-            Case Studies
-          </Link>
-          <Link
-            className="text-slate-600 dark:text-slate-400 hover:text-violet-600 dark:hover:text-violet-300 font-medium font-['Syne'] tracking-tight transition-opacity hover:opacity-80"
-            href="#"
-          >
-            Blog
-          </Link>
-          <Link
-            className="text-slate-600 dark:text-slate-400 hover:text-violet-600 dark:hover:text-violet-300 font-medium font-['Syne'] tracking-tight transition-opacity hover:opacity-80"
-            href="#"
-          >
-            Resources
-          </Link>
+          <button className="md:hidden text-slate hover:text-primary transition-colors">
+            <Menu className="w-6 h-6" />
+          </button>
         </div>
-        <Button className="bg-primary px-lg py-sm rounded-lg text-on-primary font-bold hover:opacity-80 transition-opacity active:scale-95 duration-150 ease-in-out">
-          Get Started
-        </Button>
       </div>
     </nav>
   );

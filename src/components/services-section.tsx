@@ -1,87 +1,153 @@
-import Image from "next/image";
-import { TrendingUp, CheckCircle, ArrowRight } from "lucide-react";
+import {
+  Palette,
+  Code2,
+  Search,
+  Cpu,
+  Megaphone,
+  ArrowRight,
+} from "lucide-react";
+
+const services = [
+  {
+    icon: Palette,
+    label: "Brand & Design",
+    headline: "Look the part — everywhere you show up.",
+    body: "Logo, visual identity, and design systems built to communicate trust before a customer reads a single word. Consistent across web, social, and print.",
+    tags: ["Logo Design", "Visual Identity", "Design Systems", "Brand Guidelines"],
+    featured: false,
+    dark: false,
+  },
+  {
+    icon: Code2,
+    label: "Web Development",
+    headline: "A website that works as hard as you do.",
+    body: "Fast, mobile-first, conversion-optimised websites. No template drag — custom-built to reflect your business and turn visitors into bookings.",
+    tags: ["Custom Websites", "Landing Pages", "eCommerce", "Web Apps"],
+    featured: true,
+    dark: true,
+  },
+  {
+    icon: Search,
+    label: "SEO",
+    headline: "Rank where your customers are searching.",
+    body: "Local SEO strategies that push you to the top of Google for the keywords your customers actually type. More visibility, more foot traffic, more revenue.",
+    tags: ["Local SEO", "Keyword Strategy", "On-Page Optimisation", "Google Business"],
+    featured: false,
+    dark: false,
+  },
+  {
+    icon: Cpu,
+    label: "AEO — Answer Engine Optimisation",
+    headline: "Own the AI answer box before your competitors do.",
+    body: "When customers ask ChatGPT, Perplexity, or Google AI Overviews about your industry — your business should be the answer. AEO makes that happen.",
+    tags: ["AI Search", "Featured Snippets", "Schema Markup", "Structured Data"],
+    featured: false,
+    dark: false,
+  },
+  {
+    icon: Megaphone,
+    label: "Digital Marketing",
+    headline: "Campaigns that drive real, measurable revenue.",
+    body: "Google Ads, Meta campaigns, email marketing, and social — all tied to your actual business goals, not vanity metrics. Every pound tracked.",
+    tags: ["Google Ads", "Meta Ads", "Email Marketing", "Analytics"],
+    featured: false,
+    dark: false,
+  },
+];
 
 export default function ServicesSection() {
   return (
-    <section className="py-xxxl px-lg bg-snow">
+    <section className="py-xxxl px-lg bg-snow" id="services">
       <div className="max-w-container-max mx-auto">
-        <div className="text-center mb-xxl">
-          <span className="font-eyebrow text-eyebrow text-primary">
-            CORE CAPABILITIES
-          </span>
-          <h2 className="font-h2 text-h2 mt-sm">Systematic Design Solutions</h2>
+
+        {/* Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-lg mb-xxl">
+          <div>
+            <span className="text-eyebrow text-primary block mb-md">WHAT WE DO</span>
+            <h2 className="text-h2 text-ink max-w-lg">
+              Five disciplines. One goal: grow your business.
+            </h2>
+          </div>
+          <p className="text-body text-slate max-w-sm">
+            We don't sell packages. We build strategies. Every engagement starts with understanding your business and what growth actually means for you.
+          </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-md h-auto md:h-[600px]">
-          {/* Service 1: Strategy */}
-          <div className="md:col-span-1 md:row-span-2 bg-surface p-xl rounded-2xl border border-fog flex flex-col justify-between bento-card shadow-sm hover:shadow-md">
-            <div>
-              <div className="w-12 h-12 bg-purple-xpale rounded-lg flex items-center justify-center mb-lg">
-                <TrendingUp className="text-primary w-6 h-6" />
+
+        {/* Services grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
+          {services.map((s, i) => (
+            <div
+              key={s.label}
+              className={[
+                "rounded-2xl p-xl flex flex-col justify-between bento-card border",
+                s.dark
+                  ? "bg-purple-deeper border-transparent"
+                  : "bg-surface border-fog hover:border-mist hover:shadow-md",
+                i === 3 ? "md:col-span-2 lg:col-span-1" : "",
+              ].join(" ")}
+            >
+              <div>
+                <div
+                  className={[
+                    "w-12 h-12 rounded-xl flex items-center justify-center mb-lg",
+                    s.dark ? "bg-purple-dark" : "bg-purple-xpale",
+                  ].join(" ")}
+                >
+                  <s.icon
+                    className={["w-5 h-5", s.dark ? "text-white" : "text-primary"].join(" ")}
+                  />
+                </div>
+
+                <span
+                  className={[
+                    "text-eyebrow block mb-sm",
+                    s.dark ? "text-mist" : "text-primary",
+                  ].join(" ")}
+                >
+                  {s.label}
+                </span>
+
+                <h3
+                  className={[
+                    "text-h3 mb-md",
+                    s.dark ? "text-white" : "text-ink",
+                  ].join(" ")}
+                >
+                  {s.headline}
+                </h3>
+
+                <p className={["text-body mb-lg", s.dark ? "text-mist" : "text-slate"].join(" ")}>
+                  {s.body}
+                </p>
+
+                <div className="flex flex-wrap gap-sm mb-xl">
+                  {s.tags.map((t) => (
+                    <span
+                      key={t}
+                      className={[
+                        "text-eyebrow px-sm py-xs rounded-full border",
+                        s.dark
+                          ? "border-purple-dark text-mist"
+                          : "border-fog text-slate bg-snow",
+                      ].join(" ")}
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
               </div>
-              <h3 className="font-h3 text-h3 mb-md">Strategic Intelligence</h3>
-              <p className="text-slate font-body mb-md">
-                Competitive auditing and market positioning built on
-                data-driven insights rather than just trends.
-              </p>
-            </div>
-            <ul className="space-y-sm">
-              <li className="flex items-center gap-sm font-body-sm text-ink">
-                <CheckCircle className="text-primary w-4 h-4" />
-                Competitive Audits
-              </li>
-              <li className="flex items-center gap-sm font-body-sm text-ink">
-                <CheckCircle className="text-primary w-4 h-4" />
-                Market Positioning
-              </li>
-            </ul>
-          </div>
-          {/* Service 2: Identity */}
-          <div className="md:col-span-2 bg-purple-deeper p-xl rounded-2xl flex items-center justify-between overflow-hidden relative bento-card">
-            <div className="relative z-10 max-w-sm">
-              <h3 className="font-h3 text-h3 text-white mb-md">Brand Identity</h3>
-              <p className="text-mist font-body">
-                Crafting visual languages that resonate. We create the soul of
-                your business through typography and form.
-              </p>
-            </div>
-            <div className="absolute right-0 bottom-0 top-0 w-1/2 opacity-40">
-              <Image
-                alt="Minimal logo concepts"
-                className="w-full h-full object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx0XaNH9M4Ldhrvbf_HWjT1awX__Wa2BnkX_5kMq5l0zNc6fA6Sgxy5crpKZlDC7eJ6SFAu-xLgZDcpojRcdgHjdjdBlVOOWQdK_sQqWIwF5z0APmFkPV8nse2n9aYgyVHA9CM1BJ8u0pKWqnrKakP0I_0nEzuJNI2LXCQI15m_mM-h5N_iI9C2sSKhvNZGx5OZ0H0p1-AtBFZWR3gBik-43WiQ9bTDYq7q8YY9-G26gZeSIb4W9na2ycUPjK8cfNlzzSPJA9hkIc"
-                fill
-                unoptimized
-              />
-            </div>
-          </div>
-          {/* Service 3: Systematic Design */}
-          <div className="md:col-span-2 bg-surface p-xl rounded-2xl border border-fog flex flex-col md:flex-row gap-lg bento-card shadow-sm hover:shadow-md">
-            <div className="flex-1">
-              <h3 className="font-h3 text-h3 mb-md">Systematic Design</h3>
-              <p className="text-slate font-body mb-lg">
-                Scalable design systems that bridge the gap between marketing
-                and product engineering teams.
-              </p>
-              <button className="text-primary font-bold flex items-center gap-sm hover:gap-md transition-all cursor-pointer bg-transparent border-none p-0">
+
+              <button
+                className={[
+                  "flex items-center gap-sm text-body-sm font-bold bg-transparent border-none p-0 cursor-pointer transition-all hover:gap-md",
+                  s.dark ? "text-white" : "text-primary",
+                ].join(" ")}
+              >
                 Learn More
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-4 h-4" />
               </button>
             </div>
-            <div className="flex-1 grid grid-cols-2 gap-sm">
-              <div className="bg-fog h-20 rounded-lg flex items-center justify-center font-mono text-xs">
-                ATOM.01
-              </div>
-              <div className="bg-purple-pale h-20 rounded-lg flex items-center justify-center font-mono text-xs">
-                MOL.02
-              </div>
-              <div className="bg-purple-xpale h-20 rounded-lg flex items-center justify-center font-mono text-xs">
-                ORG.03
-              </div>
-              <div className="bg-mist h-20 rounded-lg flex items-center justify-center font-mono text-xs">
-                SYS.04
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
