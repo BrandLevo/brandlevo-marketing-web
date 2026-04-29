@@ -51,25 +51,33 @@ export default function ProblemSection() {
               <div className="w-12 h-12 bg-purple-xpale rounded-xl flex items-center justify-center mb-lg">
                 <p.icon className="w-5 h-5 text-primary" />
               </div>
-              <h3 className="text-h4 text-ink mb-sm font-semibold">{p.bold}</h3>
+              <h3 className="text-h4 text-ink mb-sm">{p.bold}</h3>
               <p className="text-body text-slate">{p.body}</p>
             </div>
           ))}
         </div>
 
-        {/* Stats banner — clean, harmonious */}
-        <div className="bg-ink rounded-2xl overflow-hidden">
-          <div className="px-xl pt-xl pb-lg border-b border-white/10">
-            <span className="text-eyebrow text-mint block mb-sm">THE OPPORTUNITY</span>
-            <p className="text-h3 text-white max-w-xl">
-              Your future customers are already searching. They just can't find you yet.
+        {/* Opportunity block — harmonious with brand primary */}
+        <div className="bg-primary rounded-2xl overflow-hidden">
+          {/* Header row */}
+          <div className="px-xl pt-xl pb-lg grid md:grid-cols-2 gap-xl items-center border-b border-white/15">
+            <div>
+              <span className="text-eyebrow text-purple-pale block mb-sm">THE OPPORTUNITY</span>
+              <h3 className="text-h3 text-white">
+                Your future customers are already searching. They just can't find you yet.
+              </h3>
+            </div>
+            <p className="text-body text-purple-pale leading-relaxed">
+              You've built a great reputation. Now let's make sure that when someone searches for what you do in your city, your name is the first thing they see.
             </p>
           </div>
-          <div className="grid sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
+
+          {/* Stats row */}
+          <div className="grid sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/15">
             {stats.map((s) => (
               <div key={s.value} className="px-xl py-lg">
                 <p className="text-h1 text-white font-bold leading-none mb-sm">{s.value}</p>
-                <p className="text-body-sm text-mist leading-relaxed">{s.label}</p>
+                <p className="text-body-sm text-purple-pale leading-relaxed">{s.label}</p>
               </div>
             ))}
           </div>

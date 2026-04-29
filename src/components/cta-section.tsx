@@ -1,9 +1,9 @@
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { Calendar, Phone, CheckCircle, Clock, MessageCircle } from "lucide-react";
 
-const reassurances = [
-  "Free audit — no obligation",
-  "No pressure. No sales pitch.",
-  "We tell you what's costing you customers, whether you hire us or not.",
+const promises = [
+  "20 minutes. No tech jargon. No hard sell.",
+  "We show you exactly what's costing you customers online.",
+  "You'll leave with a clear action plan — whether you hire us or not.",
 ];
 
 export default function CtaSection() {
@@ -13,70 +13,85 @@ export default function CtaSection() {
 
         <div className="relative z-10 grid md:grid-cols-2 gap-xxl items-center">
 
-          {/* Left */}
+          {/* Left — copy */}
           <div>
-            <span className="text-eyebrow text-mint block mb-md">YOUR NEXT CUSTOMERS ARE SEARCHING RIGHT NOW</span>
+            <span className="text-eyebrow text-purple-pale block mb-md">
+              YOUR NEXT CUSTOMERS ARE SEARCHING RIGHT NOW
+            </span>
             <h2 className="text-h1 text-white mb-lg">
               Let's Make Sure They{" "}
               <span className="italic">Find You.</span>
             </h2>
-            <p className="text-body-lg text-purple-pale mb-xl">
+            <p className="text-body-lg text-purple-pale mb-xl leading-relaxed">
               Book a free 20-minute call. We'll audit your current online presence, show you exactly what's costing you customers, and give you a clear plan — whether you hire us or not.
             </p>
             <ul className="space-y-md">
-              {reassurances.map((r) => (
-                <li key={r} className="flex items-start gap-sm text-white text-body">
+              {promises.map((p) => (
+                <li key={p} className="flex items-start gap-sm text-white text-body">
                   <CheckCircle className="w-5 h-5 text-mint shrink-0 mt-0.5" />
-                  {r}
+                  {p}
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Right: Form card */}
-          <div className="bg-white rounded-2xl p-xl shadow-2xl">
-            <h3 className="text-h3 text-ink mb-xs">Get My Free Website Audit</h3>
-            <p className="text-body-sm text-slate mb-xl">Takes 2 minutes. No credit card. No spam.</p>
-
-            <div className="space-y-md">
-              <div>
-                <label className="text-eyebrow text-slate block mb-sm">Your Name</label>
-                <input
-                  type="text"
-                  placeholder="Jane Smith"
-                  className="w-full border border-fog rounded-lg px-md py-md text-body text-ink placeholder:text-slate focus:outline-none focus:border-primary transition-colors"
-                />
+          {/* Right — booking card */}
+          <div className="bg-white rounded-2xl p-xl shadow-2xl flex flex-col gap-lg">
+            <div>
+              <h3 className="text-h3 text-ink mb-xs">Book Your Free Discovery Call</h3>
+              <div className="flex items-center gap-sm text-body-sm text-slate">
+                <Clock className="w-4 h-4 text-primary" />
+                20 minutes · Free · No obligation
               </div>
-              <div>
-                <label className="text-eyebrow text-slate block mb-sm">Business Name</label>
-                <input
-                  type="text"
-                  placeholder="Smith's Plumbing Co."
-                  className="w-full border border-fog rounded-lg px-md py-md text-body text-ink placeholder:text-slate focus:outline-none focus:border-primary transition-colors"
-                />
-              </div>
-              <div>
-                <label className="text-eyebrow text-slate block mb-sm">Email Address</label>
-                <input
-                  type="email"
-                  placeholder="you@yourbusiness.com"
-                  className="w-full border border-fog rounded-lg px-md py-md text-body text-ink placeholder:text-slate focus:outline-none focus:border-primary transition-colors"
-                />
-              </div>
-              <button className="w-full bg-primary text-white rounded-lg py-md font-semibold text-body hover:opacity-90 active:scale-95 transition-all inline-flex items-center justify-center gap-sm">
-                Get My Free Website Audit
-                <ArrowRight className="w-4 h-4" />
-              </button>
-              <p className="text-eyebrow text-slate text-center">
-                We respond within 1 business day.
-              </p>
             </div>
+
+            {/* Primary — Calendly */}
+            <a
+              href="https://calendly.com/brandlevo/free-discovery"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full bg-primary text-white rounded-xl py-lg font-semibold text-body hover:opacity-90 active:scale-95 transition-all inline-flex items-center justify-center gap-sm shadow-md"
+            >
+              <Calendar className="w-5 h-5" />
+              Schedule on Calendly
+            </a>
+
+            {/* Divider */}
+            <div className="flex items-center gap-md">
+              <div className="flex-1 h-px bg-fog" />
+              <span className="text-eyebrow text-slate">or reach us directly</span>
+              <div className="flex-1 h-px bg-fog" />
+            </div>
+
+            {/* Phone */}
+            <a
+              href="tel:+15551234567"
+              className="w-full border border-fog rounded-xl py-md font-semibold text-body-sm text-ink hover:border-primary hover:text-primary transition-all inline-flex items-center justify-center gap-sm"
+            >
+              <Phone className="w-4 h-4" />
+              Call us: +1 (555) 123-4567
+            </a>
+
+            {/* WhatsApp */}
+            <a
+              href="https://wa.me/15551234567"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full border border-fog rounded-xl py-md font-semibold text-body-sm text-ink hover:border-mint hover:text-mint transition-all inline-flex items-center justify-center gap-sm"
+            >
+              <MessageCircle className="w-4 h-4" />
+              WhatsApp us
+            </a>
+
+            <p className="text-eyebrow text-slate text-center">
+              We typically respond within a few hours.
+            </p>
           </div>
         </div>
 
-        {/* Decorative glows */}
-        <div className="absolute -right-20 -bottom-20 w-[400px] h-[400px] bg-purple-dark rounded-full opacity-50 blur-3xl pointer-events-none" />
-        <div className="absolute -left-10 -top-10 w-[200px] h-[200px] bg-purple-deeper rounded-full opacity-60 blur-2xl pointer-events-none" />
+        {/* Decorative */}
+        <div className="absolute -right-20 -bottom-20 w-[400px] h-[400px] bg-purple-dark rounded-full opacity-40 blur-3xl pointer-events-none" />
+        <div className="absolute -left-10 -top-10 w-[200px] h-[200px] bg-purple-deeper rounded-full opacity-50 blur-2xl pointer-events-none" />
       </div>
     </section>
   );

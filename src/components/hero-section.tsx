@@ -24,7 +24,7 @@ export default function HeroSection() {
               href="#audit"
               className="bg-primary text-on-primary px-xl py-md rounded-lg font-semibold shadow-md hover:opacity-90 hover:-translate-y-px transition-all active:scale-95 inline-flex items-center gap-sm"
             >
-              Get My Free Website Audit
+              Book a Free Discovery Call
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link

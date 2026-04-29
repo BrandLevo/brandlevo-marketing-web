@@ -8,6 +8,9 @@ const testimonials = [
     role: "Owner, Sunrise Tax Consultancy",
     location: "Austin, TX",
     result: "23 new clients in 60 days",
+    initials: "PS",
+    avatarBg: "bg-primary",
+    avatarText: "text-white",
     rating: 5,
   },
   {
@@ -17,6 +20,9 @@ const testimonials = [
     role: "Reilly Plumbing & Heating",
     location: "Manchester, UK",
     result: "Booked out a full month ahead",
+    initials: "MR",
+    avatarBg: "bg-purple-deeper",
+    avatarText: "text-white",
     rating: 5,
   },
   {
@@ -26,6 +32,9 @@ const testimonials = [
     role: "Owner, Bella's Hair Studio",
     location: "Lagos, NG",
     result: "+180% enquiries in 90 days",
+    initials: "LO",
+    avatarBg: "bg-mint",
+    avatarText: "text-ink",
     rating: 5,
   },
 ];
@@ -52,26 +61,40 @@ export default function TestimonialsSection() {
               key={t.name}
               className="bg-snow border border-fog rounded-2xl p-xl flex flex-col bento-card hover:border-mist hover:shadow-md transition-all"
             >
+              {/* Stars */}
               <div className="flex gap-xs mb-lg">
                 {[...Array(t.rating)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-primary text-primary" />
                 ))}
               </div>
 
-              <Quote className="w-7 h-7 text-fog mb-md" />
+              <Quote className="w-7 h-7 text-fog mb-md shrink-0" />
 
               <p className="text-body text-ink mb-xl flex-grow leading-relaxed italic">
                 "{t.quote}"
               </p>
 
+              {/* Result pill */}
               <div className="bg-purple-xpale rounded-lg px-md py-sm mb-xl w-fit">
                 <span className="text-eyebrow text-primary">{t.result}</span>
               </div>
 
-              <div className="border-t border-fog pt-lg">
-                <p className="font-semibold text-ink text-body-sm">{t.name}</p>
-                <p className="text-body-sm text-slate">{t.role}</p>
-                <p className="text-eyebrow text-slate mt-xs">{t.location}</p>
+              {/* Author row with avatar */}
+              <div className="border-t border-fog pt-lg flex items-center gap-md">
+                <div
+                  className={[
+                    "w-12 h-12 rounded-full flex items-center justify-center font-bold text-body shrink-0",
+                    t.avatarBg,
+                    t.avatarText,
+                  ].join(" ")}
+                >
+                  {t.initials}
+                </div>
+                <div>
+                  <p className="font-semibold text-ink text-body-sm">{t.name}</p>
+                  <p className="text-body-sm text-slate">{t.role}</p>
+                  <p className="text-eyebrow text-slate mt-xs">{t.location}</p>
+                </div>
               </div>
             </div>
           ))}

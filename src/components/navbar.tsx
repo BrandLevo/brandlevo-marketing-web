@@ -35,7 +35,7 @@ export default function Navbar() {
             href="#audit"
             className="hidden md:inline-flex items-center bg-primary text-on-primary px-lg py-sm rounded-lg font-semibold text-body-sm hover:opacity-90 hover:-translate-y-px transition-all active:scale-95 shadow-sm"
           >
-            Get My Free Website Audit
+            Book a Free Call
           </Link>
           <button className="md:hidden text-slate hover:text-primary transition-colors">
             <Menu className="w-6 h-6" />
