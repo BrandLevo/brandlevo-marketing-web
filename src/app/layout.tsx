@@ -1,19 +1,17 @@
 import type { Metadata } from "next";
-import { Syne, Epilogue, JetBrains_Mono } from "next/font/google";
+import { Fraunces, DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-// ── Fonts loaded via next/font/google (self-hosted, no external requests)
-const syne = Syne({
+const fraunces = Fraunces({
   subsets: ["latin"],
-  weight: ["600", "700", "800"],
-  variable: "--font-syne",
+  axes: ["opsz"],
+  variable: "--font-fraunces",
   display: "swap",
 });
 
-const epilogue = Epilogue({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-epilogue",
+  variable: "--font-dm-sans",
   display: "swap",
 });
 
@@ -25,13 +23,13 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "BrandLevo | Intelligence for the Next Era of Branding",
+  title: "BrandLevo | Websites That Bring Local Businesses Customers",
   description:
-    "We blend systematic design logic with strategic intuition to build identities that don't just exist—they command attention and drive exponential growth.",
-  keywords: ["brand agency", "brand strategy", "design systems", "brand identity"],
+    "We build websites for local businesses that are invisible online. SEO, AEO, and digital marketing — so the phone rings and bookings come in.",
+  keywords: ["local business website", "small business web design", "local SEO", "digital marketing"],
   openGraph: {
-    title: "BrandLevo | Intelligence for the Next Era of Branding",
-    description: "Systematic design solutions for the next era of branding.",
+    title: "BrandLevo | Websites That Bring Local Businesses Customers",
+    description: "We build websites for local businesses that are invisible online.",
     type: "website",
   },
 };
@@ -44,7 +42,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${syne.variable} ${epilogue.variable} ${jetbrainsMono.variable} scroll-smooth`}
+      className={`${fraunces.variable} ${dmSans.variable} ${jetbrainsMono.variable} scroll-smooth`}
     >
       <body className="antialiased min-h-screen font-body text-on-surface">
         {children}

@@ -1,57 +1,35 @@
-import {
-  Palette,
-  Code2,
-  Search,
-  Cpu,
-  Megaphone,
-  ArrowRight,
-} from "lucide-react";
+import { Globe, Search, MapPin, PenLine, Smartphone, Shield, Cpu } from "lucide-react";
 
 const services = [
   {
-    icon: Palette,
-    label: "Brand & Design",
-    headline: "Look the part — everywhere you show up.",
-    body: "Logo, visual identity, and design systems built to communicate trust before a customer reads a single word. Consistent across web, social, and print.",
-    tags: ["Logo Design", "Visual Identity", "Design Systems", "Brand Guidelines"],
-    featured: false,
-    dark: false,
-  },
-  {
-    icon: Code2,
-    label: "Web Development",
-    headline: "A website that works as hard as you do.",
-    body: "Fast, mobile-first, conversion-optimised websites. No template drag — custom-built to reflect your business and turn visitors into bookings.",
-    tags: ["Custom Websites", "Landing Pages", "eCommerce", "Web Apps"],
-    featured: true,
-    dark: true,
+    icon: Globe,
+    title: "Website Design & Development",
+    outcome: "A site that loads fast, looks great on any phone, and turns visitors into paying customers.",
   },
   {
     icon: Search,
-    label: "SEO",
-    headline: "Rank where your customers are searching.",
-    body: "Local SEO strategies that push you to the top of Google for the keywords your customers actually type. More visibility, more foot traffic, more revenue.",
-    tags: ["Local SEO", "Keyword Strategy", "On-Page Optimisation", "Google Business"],
-    featured: false,
-    dark: false,
+    title: "Local SEO",
+    outcome: "Show up when someone in your town searches \"best [your service] near me.\"",
+  },
+  {
+    icon: MapPin,
+    title: "Google Business Profile",
+    outcome: "Get on Google Maps, rack up reviews, and dominate local search — where buying decisions happen.",
   },
   {
     icon: Cpu,
-    label: "AEO — Answer Engine Optimisation",
-    headline: "Own the AI answer box before your competitors do.",
-    body: "When customers ask ChatGPT, Perplexity, or Google AI Overviews about your industry — your business should be the answer. AEO makes that happen.",
-    tags: ["AI Search", "Featured Snippets", "Schema Markup", "Structured Data"],
-    featured: false,
-    dark: false,
+    title: "AEO — Answer Engine Optimisation",
+    outcome: "When customers ask ChatGPT or Google AI about your industry, your business should be the answer.",
   },
   {
-    icon: Megaphone,
-    label: "Digital Marketing",
-    headline: "Campaigns that drive real, measurable revenue.",
-    body: "Google Ads, Meta campaigns, email marketing, and social — all tied to your actual business goals, not vanity metrics. Every pound tracked.",
-    tags: ["Google Ads", "Meta Ads", "Email Marketing", "Analytics"],
-    featured: false,
-    dark: false,
+    icon: PenLine,
+    title: "Content & Copywriting",
+    outcome: "We write every word for you — landing pages, service pages, blogs — in a voice that sounds like you.",
+  },
+  {
+    icon: Shield,
+    title: "Hosting, Maintenance & Support",
+    outcome: "We host it, secure it, back it up, and fix things before you notice they broke.",
   },
 ];
 
@@ -61,91 +39,56 @@ export default function ServicesSection() {
       <div className="max-w-container-max mx-auto">
 
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-lg mb-xxl">
-          <div>
-            <span className="text-eyebrow text-primary block mb-md">WHAT WE DO</span>
-            <h2 className="text-h2 text-ink max-w-lg">
-              Five disciplines. One goal: grow your business.
-            </h2>
-          </div>
-          <p className="text-body text-slate max-w-sm">
-            We don't sell packages. We build strategies. Every engagement starts with understanding your business and what growth actually means for you.
+        <div className="max-w-2xl mx-auto text-center mb-xxl">
+          <span className="text-eyebrow text-primary block mb-md">WHAT WE DO</span>
+          <h2 className="text-h2 text-ink mb-lg">
+            Everything You Need to Show Up Online —{" "}
+            <span className="text-primary italic">In One Place.</span>
+          </h2>
+          <p className="text-body-lg text-slate">
+            No piecing together five contractors. No hidden fees. Pick what fits — we handle the rest.
           </p>
         </div>
 
         {/* Services grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-md">
           {services.map((s, i) => (
             <div
-              key={s.label}
+              key={s.title}
               className={[
-                "rounded-2xl p-xl flex flex-col justify-between bento-card border",
-                s.dark
-                  ? "bg-purple-deeper border-transparent"
+                "rounded-2xl p-xl border bento-card flex flex-col gap-lg",
+                i === 1
+                  ? "bg-primary border-transparent text-white"
                   : "bg-surface border-fog hover:border-mist hover:shadow-md",
-                i === 3 ? "md:col-span-2 lg:col-span-1" : "",
               ].join(" ")}
             >
-              <div>
-                <div
-                  className={[
-                    "w-12 h-12 rounded-xl flex items-center justify-center mb-lg",
-                    s.dark ? "bg-purple-dark" : "bg-purple-xpale",
-                  ].join(" ")}
-                >
-                  <s.icon
-                    className={["w-5 h-5", s.dark ? "text-white" : "text-primary"].join(" ")}
-                  />
-                </div>
-
-                <span
-                  className={[
-                    "text-eyebrow block mb-sm",
-                    s.dark ? "text-mist" : "text-primary",
-                  ].join(" ")}
-                >
-                  {s.label}
-                </span>
-
-                <h3
-                  className={[
-                    "text-h3 mb-md",
-                    s.dark ? "text-white" : "text-ink",
-                  ].join(" ")}
-                >
-                  {s.headline}
-                </h3>
-
-                <p className={["text-body mb-lg", s.dark ? "text-mist" : "text-slate"].join(" ")}>
-                  {s.body}
-                </p>
-
-                <div className="flex flex-wrap gap-sm mb-xl">
-                  {s.tags.map((t) => (
-                    <span
-                      key={t}
-                      className={[
-                        "text-eyebrow px-sm py-xs rounded-full border",
-                        s.dark
-                          ? "border-purple-dark text-mist"
-                          : "border-fog text-slate bg-snow",
-                      ].join(" ")}
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <button
+              <div
                 className={[
-                  "flex items-center gap-sm text-body-sm font-bold bg-transparent border-none p-0 cursor-pointer transition-all hover:gap-md",
-                  s.dark ? "text-white" : "text-primary",
+                  "w-12 h-12 rounded-xl flex items-center justify-center shrink-0",
+                  i === 1 ? "bg-purple-dark" : "bg-purple-xpale",
                 ].join(" ")}
               >
-                Learn More
-                <ArrowRight className="w-4 h-4" />
-              </button>
+                <s.icon className={["w-5 h-5", i === 1 ? "text-white" : "text-primary"].join(" ")} />
+              </div>
+
+              <div>
+                <h3 className={["text-h4 mb-sm", i === 1 ? "text-white" : "text-ink"].join(" ")}>
+                  {s.title}
+                </h3>
+                <p className={["text-body", i === 1 ? "text-purple-pale" : "text-slate"].join(" ")}>
+                  {s.outcome}
+                </p>
+              </div>
+
+              <a
+                href="#audit"
+                className={[
+                  "text-body-sm font-semibold mt-auto inline-flex items-center gap-xs hover:gap-sm transition-all",
+                  i === 1 ? "text-white/80 hover:text-white" : "text-primary",
+                ].join(" ")}
+              >
+                Learn more →
+              </a>
             </div>
           ))}
         </div>

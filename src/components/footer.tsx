@@ -1,28 +1,20 @@
 import Link from "next/link";
-import { Globe, Hash, AtSign, Share2, MapPin, Mail, Phone } from "lucide-react";
+import { Globe, Hash, AtSign, Share2, MapPin, Mail, Phone, ArrowRight } from "lucide-react";
 
 const services = [
-  "Web Design & Development",
-  "Search Engine Optimisation",
-  "Answer Engine Optimisation",
-  "Digital Marketing",
-  "Brand Identity & Design",
+  { label: "Web Design & Development", href: "#services" },
+  { label: "Local SEO", href: "#services" },
+  { label: "Google Business Profile", href: "#services" },
+  { label: "AEO — Answer Engine Optimisation", href: "#services" },
+  { label: "Hosting & Support", href: "#services" },
 ];
 
 const company = [
-  { label: "About Us", href: "#about" },
-  { label: "Case Studies", href: "#case-studies" },
-  { label: "Insights", href: "#insights" },
-  { label: "Careers", href: "#" },
+  { label: "About", href: "#about-us" },
+  { label: "Our Process", href: "#process" },
+  { label: "Results", href: "#results" },
+  { label: "Pricing", href: "#pricing" },
   { label: "Contact", href: "#contact" },
-];
-
-const resources = [
-  { label: "Free Digital Audit", href: "#audit" },
-  { label: "Blog", href: "#insights" },
-  { label: "FAQ", href: "#" },
-  { label: "Privacy Policy", href: "#" },
-  { label: "Terms of Service", href: "#" },
 ];
 
 const socials = [
@@ -36,30 +28,43 @@ export default function Footer() {
   return (
     <footer className="bg-ink text-mist" id="contact">
 
-      {/* Main footer grid */}
       <div className="max-w-container-max mx-auto px-lg pt-xxl pb-xl">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-xl mb-xxl">
 
-          {/* Brand column */}
+          {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="block mb-lg">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/White.svg" alt="BrandLevo" className="h-10 w-auto" />
             </Link>
-            <p className="text-body-sm text-mist mb-xl leading-relaxed">
-              We help local businesses turn 5-star reputations into high-performance digital presences. Design, development, SEO, AEO, and digital marketing — all under one roof.
+            <p className="text-body-sm text-mist mb-lg leading-relaxed">
+              Websites that bring you customers. We help local businesses turn 5-star reputations into 24/7 revenue machines.
             </p>
-            <div className="flex gap-md">
+            <div className="flex gap-sm mb-xl">
               {socials.map((s) => (
                 <a
                   key={s.label}
                   href={s.href}
                   aria-label={s.label}
-                  className="w-10 h-10 rounded-lg bg-graphite hover:bg-primary flex items-center justify-center transition-colors"
+                  className="w-9 h-9 rounded-lg bg-graphite hover:bg-primary flex items-center justify-center transition-colors"
                 >
                   <s.icon className="w-4 h-4 text-mist" />
                 </a>
               ))}
+            </div>
+            <div className="space-y-sm">
+              <a href="mailto:hello@brandlevo.com" className="flex items-center gap-sm text-body-sm text-mist hover:text-white transition-colors">
+                <Mail className="w-4 h-4 text-primary" />
+                hello@brandlevo.com
+              </a>
+              <a href="tel:+15551234567" className="flex items-center gap-sm text-body-sm text-mist hover:text-white transition-colors">
+                <Phone className="w-4 h-4 text-primary" />
+                +1 (555) 123-4567
+              </a>
+              <span className="flex items-start gap-sm text-body-sm text-mist">
+                <MapPin className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                Remote-first · Serving clients worldwide
+              </span>
             </div>
           </div>
 
@@ -68,10 +73,10 @@ export default function Footer() {
             <h4 className="text-eyebrow text-white mb-lg">SERVICES</h4>
             <ul className="space-y-md">
               {services.map((s) => (
-                <li key={s}>
-                  <a href="#services" className="text-body-sm text-mist hover:text-white transition-colors">
-                    {s}
-                  </a>
+                <li key={s.label}>
+                  <Link href={s.href} className="text-body-sm text-mist hover:text-white transition-colors">
+                    {s.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -91,41 +96,22 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Newsletter */}
           <div>
-            <h4 className="text-eyebrow text-white mb-lg">GET IN TOUCH</h4>
-            <ul className="space-y-lg">
-              <li className="flex items-start gap-sm">
-                <Mail className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                <a href="mailto:hello@brandlevo.com" className="text-body-sm text-mist hover:text-white transition-colors">
-                  hello@brandlevo.com
-                </a>
-              </li>
-              <li className="flex items-start gap-sm">
-                <Phone className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                <a href="tel:+15551234567" className="text-body-sm text-mist hover:text-white transition-colors">
-                  +1 (555) 123-4567
-                </a>
-              </li>
-              <li className="flex items-start gap-sm">
-                <MapPin className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                <span className="text-body-sm text-mist">
-                  Remote-first · Serving clients nationwide
-                </span>
-              </li>
-            </ul>
-
-            <div className="mt-xl">
-              <h4 className="text-eyebrow text-white mb-lg">RESOURCES</h4>
-              <ul className="space-y-md">
-                {resources.slice(0, 3).map((r) => (
-                  <li key={r.label}>
-                    <Link href={r.href} className="text-body-sm text-mist hover:text-white transition-colors">
-                      {r.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+            <h4 className="text-eyebrow text-white mb-lg">STAY IN TOUCH</h4>
+            <p className="text-body-sm text-mist mb-lg leading-relaxed">
+              Get one practical tip a week to grow your local business. No fluff, unsubscribe anytime.
+            </p>
+            <div className="flex flex-col gap-sm">
+              <input
+                type="email"
+                placeholder="you@yourbusiness.com"
+                className="w-full bg-graphite border border-white/10 rounded-lg px-md py-sm text-body-sm text-white placeholder:text-slate focus:outline-none focus:border-primary transition-colors"
+              />
+              <button className="w-full bg-primary text-white rounded-lg py-sm font-semibold text-body-sm hover:opacity-90 transition-all inline-flex items-center justify-center gap-sm">
+                Subscribe
+                <ArrowRight className="w-3.5 h-3.5" />
+              </button>
             </div>
           </div>
         </div>
@@ -133,14 +119,11 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-graphite pt-lg flex flex-col md:flex-row justify-between items-center gap-md">
           <p className="text-eyebrow text-slate">
-            © 2025 BrandLevo. All rights reserved.
+            © 2026 BrandLevo. All rights reserved.
           </p>
           <div className="flex gap-lg">
-            {resources.slice(3).map((r) => (
-              <Link key={r.label} href={r.href} className="text-eyebrow text-slate hover:text-mist transition-colors">
-                {r.label}
-              </Link>
-            ))}
+            <a href="#" className="text-eyebrow text-slate hover:text-mist transition-colors">Privacy Policy</a>
+            <a href="#" className="text-eyebrow text-slate hover:text-mist transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>
