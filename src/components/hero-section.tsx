@@ -68,8 +68,9 @@ export default function HeroSection() {
             <Image
               alt="Local business owner with their new website"
               className="w-full h-full object-cover object-top"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeAeqwgMd8qgzbTT0TUQCeVgiS5VXHSWjGSKXGPrCpU09LHAbYij3jibBzV8osmkr7pnPTFENxAxpSnil41OaxD6_Tx5VJRecpzKMhteN-FeS5JqKNtbI4icLGVztsw6uThFNVFdgjzyVZq9GnnNgSPYqj3Xx9KcKGEmIkuDcfSSIpB9dO0FWM0544q5pzo5rXYws7-0EegV9md6IGCdA063fmQufX92rMzXKANVcUv5yTm65n0y6eYPnIMwS-d9Pc5Dd70JbqLAI"
+              src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=900&h=960&fit=crop&q=80"
               fill
+              loading="eager"
               unoptimized
             />
             {/* Subtle gradient fade at bottom */}

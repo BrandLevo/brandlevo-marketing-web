@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 const cases = [
   {
     image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBvX4a3AVrC96Pso9B37Aiv6sHouK3wvUUcvVqrJhbzsi9SdwBGkxlRLIxw7iRzEiF16-VbZFHKnye5jIi1_GpeXhQv89V3tAWEdFd7wX5AHgwByMe2L4H2xFM_lUhTbUjDkkxK6jt3DS4CGxCv2IMEZbfDpKDqJUw6moDU1Qv7BYlhr86HwxXLpglAZugMA9SZt1omCipttFNdsKgRMSsvsWM18NIxn0ZMEQ6fudZ3i_cPL-m8RCPS-zygt2hDODiJoYV5kcDmE2w",
+      "https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&h=500&fit=crop&q=80",
     tag: "Web + SEO",
     title: "Premier Plumbing Co.",
     result: "+420% organic search traffic in 4 months",
@@ -12,7 +12,7 @@ const cases = [
   },
   {
     image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCeAeqwgMd8qgzbTT0TUQCeVgiS5VXHSWjGSKXGPrCpU09LHAbYij3jibBzV8osmkr7pnPTFENxAxpSnil41OaxD6_Tx5VJRecpzKMhteN-FeS5JqKNtbI4icLGVztsw6uThFNVFdgjzyVZq9GnnNgSPYqj3Xx9KcKGEmIkuDcfSSIpB9dO0FWM0544q5pzo5rXYws7-0EegV9md6IGCdA063fmQufX92rMzXKANVcUv5yTm65n0y6eYPnIMwS-d9Pc5Dd70JbqLAI",
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=500&fit=crop&q=80",
     tag: "Brand + AEO + Digital Marketing",
     title: "Lumiere Interiors",
     result: "Fully booked 6 weeks post-launch",

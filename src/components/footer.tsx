@@ -2,19 +2,19 @@ import Link from "next/link";
 import { Mail, Phone, MapPin, Hash, Globe, AtSign, Share2 } from "lucide-react";
 
 const services = [
-  { label: "Web Design & Development", href: "#services" },
-  { label: "Local SEO", href: "#services" },
-  { label: "Google Business Profile", href: "#services" },
-  { label: "AEO — Answer Engine Optimisation", href: "#services" },
-  { label: "Hosting & Support", href: "#services" },
+  { label: "Web Design & Development", href: "/services" },
+  { label: "Local SEO", href: "/services" },
+  { label: "Google Business Profile", href: "/services" },
+  { label: "AEO — Answer Engine Optimisation", href: "/services" },
+  { label: "Hosting & Support", href: "/services" },
 ];
 
 const company = [
-  { label: "About Us", href: "#about-us" },
-  { label: "Our Process", href: "#process" },
-  { label: "Results", href: "#results" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Contact", href: "#contact" },
+  { label: "About Us", href: "/about" },
+  { label: "Case Studies", href: "/case-studies" },
+  { label: "Blog", href: "/blog" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const socials = [
@@ -26,7 +26,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="bg-ink" id="contact">
+    <footer className="bg-ink">
       <div className="max-w-container-max mx-auto px-lg">
 
         {/* Top row: brand + CTA */}
@@ -46,7 +46,7 @@ export default function Footer() {
               Ready to get found online?
             </p>
             <Link
-              href="#audit"
+              href="/contact"
               className="inline-flex items-center gap-sm bg-primary text-white px-xl py-md rounded-full font-semibold hover:opacity-90 transition-all"
             >
               Book a Free Call

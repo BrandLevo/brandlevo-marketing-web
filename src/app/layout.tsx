@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Fraunces, DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -45,7 +47,9 @@ export default function RootLayout({
       className={`${fraunces.variable} ${dmSans.variable} ${jetbrainsMono.variable} scroll-smooth`}
     >
       <body className="antialiased min-h-screen font-body text-on-surface">
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

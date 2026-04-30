@@ -9,17 +9,17 @@ const stats = [
 
 const images = [
   {
-    src: "https://lh3.googleusercontent.com/aida-public/AB6AXuBvX4a3AVrC96Pso9B37Aiv6sHouK3wvUUcvVqrJhbzsi9SdwBGkxlRLIxw7iRzEiF16-VbZFHKnye5jIi1_GpeXhQv89V3tAWEdFd7wX5AHgwByMe2L4H2xFM_lUhTbUjDkkxK6jt3DS4CGxCv2IMEZbfDpKDqJUw6moDU1Qv7BYlhr86HwxXLpglAZugMA9SZt1omCipttFNdsKgRMSsvsWM18NIxn0ZMEQ6fudZ3i_cPL-m8RCPS-zygt2hDODiJoYV5kcDmE2w",
+    src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop&q=80",
     alt: "Client success story",
     className: "col-span-2 row-span-2",
   },
   {
-    src: "https://lh3.googleusercontent.com/aida-public/AB6AXuCeAeqwgMd8qgzbTT0TUQCeVgiS5VXHSWjGSKXGPrCpU09LHAbYij3jibBzV8osmkr7pnPTFENxAxpSnil41OaxD6_Tx5VJRecpzKMhteN-FeS5JqKNtbI4icLGVztsw6uThFNVFdgjzyVZq9GnnNgSPYqj3Xx9KcKGEmIkuDcfSSIpB9dO0FWM0544q5pzo5rXYws7-0EegV9md6IGCdA063fmQufX92rMzXKANVcUv5yTm65n0y6eYPnIMwS-d9Pc5Dd70JbqLAI",
+    src: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop&q=80",
     alt: "Our work in action",
     className: "col-span-1 row-span-1",
   },
   {
-    src: "https://lh3.googleusercontent.com/aida-public/AB6AXuBx0XaNH9M4Ldhrvbf_HWjT1awX__Wa2BnkX_5kMq5l0zNc6fA6Sgxy5crpKZlDC7eJ6SFAu-xLgZDcpojRcdgHjdjdBlVOOWQdK_sQqWIwF5z0APmFkPV8nse2n9aYgyVHA9CM1BJ8u0pKWqnrKakP0I_0nEzuJNI2LXCQI15m_mM-h5N_iI9C2sSKhvNZGx5OZ0H0p1-AtBFZWR3gBik-43WiQ9bTDYq7q8YY9-G26gZeSIb4W9na2ycUPjK8cfNlzzSPJA9hkIc",
+    src: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop&q=80",
     alt: "Brand design",
     className: "col-span-1 row-span-1",
   },

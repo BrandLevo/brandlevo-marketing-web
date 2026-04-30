@@ -1,4 +1,3 @@
-import Navbar from "@/components/navbar";
 import HeroSection from "@/components/hero-section";
 import ProblemSection from "@/components/problem-section";
 import ValuePropositionSection from "@/components/mission-vision-section";
@@ -10,37 +9,32 @@ import PricingSection from "@/components/pricing-section";
 import AboutSection from "@/components/about-section";
 import FaqSection from "@/components/faq-section";
 import CtaSection from "@/components/cta-section";
-import Footer from "@/components/footer";
 
 export default function Home() {
   return (
-    <>
-      <Navbar />
-      <main>
-        {/* 1. Hero — one-liner + problem + CTA */}
-        <HeroSection />
-        {/* 2. Stakes — agitate the cost of inaction */}
-        <ProblemSection />
-        {/* 3. Guide — empathy + authority */}
-        <ValuePropositionSection />
-        {/* 4. Plan — 3 clear steps */}
-        <ProcessSection />
-        {/* 5. Services — what we deliver */}
-        <ServicesSection />
-        {/* 6. Transformation — before/after success vision */}
-        <TransformationSection />
-        {/* 7. Social proof */}
-        <TestimonialsSection />
-        {/* 8. Pricing — reduce friction */}
-        <PricingSection />
-        {/* 9. About — brief guide credentials */}
-        <AboutSection />
-        {/* 10. FAQ — handle objections */}
-        <FaqSection />
-        {/* 11. Final CTA — same direct CTA repeated */}
-        <CtaSection />
-      </main>
-      <Footer />
-    </>
+    <main>
+      {/* 1. Hero — one-liner + problem + CTA */}
+      <HeroSection />
+      {/* 2. Stakes — agitate the cost of inaction */}
+      <ProblemSection />
+      {/* 3. Guide — empathy + authority */}
+      <ValuePropositionSection />
+      {/* 4. Plan — 3 clear steps */}
+      <ProcessSection />
+      {/* 5. Services — what we deliver */}
+      <ServicesSection />
+      {/* 6. Transformation — before/after success vision */}
+      <TransformationSection />
+      {/* 7. Social proof */}
+      <TestimonialsSection />
+      {/* 8. Pricing — reduce friction */}
+      <PricingSection />
+      {/* 9. About — brief guide credentials */}
+      <AboutSection />
+      {/* 10. FAQ — handle objections */}
+      <FaqSection />
+      {/* 11. Final CTA — same direct CTA repeated */}
+      <CtaSection />
+    </main>
   );
 }

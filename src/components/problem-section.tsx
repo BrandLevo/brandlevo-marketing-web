@@ -26,7 +26,7 @@ const stats = [
 
 export default function ProblemSection() {
   return (
-    <section className="py-xxxl px-lg bg-surface" id="about">
+    <section className="py-xxxl px-lg bg-surface">
       <div className="max-w-container-max mx-auto">
 
         {/* Header */}
