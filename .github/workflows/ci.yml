@@ -1,0 +1,14 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  ci:
+    uses: BrandLevo/internal-github-actions/.github/workflows/node-ci.yml@main
+    with:
+      lint-command: "npm run lint"
+      build-command: "npm run build"
