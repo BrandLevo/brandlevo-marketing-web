@@ -5,7 +5,6 @@ import ProcessSection from "@/components/process-section";
 import ServicesSection from "@/components/services-section";
 import TransformationSection from "@/components/transformation-section";
 import TestimonialsSection from "@/components/testimonials-section";
-import PricingSection from "@/components/pricing-section";
 import AboutSection from "@/components/about-section";
 import FaqSection from "@/components/faq-section";
 import CtaSection from "@/components/cta-section";
@@ -27,8 +26,6 @@ export default function Home() {
       <TransformationSection />
       {/* 7. Social proof */}
       <TestimonialsSection />
-      {/* 8. Pricing — reduce friction */}
-      <PricingSection />
       {/* 9. About — brief guide credentials */}
       <AboutSection />
       {/* 10. FAQ — handle objections */}

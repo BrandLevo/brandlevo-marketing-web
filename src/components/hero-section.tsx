@@ -12,7 +12,7 @@ const stats = [
 export default function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-snow">
-      <div className="max-w-container-max mx-auto px-lg pt-xxl pb-0 grid lg:grid-cols-2 items-end gap-xl">
+      <div className="max-w-container-max mx-auto px-md sm:px-lg pt-xl sm:pt-xxl pb-0 grid lg:grid-cols-2 items-end gap-xl">
 
         {/* Left: Copy */}
         <div className="pb-xxl">
@@ -63,7 +63,7 @@ export default function HeroSection() {
         </div>
 
         {/* Right: Image — flush to bottom, no floating clutter */}
-        <div className="relative h-full min-h-[420px] lg:min-h-[540px]">
+        <div className="relative h-[320px] sm:h-[420px] lg:h-full lg:min-h-[540px]">
           <div className="absolute inset-0 rounded-tl-3xl rounded-tr-3xl overflow-hidden">
             <Image
               alt="Local business owner with their new website"
