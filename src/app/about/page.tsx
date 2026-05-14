@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Heart, Target, Zap, Users, Award, Globe } from "lucide-react";
+import { ArrowRight, Heart, Target, Zap, Users } from "lucide-react";
+import PageHero from "@/components/page-hero";
 
 export const metadata: Metadata = {
   title: "About Us | BrandLevo",
@@ -81,36 +82,20 @@ const stats = [
 export default function AboutPage() {
   return (
     <main>
-      {/* Hero */}
-      <section className="bg-snow py-xxl px-lg border-b border-fog">
-        <div className="max-w-container-max mx-auto grid md:grid-cols-2 gap-xxl items-center">
-          <div>
-            <span className="text-eyebrow text-primary block mb-md">ABOUT BRANDLEVO</span>
-            <h1 className="text-h1 text-ink mb-lg">
-              We Started BrandLevo Because{" "}
-              <span className="text-primary italic">Small Businesses Deserve Better.</span>
-            </h1>
-            <p className="text-body-lg text-slate leading-relaxed">
-              Our founder&apos;s dad ran an electrical business for 22 years. He was brilliant at the work, had five-star reviews, and was losing jobs to a competitor with a flashier website and a Google ranking he didn&apos;t understand. That felt wrong. BrandLevo exists to fix it.
-            </p>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-2 gap-md">
-            {stats.map((s) => (
-              <div key={s.value} className="bg-white border border-fog rounded-2xl p-xl text-center">
-                <p className="text-h2 text-primary font-bold leading-none mb-xs">{s.value}</p>
-                <p className="text-eyebrow text-slate">{s.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="ABOUT BRANDLEVO"
+        title="We Started BrandLevo Because"
+        titleAccent="Brands Deserve Better."
+        body="Our founder's dad ran an electrical business for 22 years — brilliant at the work, five-star reviews, and losing jobs to a competitor with a flashier website. That felt wrong. BrandLevo exists to fix it."
+        cta={{ label: "Work With Us", href: "/contact" }}
+        stats={stats}
+        variant="dark"
+      />
 
       {/* Mission + Vision */}
       <section className="py-xxxl px-lg bg-white">
-        <div className="max-w-container-max mx-auto grid md:grid-cols-2 gap-xxl">
-          <div className="bg-primary rounded-2xl p-xl">
+        <div className="max-w-container-max mx-auto grid md:grid-cols-2 gap-xxl reveal">
+          <div className="bg-primary rounded-2xl p-md sm:p-xl">
             <span className="text-eyebrow text-white/60 block mb-md">OUR MISSION</span>
             <h2 className="text-h3 text-white mb-md">
               Give every local business the digital presence the big guys take for granted.
@@ -119,7 +104,7 @@ export default function AboutPage() {
               Not just a website — a complete digital front door. One that ranks on Google, shows up on maps, gets cited by AI assistants, and turns visitors into customers. Built fast, priced fairly, maintained properly.
             </p>
           </div>
-          <div className="bg-snow border border-fog rounded-2xl p-xl">
+          <div className="bg-snow border border-fog rounded-2xl p-md sm:p-xl">
             <span className="text-eyebrow text-primary block mb-md">OUR VISION</span>
             <h2 className="text-h3 text-ink mb-md">
               A world where the best local business — not the best-marketed one — wins.
@@ -139,8 +124,8 @@ export default function AboutPage() {
             Four principles we&apos;ve never compromised on.
           </h2>
           <div className="grid md:grid-cols-2 gap-lg">
-            {values.map((v) => (
-              <div key={v.title} className="bg-white border border-fog rounded-2xl p-xl flex gap-lg">
+            {values.map((v, i) => (
+              <div key={v.title} className={`reveal stagger-${i + 1} bg-white border border-fog rounded-2xl p-md sm:p-xl flex gap-md sm:gap-lg`}>
                 <div className="shrink-0 w-10 h-10 rounded-xl bg-purple-xpale flex items-center justify-center">
                   <v.icon className="w-5 h-5 text-primary" />
                 </div>
@@ -162,8 +147,8 @@ export default function AboutPage() {
             Small enough to care. Experienced enough to deliver.
           </h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-lg">
-            {team.map((t) => (
-              <div key={t.name} className="bg-snow border border-fog rounded-2xl p-lg">
+            {team.map((t, i) => (
+              <div key={t.name} className={`reveal stagger-${i + 1} bg-snow border border-fog rounded-2xl p-lg`}>
                 <div className={`w-14 h-14 rounded-2xl ${t.bg} flex items-center justify-center mb-lg`}>
                   <span className="text-white font-bold text-h4">{t.initials}</span>
                 </div>
@@ -200,47 +185,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Why us */}
-      <section className="py-xxl px-lg bg-ink">
-        <div className="max-w-container-max mx-auto grid md:grid-cols-2 gap-xxl items-center">
-          <div>
-            <span className="text-eyebrow text-primary block mb-md">WHY BRANDLEVO OVER A FREELANCER OR BIG AGENCY</span>
-            <h2 className="text-h3 text-white mb-lg">We sit in the sweet spot nobody else occupies.</h2>
-            <div className="space-y-md">
-              {[
-                { label: "Freelancer", note: "Cheap — but one person, slow, no strategy, disappears." },
-                { label: "Big agency", note: "Full-service — but expensive, you're a small account, junior team." },
-                { label: "BrandLevo", note: "Agency expertise, startup speed, local business pricing. You deal with the same team from brief to launch." },
-              ].map((item) => (
-                <div key={item.label} className="flex gap-md">
-                  <div className="shrink-0 w-2 h-2 rounded-full bg-primary mt-2" />
-                  <div>
-                    <span className="text-body font-semibold text-white">{item.label}: </span>
-                    <span className="text-body text-white/60">{item.note}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="flex flex-col items-start gap-lg">
-            <div className="inline-flex items-center gap-sm bg-white/5 border border-white/10 rounded-full px-md py-sm">
-              <Award className="w-4 h-4 text-primary" />
-              <span className="text-eyebrow text-white/70">TRUSTED BY 80+ LOCAL BUSINESSES</span>
-            </div>
-            <div className="inline-flex items-center gap-sm bg-white/5 border border-white/10 rounded-full px-md py-sm">
-              <Globe className="w-4 h-4 text-primary" />
-              <span className="text-eyebrow text-white/70">4 CONTINENTS · REMOTE-FIRST</span>
-            </div>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-sm bg-primary text-white px-xl py-md rounded-full font-bold hover:opacity-90 transition-all mt-md"
-            >
-              Meet the team on a call
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }

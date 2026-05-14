@@ -1,37 +1,32 @@
 import type { Metadata } from "next";
-import { Fraunces, DM_Sans, JetBrains_Mono } from "next/font/google";
+import { Nunito_Sans, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import ScrollReveal from "@/components/scroll-reveal";
 
-const fraunces = Fraunces({
+const nunitoSans = Nunito_Sans({
   subsets: ["latin"],
-  axes: ["opsz"],
-  variable: "--font-fraunces",
+  weight: ["400", "600", "700", "800"],
+  variable: "--font-nunito-sans",
   display: "swap",
 });
 
-const dmSans = DM_Sans({
+const poppins = Poppins({
   subsets: ["latin"],
-  variable: "--font-dm-sans",
-  display: "swap",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-jetbrains-mono",
+  weight: ["400", "500", "600"],
+  variable: "--font-poppins",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "BrandLevo | Websites That Bring Local Businesses Customers",
+  title: "BrandLevo | AI-Powered Brand Growth Partner",
   description:
-    "We build websites for local businesses that are invisible online. SEO, AEO, and digital marketing — so the phone rings and bookings come in.",
-  keywords: ["local business website", "small business web design", "local SEO", "digital marketing"],
+    "BrandLevo is the AI-powered digital marketing engine that lifts your brand higher with smarter campaigns, sharper insights, and unstoppable growth — all on autopilot.",
+  keywords: ["AI marketing", "brand growth", "digital marketing", "local SEO", "brand identity"],
   openGraph: {
-    title: "BrandLevo | Websites That Bring Local Businesses Customers",
-    description: "We build websites for local businesses that are invisible online.",
+    title: "BrandLevo | AI-Powered Brand Growth Partner",
+    description: "Where intelligence meets elevation. AI-driven marketing that delivers precision, growth, and measurable impact at every touchpoint.",
     type: "website",
   },
 };
@@ -44,12 +39,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${dmSans.variable} ${jetbrainsMono.variable} scroll-smooth`}
+      className={`${nunitoSans.variable} ${poppins.variable} scroll-smooth`}
     >
       <body className="antialiased min-h-screen font-body text-on-surface">
         <Navbar />
         {children}
         <Footer />
+        <ScrollReveal />
       </body>
     </html>
   );

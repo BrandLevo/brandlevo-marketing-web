@@ -13,6 +13,7 @@ import {
   BarChart3,
   Zap,
 } from "lucide-react";
+import PageHero from "@/components/page-hero";
 
 export const metadata: Metadata = {
   title: "Services | BrandLevo",
@@ -153,35 +154,25 @@ const tools = [
 export default function ServicesPage() {
   return (
     <main>
-      {/* Hero */}
-      <section className="bg-snow py-xxl px-lg border-b border-fog">
-        <div className="max-w-container-max mx-auto">
-          <span className="text-eyebrow text-primary block mb-md">SERVICES</span>
-          <h1 className="text-h1 text-ink mb-lg max-w-2xl">
-            Everything You Need to Go from{" "}
-            <span className="text-primary italic">Invisible to Fully Booked.</span>
-          </h1>
-          <p className="text-body-lg text-slate max-w-xl mb-xl">
-            One agency. No hand-offs. We handle design, copy, SEO, AEO, and hosting — so every piece works together instead of pulling in different directions.
-          </p>
-          <div className="flex flex-wrap gap-lg">
-            {[
-              { icon: Clock, text: "Live in 14 days" },
-              { icon: BarChart3, text: "Results in 60–90 days" },
-              { icon: Zap, text: "No tech skills needed" },
-            ].map((t) => (
-              <div key={t.text} className="flex items-center gap-xs text-body-sm text-slate font-medium">
-                <t.icon className="w-4 h-4 text-primary" />
-                {t.text}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="WHAT WE DO"
+        title="Full-Stack Brand Growth,"
+        titleAccent="All Under One Roof."
+        body="One agency. No hand-offs. We handle design, copy, SEO, AEO, and hosting — so every piece works together instead of pulling in different directions."
+        cta={{ label: "Book a Free Audit", href: "/contact" }}
+        secondaryCta={{ label: "See all services", href: "#services-list" }}
+        stats={[
+          { value: "14 days", label: "Average launch" },
+          { value: "6", label: "Core services" },
+          { value: "3.4×", label: "Lead growth" },
+          { value: "80+", label: "Clients served" },
+        ]}
+        variant="purple"
+      />
 
       {/* Service deep-dives */}
-      <section className="py-xxxl px-lg bg-white">
-        <div className="max-w-container-max mx-auto space-y-xxl">
+      <section className="py-xxxl px-lg bg-white" id="services-list">
+        <div className="max-w-container-max mx-auto space-y-xxl reveal">
           {services.map((s, i) => (
             <div
               key={s.title}

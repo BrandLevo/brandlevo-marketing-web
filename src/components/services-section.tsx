@@ -45,7 +45,7 @@ export default function ServicesSection() {
       <div className="max-w-container-max mx-auto">
 
         {/* Header */}
-        <div className="max-w-2xl mx-auto text-center mb-xxl">
+        <div className="reveal max-w-2xl mx-auto text-center mb-xxl">
           <span className="text-eyebrow text-primary block mb-md">WHAT WE DO</span>
           <h2 className="text-h2 text-ink mb-lg">
             Everything You Need to Show Up Online —{" "}
@@ -56,13 +56,13 @@ export default function ServicesSection() {
           </p>
         </div>
 
-        {/* Services grid — consistent card style, featured card uses accent bg */}
+        {/* Services grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-md">
-          {services.map((s) => (
+          {services.map((s, i) => (
             <div
               key={s.title}
               className={[
-                "rounded-2xl p-xl border flex flex-col gap-md bento-card",
+                `reveal stagger-${i + 1} rounded-2xl p-xl border flex flex-col gap-md bento-card`,
                 s.featured
                   ? "bg-purple-deeper border-transparent"
                   : "bg-surface border-fog hover:border-mist hover:shadow-md",

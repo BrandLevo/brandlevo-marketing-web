@@ -27,7 +27,7 @@ export default function InsightsSection() {
       <div className="max-w-container-max mx-auto">
 
         {/* Header */}
-        <div className="flex justify-between items-end mb-xxl">
+        <div className="reveal flex justify-between items-end mb-xxl">
           <div>
             <span className="text-eyebrow text-primary block mb-md">INSIGHTS</span>
             <h2 className="text-h2 text-ink max-w-sm">
@@ -45,10 +45,10 @@ export default function InsightsSection() {
 
         {/* Articles */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-lg">
-          {articles.map((a) => (
+          {articles.map((a, i) => (
             <article
               key={a.title}
-              className="bg-snow border border-fog rounded-xl p-lg flex flex-col hover:border-mist transition-colors group cursor-pointer bento-card"
+              className={`reveal stagger-${i + 1} bg-snow border border-fog rounded-xl p-lg flex flex-col hover:border-mist transition-colors group cursor-pointer bento-card`}
             >
               <span className="text-eyebrow text-primary bg-purple-xpale px-sm py-xs rounded w-fit mb-lg">
                 {a.tag}

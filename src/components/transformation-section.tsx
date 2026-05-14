@@ -9,7 +9,7 @@ const before = [
 ];
 
 const after = [
-  "A modern website you're proud to share",
+  "A modern brand presence you're proud to share",
   "Top of Google for searches in your town",
   "A steady stream of leads from your site",
   "Predictable bookings — every single week",
@@ -21,10 +21,10 @@ export default function TransformationSection() {
     <section className="py-xxxl px-lg bg-snow">
       <div className="max-w-container-max mx-auto">
 
-        <div className="text-center max-w-xl mx-auto mb-xxl">
+        <div className="reveal text-center max-w-xl mx-auto mb-xxl">
           <span className="text-eyebrow text-primary block mb-md">THE TRANSFORMATION</span>
           <h2 className="text-h2 text-ink">
-            Imagine Your Business in{" "}
+            Imagine Your Brand in{" "}
             <span className="text-primary italic">90 Days.</span>
           </h2>
         </div>
@@ -32,7 +32,7 @@ export default function TransformationSection() {
         <div className="grid md:grid-cols-2 gap-xl max-w-4xl mx-auto">
 
           {/* Before */}
-          <div className="bg-surface border border-fog rounded-2xl p-xl">
+          <div className="reveal-left bg-surface border border-fog rounded-2xl p-xl">
             <div className="flex items-center gap-sm mb-xl">
               <div className="w-8 h-8 rounded-full bg-fog flex items-center justify-center">
                 <X className="w-4 h-4 text-slate" />
@@ -50,7 +50,7 @@ export default function TransformationSection() {
           </div>
 
           {/* After */}
-          <div className="bg-primary rounded-2xl p-xl relative overflow-hidden">
+          <div className="reveal-right bg-primary rounded-2xl p-xl relative overflow-hidden">
             <div className="flex items-center gap-sm mb-xl">
               <div className="w-8 h-8 rounded-full bg-purple-dark flex items-center justify-center">
                 <Check className="w-4 h-4 text-white" />
@@ -70,7 +70,7 @@ export default function TransformationSection() {
           </div>
         </div>
 
-        <p className="text-center text-body-sm text-slate mt-xl max-w-md mx-auto">
+        <p className="reveal text-center text-body-sm text-slate mt-xl max-w-md mx-auto">
           Our clients don't just buy a website — they buy the future version of their business that's found, trusted, and booked.
         </p>
       </div>

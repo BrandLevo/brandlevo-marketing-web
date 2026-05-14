@@ -6,7 +6,7 @@ export default function AboutSection() {
       <div className="max-w-container-max mx-auto grid md:grid-cols-2 gap-xxl items-center">
 
         {/* Left: Visual */}
-        <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-fog flex items-center justify-center order-2 md:order-1">
+        <div className="reveal-left relative aspect-[4/3] rounded-2xl overflow-hidden bg-fog flex items-center justify-center order-2 md:order-1">
           <div className="text-center p-xl">
             <div className="w-20 h-20 rounded-full bg-primary mx-auto mb-lg flex items-center justify-center text-white text-2xl font-bold font-display">
               BL
@@ -17,7 +17,7 @@ export default function AboutSection() {
         </div>
 
         {/* Right: Copy */}
-        <div className="order-1 md:order-2">
+        <div className="reveal-right order-1 md:order-2">
           <span className="text-eyebrow text-primary block mb-md">ABOUT US</span>
           <h2 className="text-h2 text-ink mb-xl">
             Built for Small Businesses,{" "}

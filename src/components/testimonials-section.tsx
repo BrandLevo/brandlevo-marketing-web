@@ -44,34 +44,34 @@ export default function TestimonialsSection() {
     <section className="py-xxxl px-lg bg-surface" id="results">
       <div className="max-w-container-max mx-auto">
 
-        <div className="text-center max-w-xl mx-auto mb-xxl">
+        <div className="reveal text-center max-w-xl mx-auto mb-xxl">
           <span className="text-eyebrow text-primary block mb-md">CLIENT RESULTS</span>
           <h2 className="text-h2 text-ink mb-md">
             Don't Take Our Word for It.{" "}
             <span className="text-primary italic">Take Theirs.</span>
           </h2>
           <p className="text-body text-slate">
-            Real small business owners. Real results. No jargon, no fluff.
+            Real businesses. Real results. No jargon, no fluff.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-lg">
-          {testimonials.map((t) => (
+          {testimonials.map((t, i) => (
             <div
               key={t.name}
-              className="bg-snow border border-fog rounded-2xl p-xl flex flex-col bento-card hover:border-mist hover:shadow-md transition-all"
+              className={`reveal stagger-${i + 1} bg-snow border border-fog rounded-2xl p-xl flex flex-col bento-card hover:border-mist hover:shadow-md transition-all`}
             >
               {/* Stars */}
               <div className="flex gap-xs mb-lg">
-                {[...Array(t.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-primary text-primary" />
+                {[...Array(t.rating)].map((_, j) => (
+                  <Star key={j} className="w-4 h-4 fill-gold text-gold" />
                 ))}
               </div>
 
               <Quote className="w-7 h-7 text-fog mb-md shrink-0" />
 
               <p className="text-body text-ink mb-xl flex-grow leading-relaxed italic">
-                "{t.quote}"
+                &ldquo;{t.quote}&rdquo;
               </p>
 
               {/* Result pill */}

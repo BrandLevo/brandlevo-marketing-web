@@ -15,19 +15,19 @@ export default function CtaSection() {
 
           {/* Left — copy */}
           <div>
-            <span className="text-eyebrow text-purple-pale block mb-md">
+            <span className="hero-eyebrow text-eyebrow text-purple-pale block mb-md">
               YOUR NEXT CUSTOMERS ARE SEARCHING RIGHT NOW
             </span>
-            <h2 className="text-h1 text-white mb-lg">
-              Let's Make Sure They{" "}
+            <h2 className="hero-title text-h1 text-white mb-lg">
+              Let&apos;s Make Sure They{" "}
               <span className="italic">Find You.</span>
             </h2>
-            <p className="text-body-lg text-purple-pale mb-xl leading-relaxed">
-              Book a free 20-minute call. We'll audit your current online presence, show you exactly what's costing you customers, and give you a clear plan — whether you hire us or not.
+            <p className="hero-body text-body-lg text-purple-pale mb-xl leading-relaxed">
+              Book a free 20-minute call. We&apos;ll audit your current online presence, show you exactly what&apos;s costing you customers, and give you a clear plan — whether you hire us or not.
             </p>
             <ul className="space-y-md">
-              {promises.map((p) => (
-                <li key={p} className="flex items-start gap-sm text-white text-body">
+              {promises.map((p, i) => (
+                <li key={p} className={`reveal stagger-${i + 1} flex items-start gap-sm text-white text-body`}>
                   <CheckCircle className="w-5 h-5 text-mint shrink-0 mt-0.5" />
                   {p}
                 </li>
@@ -36,7 +36,7 @@ export default function CtaSection() {
           </div>
 
           {/* Right — booking card */}
-          <div className="bg-white rounded-2xl p-xl shadow-2xl flex flex-col gap-lg">
+          <div className="reveal-scale bg-white rounded-2xl p-md sm:p-xl shadow-2xl flex flex-col gap-lg">
             <div>
               <h3 className="text-h3 text-ink mb-xs">Book Your Free Discovery Call</h3>
               <div className="flex items-center gap-sm text-body-sm text-slate">
@@ -50,7 +50,7 @@ export default function CtaSection() {
               href="https://calendly.com/brandlevo/free-discovery"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full bg-primary text-white rounded-xl py-lg font-semibold text-body hover:opacity-90 active:scale-95 transition-all inline-flex items-center justify-center gap-sm shadow-md"
+              className="animate-pulse-ring w-full bg-primary text-white rounded-xl py-lg font-semibold text-body hover:opacity-90 active:scale-95 transition-all inline-flex items-center justify-center gap-sm shadow-md"
             >
               <Calendar className="w-5 h-5" />
               Schedule on Calendly

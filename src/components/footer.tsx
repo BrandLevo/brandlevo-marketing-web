@@ -1,16 +1,16 @@
 import Link from "next/link";
-import { Mail, Phone, MapPin, Hash, Globe, AtSign, Share2 } from "lucide-react";
+import { Hash, Globe, AtSign, Share2, Mail, Phone } from "lucide-react";
 
 const services = [
-  { label: "Web Design & Development", href: "/services" },
+  { label: "Web Design & Dev", href: "/services" },
   { label: "Local SEO", href: "/services" },
   { label: "Google Business Profile", href: "/services" },
-  { label: "AEO — Answer Engine Optimisation", href: "/services" },
+  { label: "AEO — AI Search", href: "/services" },
   { label: "Hosting & Support", href: "/services" },
 ];
 
 const company = [
-  { label: "About Us", href: "/about" },
+  { label: "About", href: "/about" },
   { label: "Case Studies", href: "/case-studies" },
   { label: "Blog", href: "/blog" },
   { label: "Pricing", href: "/pricing" },
@@ -18,7 +18,7 @@ const company = [
 ];
 
 const socials = [
-  { icon: Hash, href: "#", label: "X" },
+  { icon: Hash, href: "#", label: "X (Twitter)" },
   { icon: Globe, href: "#", label: "LinkedIn" },
   { icon: AtSign, href: "#", label: "Instagram" },
   { icon: Share2, href: "#", label: "Facebook" },
@@ -26,127 +26,94 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="bg-ink">
-      <div className="max-w-container-max mx-auto px-lg">
+    <footer className="reveal bg-snow border-t border-fog">
+      <div className="max-w-container-max mx-auto px-md sm:px-xl">
 
-        {/* Top row: brand + CTA */}
-        <div className="py-xxl grid md:grid-cols-2 gap-xl items-center border-b border-white/10">
+        {/* Main row */}
+        <div className="py-xxl grid md:grid-cols-[1fr_2fr] gap-xl md:gap-xxl">
+
+          {/* Brand column */}
           <div>
-            <Link href="/" className="block mb-md">
+            <Link href="/" className="block mb-lg">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/White.svg" alt="BrandLevo" className="h-9 w-auto" />
+              <img src="/Original.svg" alt="BrandLevo" className="h-9 w-auto" />
             </Link>
-            <p className="text-body text-white/60 max-w-xs leading-relaxed">
-              Websites that bring you customers. Built for local businesses that are ready to grow.
+            <p className="text-body-sm text-slate leading-relaxed max-w-[220px]">
+              Where intelligence meets elevation. AI-powered growth for brands ready to rise.
             </p>
           </div>
 
-          <div className="md:text-right">
-            <p className="text-h3 text-white mb-md">
-              Ready to get found online?
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-sm bg-primary text-white px-xl py-md rounded-full font-semibold hover:opacity-90 transition-all"
-            >
-              Book a Free Call
-            </Link>
-          </div>
-        </div>
-
-        {/* Middle row: links */}
-        <div className="py-xxl grid sm:grid-cols-2 md:grid-cols-4 gap-xl border-b border-white/10">
-
-          {/* Services */}
-          <div>
-            <p className="text-eyebrow text-white/40 mb-lg">SERVICES</p>
-            <ul className="space-y-sm">
-              {services.map((s) => (
-                <li key={s.label}>
-                  <Link href={s.href} className="text-body-sm text-white/60 hover:text-white transition-colors">
-                    {s.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <p className="text-eyebrow text-white/40 mb-lg">COMPANY</p>
-            <ul className="space-y-sm">
-              {company.map((c) => (
-                <li key={c.label}>
-                  <Link href={c.href} className="text-body-sm text-white/60 hover:text-white transition-colors">
-                    {c.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <p className="text-eyebrow text-white/40 mb-lg">CONTACT</p>
-            <ul className="space-y-md">
-              <li>
-                <a href="mailto:hello@brandlevo.com" className="flex items-start gap-sm text-body-sm text-white/60 hover:text-white transition-colors">
-                  <Mail className="w-4 h-4 shrink-0 mt-0.5 text-primary" />
-                  hello@brandlevo.com
-                </a>
-              </li>
-              <li>
-                <a href="tel:+15551234567" className="flex items-start gap-sm text-body-sm text-white/60 hover:text-white transition-colors">
-                  <Phone className="w-4 h-4 shrink-0 mt-0.5 text-primary" />
-                  +1 (555) 123-4567
-                </a>
-              </li>
-              <li className="flex items-start gap-sm text-body-sm text-white/60">
-                <MapPin className="w-4 h-4 shrink-0 mt-0.5 text-primary" />
-                Remote-first · Worldwide
-              </li>
-            </ul>
-          </div>
-
-          {/* Stay in touch */}
-          <div>
-            <p className="text-eyebrow text-white/40 mb-lg">FOLLOW US</p>
-            <div className="flex flex-wrap gap-sm mb-xl">
-              {socials.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  aria-label={s.label}
-                  className="w-10 h-10 rounded-xl border border-white/10 hover:border-primary hover:bg-primary/10 flex items-center justify-center transition-all"
-                >
-                  <s.icon className="w-4 h-4 text-white/70" />
-                </a>
-              ))}
-            </div>
+          {/* Link columns */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-lg sm:gap-xl">
+            {/* Services */}
             <div>
-              <p className="text-eyebrow text-white/40 mb-md">WEEKLY TIP</p>
-              <div className="flex gap-sm">
-                <input
-                  type="email"
-                  placeholder="Your email"
-                  className="flex-1 min-w-0 bg-white/5 border border-white/10 rounded-lg px-md py-sm text-body-sm text-white placeholder:text-white/30 focus:outline-none focus:border-primary/60 transition-colors"
-                />
-                <button className="shrink-0 bg-primary text-white px-md py-sm rounded-lg text-body-sm font-semibold hover:opacity-90 transition-all">
-                  Go
-                </button>
-              </div>
+              <p className="text-eyebrow text-slate font-semibold tracking-widest uppercase mb-md">Services</p>
+              <ul className="space-y-sm">
+                {services.map((s) => (
+                  <li key={s.label}>
+                    <Link href={s.href} className="text-body-sm text-slate hover:text-primary transition-colors">
+                      {s.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Company */}
+            <div>
+              <p className="text-eyebrow text-slate font-semibold tracking-widest uppercase mb-md">Company</p>
+              <ul className="space-y-sm">
+                {company.map((c) => (
+                  <li key={c.label}>
+                    <Link href={c.href} className="text-body-sm text-slate hover:text-primary transition-colors">
+                      {c.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact */}
+            <div className="col-span-2 sm:col-span-1">
+              <p className="text-eyebrow text-slate font-semibold tracking-widest uppercase mb-md">Contact</p>
+              <ul className="space-y-sm">
+                <li>
+                  <a href="mailto:hello@brandlevo.com" className="flex items-center gap-xs text-body-sm text-slate hover:text-primary transition-colors">
+                    <Mail className="w-3.5 h-3.5 shrink-0" />
+                    hello@brandlevo.com
+                  </a>
+                </li>
+                <li>
+                  <a href="tel:+15551234567" className="flex items-center gap-xs text-body-sm text-slate hover:text-primary transition-colors">
+                    <Phone className="w-3.5 h-3.5 shrink-0" />
+                    +1 (555) 123-4567
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="py-lg flex flex-col sm:flex-row justify-between items-center gap-sm">
-          <p className="text-body-sm text-white/40">
-            © 2026 BrandLevo. All rights reserved.
-          </p>
+        <div className="border-t border-fog py-lg flex flex-col sm:flex-row items-center justify-between gap-sm sm:gap-md">
+          <p className="text-body-sm text-slate">© 2026 BrandLevo. All rights reserved.</p>
+
           <div className="flex items-center gap-lg">
-            <a href="#" className="text-body-sm text-white/40 hover:text-white/70 transition-colors">Privacy Policy</a>
-            <a href="#" className="text-body-sm text-white/40 hover:text-white/70 transition-colors">Terms of Service</a>
+            <a href="#" className="text-body-sm text-slate hover:text-primary transition-colors">Privacy Policy</a>
+            <a href="#" className="text-body-sm text-slate hover:text-primary transition-colors">Terms</a>
+          </div>
+
+          <div className="flex items-center gap-sm">
+            {socials.map((s) => (
+              <a
+                key={s.label}
+                href={s.href}
+                aria-label={s.label}
+                className="w-8 h-8 rounded-lg border border-fog bg-white flex items-center justify-center hover:border-primary hover:text-primary transition-all text-slate"
+              >
+                <s.icon className="w-3.5 h-3.5" />
+              </a>
+            ))}
           </div>
         </div>
       </div>

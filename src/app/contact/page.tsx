@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Mail, Phone, MessageCircle, Clock, CheckCircle, CalendarDays, ArrowRight } from "lucide-react";
+import PageHero from "@/components/page-hero";
 
 export const metadata: Metadata = {
   title: "Book a Free Call | BrandLevo",
@@ -55,16 +56,24 @@ const faqs = [
 export default function ContactPage() {
   return (
     <main>
-      {/* Hero */}
-      <section className="bg-snow py-xxl px-lg border-b border-fog">
+      <PageHero
+        eyebrow="BOOK A FREE CALL"
+        title="20 Minutes."
+        titleAccent="A Plan You Can Use Today."
+        body="We audit your online presence live — Google ranking, website, local SEO — and hand you a clear action plan. No pitch deck. No obligation. Ever."
+        badge="Next slot available within 48 hours"
+        cta={{ label: "Schedule on Calendly", href: "https://calendly.com/brandlevo/free-discovery" }}
+        secondaryCta={{ label: "Or scroll down to call us", href: "#contact-form" }}
+        variant="dark"
+      />
+
+      {/* Contact detail sections */}
+      <section className="bg-snow py-xxl px-lg border-b border-fog" id="contact-form">
         <div className="max-w-container-max mx-auto grid md:grid-cols-2 gap-xxl items-start">
           <div>
-            <span className="text-eyebrow text-primary block mb-md">BOOK A FREE CALL</span>
-            <h1 className="text-h1 text-ink mb-lg">
-              20 Minutes.{" "}
-              <span className="text-primary italic">A Plan You Can Use Today.</span>
-            </h1>
-            <p className="text-body-lg text-slate mb-xl leading-relaxed">
+            <span className="text-eyebrow text-primary block mb-md">WHAT TO EXPECT</span>
+            <h2 className="text-h2 text-ink mb-lg">Here&apos;s exactly what happens on the call.</h2>
+            <p className="hero-body text-body-lg text-slate mb-xl leading-relaxed">
               We audit your online presence live on the call — Google ranking, website, GBP — and tell you exactly what&apos;s costing you customers. No pitch deck. No obligation.
             </p>
             <ul className="space-y-sm mb-xxl">
@@ -78,7 +87,7 @@ export default function ContactPage() {
           </div>
 
           {/* Booking card */}
-          <div className="bg-white border border-fog rounded-2xl p-xl shadow-sm">
+          <div className="reveal-scale bg-white border border-fog rounded-2xl p-md sm:p-xl shadow-sm">
             <div className="flex items-center gap-sm mb-xl">
               <CalendarDays className="w-5 h-5 text-primary" />
               <span className="text-h4 text-ink font-semibold">Book Your Free Call</span>
@@ -179,8 +188,8 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <form className="space-y-md bg-white border border-fog rounded-2xl p-xl">
-            <div className="grid grid-cols-2 gap-md">
+          <form className="space-y-md bg-white border border-fog rounded-2xl p-md sm:p-xl">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-md">
               <div>
                 <label className="text-eyebrow text-slate block mb-sm">FIRST NAME</label>
                 <input

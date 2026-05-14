@@ -31,11 +31,16 @@ export default function ValuePropositionSection() {
       <div className="max-w-container-max mx-auto grid md:grid-cols-2 gap-xxl items-center">
 
         {/* Left: Image collage */}
-        <div className="relative grid grid-cols-3 grid-rows-2 gap-sm h-[420px]">
+        <div className="reveal-left relative h-[280px] sm:h-[420px] sm:grid sm:grid-cols-3 sm:grid-rows-2 sm:gap-sm">
           {images.map((img, i) => (
             <div
               key={i}
-              className={["relative rounded-2xl overflow-hidden", img.className].join(" ")}
+              className={[
+                "relative rounded-2xl overflow-hidden",
+                i === 0
+                  ? "h-full sm:h-auto sm:col-span-2 sm:row-span-2"
+                  : "hidden sm:block",
+              ].join(" ")}
             >
               <Image
                 src={img.src}
@@ -48,7 +53,7 @@ export default function ValuePropositionSection() {
           ))}
 
           {/* Floating authority badge */}
-          <div className="absolute -bottom-md -right-md bg-surface rounded-xl shadow-xl border border-fog p-md z-10 min-w-[160px]">
+          <div className="absolute -bottom-md -right-0 sm:-right-md bg-surface rounded-xl shadow-xl border border-fog p-md z-10 min-w-[160px]">
             <p className="text-eyebrow text-primary mb-xs">OUR TRACK RECORD</p>
             <div className="flex gap-md">
               {stats.slice(0, 2).map((s) => (
@@ -62,7 +67,7 @@ export default function ValuePropositionSection() {
         </div>
 
         {/* Right: Copy */}
-        <div>
+        <div className="reveal-right">
           <span className="text-eyebrow text-primary block mb-md">WHY BRANDLEVO</span>
           <h2 className="text-h2 text-ink mb-lg">
             We Get It. Building a Website Feels Overwhelming.{" "}

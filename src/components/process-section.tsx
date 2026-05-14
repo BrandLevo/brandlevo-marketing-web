@@ -12,14 +12,14 @@ const steps = [
   {
     number: "02",
     icon: Rocket,
-    title: "We Build Your Website",
-    body: "In 14 days, we design, write, and launch a clean, mobile-friendly site that's built to rank on Google and turn visitors into customers.",
+    title: "We Build Your Strategy",
+    body: "In 14 days, we design, write, and launch a clean, mobile-friendly presence built to rank on Google and turn visitors into customers.",
     deliverables: ["Custom mobile-first website", "SEO-ready from day one", "Copywriting included", "Hosted, secured & live"],
   },
   {
     number: "03",
     icon: TrendingUp,
-    title: "Watch the Calls Come In",
+    title: "Watch the Growth Come In",
     body: "We hand you a simple dashboard, train you on the basics, and stick around for support. You focus on customers; we keep things running.",
     deliverables: ["Monthly performance reports", "SEO & marketing campaigns", "Ongoing technical support", "Strategy calls on demand"],
   },
@@ -31,7 +31,7 @@ export default function ProcessSection() {
       <div className="max-w-container-max mx-auto">
 
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-xxl">
+        <div className="reveal text-center max-w-2xl mx-auto mb-xxl">
           <span className="text-eyebrow text-primary block mb-md">HOW IT WORKS</span>
           <h2 className="text-h2 text-ink mb-lg">
             Getting Online Shouldn't Feel Like Climbing a Mountain.{" "}
@@ -45,11 +45,11 @@ export default function ProcessSection() {
         {/* Steps */}
         <div className="relative">
           {/* Desktop connector */}
-          <div className="hidden lg:block absolute top-8 left-[calc(16.6%+2rem)] right-[calc(16.6%+2rem)] h-px bg-fog z-0" />
+          <div className="connector-reveal hidden lg:block absolute top-8 left-[calc(16.6%+2rem)] right-[calc(16.6%+2rem)] h-px bg-fog z-0" />
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-xl">
-            {steps.map((step) => (
-              <div key={step.number} className="relative">
+            {steps.map((step, i) => (
+              <div key={step.number} className={`reveal stagger-${i + 1} relative`}>
                 <div className="flex lg:flex-col gap-lg mb-lg items-start">
                   <div className="relative z-10 w-16 h-16 bg-primary rounded-2xl flex items-center justify-center shadow-lg shrink-0">
                     <step.icon className="w-7 h-7 text-white" />
@@ -76,7 +76,7 @@ export default function ProcessSection() {
         </div>
 
         {/* CTA */}
-        <div className="mt-xxl text-center">
+        <div className="reveal mt-xxl text-center">
           <Link
             href="#audit"
             className="inline-flex items-center gap-sm bg-primary text-on-primary px-xl py-md rounded-lg font-semibold shadow-md hover:opacity-90 transition-all"

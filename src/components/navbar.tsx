@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Phone } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { Menu, X } from "lucide-react";
 
 const links = [
   { label: "Services", href: "/services" },
@@ -10,124 +11,143 @@ const links = [
   { label: "Blog", href: "/blog" },
   { label: "Pricing", href: "/pricing" },
   { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [open]);
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 60);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   const close = () => setOpen(false);
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-fog/60">
+      <header
+        className={[
+          "bg-white/95 backdrop-blur-md border-b border-fog sticky top-0 z-50 transition-all duration-300",
+          scrolled ? "shadow-sm" : "shadow-none",
+        ].join(" ")}
+      >
         <div className="max-w-container-max mx-auto px-md sm:px-xl">
-          <div className="h-16 flex items-center justify-between gap-xl">
+          <div className="h-16 flex items-center justify-between">
 
             {/* Logo */}
             <Link href="/" onClick={close} className="shrink-0">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/Original.svg" alt="BrandLevo" className="h-10 w-auto" />
+              <img src="/Original.svg" alt="BrandLevo" className="h-9 w-auto" />
             </Link>
 
-            {/* Nav pill — desktop */}
-            <nav className="hidden md:flex items-center gap-xs bg-snow border border-fog rounded-full px-md py-[6px]">
-              {links.map((l) => (
-                <Link
-                  key={l.href}
-                  href={l.href}
-                  className="text-body font-medium text-slate hover:text-primary transition-colors px-md py-[6px] rounded-full hover:bg-purple-xpale"
-                >
-                  {l.label}
-                </Link>
-              ))}
+            {/* Pill nav — desktop (lg+) */}
+            <nav className="hidden lg:flex items-center bg-snow border border-fog rounded-full px-1.5 py-1.5 gap-0.5">
+              {links.map((l) => {
+                const isActive = pathname === l.href;
+                return (
+                  <Link
+                    key={l.href}
+                    href={l.href}
+                    className={[
+                      "text-body-sm px-md py-[6px] rounded-full transition-all duration-200 whitespace-nowrap",
+                      isActive
+                        ? "bg-primary text-white font-semibold shadow-sm"
+                        : "text-slate font-medium hover:text-ink hover:bg-fog/80",
+                    ].join(" ")}
+                  >
+                    {l.label}
+                  </Link>
+                );
+              })}
             </nav>
 
-            {/* Right actions */}
-            <div className="flex items-center gap-md">
-              <a
-                href="tel:+15551234567"
-                className="hidden lg:flex items-center gap-xs text-body text-slate hover:text-primary transition-colors font-medium"
-              >
-                <Phone className="w-4 h-4" />
-                +1 (555) 123-4567
-              </a>
+            {/* Right — CTA + hamburger */}
+            <div className="flex items-center gap-sm">
               <Link
                 href="/contact"
-                className="hidden md:inline-flex items-center bg-primary text-white px-lg py-[10px] rounded-full font-semibold text-body hover:opacity-90 hover:-translate-y-px transition-all active:scale-95 shadow-sm"
+                className="hidden lg:inline-flex items-center bg-primary text-white px-lg py-[9px] rounded-full text-body-sm font-semibold hover:opacity-90 hover:-translate-y-px transition-all active:scale-95 shadow-sm"
               >
                 Book a Free Call
               </Link>
 
-              {/* Hamburger — mobile only */}
+              {/* Compact CTA on md only (between 768–1024px) */}
+              <Link
+                href="/contact"
+                className="hidden md:inline-flex lg:hidden items-center bg-primary text-white px-md py-[7px] rounded-full text-body-sm font-semibold hover:opacity-90 transition-all"
+              >
+                Book a Call
+              </Link>
+
+              {/* Hamburger — below lg */}
               <button
                 onClick={() => setOpen((o) => !o)}
                 aria-label={open ? "Close menu" : "Open menu"}
                 aria-expanded={open}
-                className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg text-slate hover:text-primary hover:bg-purple-xpale transition-colors"
+                className="lg:hidden w-9 h-9 rounded-lg border border-fog flex items-center justify-center text-slate hover:text-primary hover:border-primary/50 transition-colors"
               >
-                {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                {open ? <X className="w-[18px] h-[18px]" /> : <Menu className="w-[18px] h-[18px]" />}
               </button>
             </div>
           </div>
         </div>
       </header>
 
-      {/* ── Mobile drawer ───────────────────────────────────────── */}
-      {/* Backdrop */}
+      {/* Overlay */}
       <div
         onClick={close}
+        role="presentation"
         className={[
-          "fixed inset-0 z-40 bg-ink/40 backdrop-blur-sm md:hidden transition-opacity duration-300",
+          "fixed inset-0 z-40 bg-ink/20 backdrop-blur-sm lg:hidden transition-opacity duration-300",
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none",
         ].join(" ")}
         aria-hidden="true"
       />
 
-      {/* Slide-down panel */}
+      {/* Mobile / tablet drawer */}
       <div
+        role="dialog"
+        aria-modal="true"
+        aria-label="Navigation menu"
         className={[
-          "fixed top-16 left-0 right-0 z-40 bg-white border-b border-fog shadow-xl md:hidden",
+          "fixed top-16 left-0 right-0 z-40 bg-white border-b border-fog shadow-lg lg:hidden",
           "transition-all duration-300 ease-in-out origin-top",
           open ? "opacity-100 scale-y-100 translate-y-0" : "opacity-0 scale-y-95 -translate-y-2 pointer-events-none",
         ].join(" ")}
       >
-        <nav className="max-w-container-max mx-auto px-md py-lg flex flex-col gap-xs">
-          {links.map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              onClick={close}
-              className="text-body font-medium text-ink hover:text-primary hover:bg-purple-xpale rounded-xl px-md py-md transition-colors"
-            >
-              {l.label}
-            </Link>
-          ))}
+        <nav className="max-w-container-max mx-auto px-md py-md flex flex-col gap-xs">
+          {[...links, { label: "Contact", href: "/contact" }].map((l) => {
+            const isActive = pathname === l.href;
+            return (
+              <Link
+                key={l.href}
+                href={l.href}
+                onClick={close}
+                className={[
+                  "px-md py-[10px] rounded-xl text-body-sm font-medium transition-colors",
+                  isActive
+                    ? "bg-primary/8 text-primary font-semibold"
+                    : "text-ink hover:text-primary hover:bg-purple-xpale",
+                ].join(" ")}
+              >
+                {l.label}
+              </Link>
+            );
+          })}
 
-          {/* Divider */}
-          <div className="my-sm border-t border-fog" />
+          <div className="my-xs border-t border-fog" />
 
-          {/* Phone */}
-          <a
-            href="tel:+15551234567"
-            onClick={close}
-            className="flex items-center gap-sm text-body text-slate hover:text-primary transition-colors font-medium px-md py-md rounded-xl hover:bg-purple-xpale"
-          >
-            <Phone className="w-4 h-4" />
-            +1 (555) 123-4567
-          </a>
-
-          {/* CTA */}
           <Link
             href="/contact"
             onClick={close}
-            className="mt-sm inline-flex justify-center items-center bg-primary text-white px-xl py-md rounded-full font-semibold text-body hover:opacity-90 transition-all active:scale-95 shadow-sm"
+            className="inline-flex justify-center items-center bg-primary text-white px-xl py-[10px] rounded-full text-body-sm font-semibold hover:opacity-90 transition-all active:scale-95"
           >
             Book a Free Call
           </Link>

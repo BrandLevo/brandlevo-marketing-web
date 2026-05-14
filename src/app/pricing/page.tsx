@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CheckCircle, XCircle, ArrowRight, HelpCircle, Shield } from "lucide-react";
+import { Check, CheckCircle, Minus, ArrowRight, HelpCircle, Shield } from "lucide-react";
+import PageHero from "@/components/page-hero";
 
 export const metadata: Metadata = {
   title: "Pricing | BrandLevo",
@@ -8,90 +9,40 @@ export const metadata: Metadata = {
     "Transparent, one-time pricing for local business websites and digital marketing. No retainers, no surprises, no contracts.",
 };
 
-const comparison = [
+const comparisonGroups = [
   {
-    feature: "Custom website design",
-    getOnline: true,
-    getFound: true,
-    getBooked: true,
+    category: "Website",
+    rows: [
+      { feature: "Custom website design", getOnline: true, getFound: true, getBooked: true },
+      { feature: "Pages of content", getOnline: "Up to 5", getFound: "Up to 10", getBooked: "Up to 15" },
+      { feature: "Professional copywriting", getOnline: false, getFound: true, getBooked: true },
+      { feature: "Hosting + SSL", getOnline: true, getFound: true, getBooked: true },
+    ],
   },
   {
-    feature: "Pages of content",
-    getOnline: "Up to 5",
-    getFound: "Up to 10",
-    getBooked: "Up to 15",
+    category: "Visibility",
+    rows: [
+      { feature: "Local SEO setup", getOnline: "Basic", getFound: "Full", getBooked: "Full + AEO" },
+      { feature: "Google Business Profile", getOnline: true, getFound: true, getBooked: true },
+      { feature: "Google Ads setup", getOnline: false, getFound: true, getBooked: true },
+      { feature: "AEO (AI search visibility)", getOnline: false, getFound: false, getBooked: true },
+    ],
   },
   {
-    feature: "Professional copywriting",
-    getOnline: false,
-    getFound: true,
-    getBooked: true,
+    category: "Leads & Growth",
+    rows: [
+      { feature: "Booking / lead capture", getOnline: false, getFound: false, getBooked: true },
+      { feature: "Social media kit", getOnline: false, getFound: false, getBooked: true },
+    ],
   },
   {
-    feature: "Local SEO setup",
-    getOnline: "Basic",
-    getFound: "Full",
-    getBooked: "Full + AEO",
-  },
-  {
-    feature: "Google Business Profile",
-    getOnline: true,
-    getFound: true,
-    getBooked: true,
-  },
-  {
-    feature: "Google Ads setup",
-    getOnline: false,
-    getFound: true,
-    getBooked: true,
-  },
-  {
-    feature: "Booking / lead capture",
-    getOnline: false,
-    getFound: false,
-    getBooked: true,
-  },
-  {
-    feature: "AEO (AI search visibility)",
-    getOnline: false,
-    getFound: false,
-    getBooked: true,
-  },
-  {
-    feature: "Social media kit",
-    getOnline: false,
-    getFound: false,
-    getBooked: true,
-  },
-  {
-    feature: "Monthly performance report",
-    getOnline: false,
-    getFound: true,
-    getBooked: true,
-  },
-  {
-    feature: "Quarterly strategy call",
-    getOnline: false,
-    getFound: false,
-    getBooked: true,
-  },
-  {
-    feature: "1 monthly content update",
-    getOnline: false,
-    getFound: false,
-    getBooked: true,
-  },
-  {
-    feature: "Hosting + SSL included",
-    getOnline: true,
-    getFound: true,
-    getBooked: true,
-  },
-  {
-    feature: "Support",
-    getOnline: "Email",
-    getFound: "Priority email",
-    getBooked: "Phone + email",
+    category: "Ongoing Support",
+    rows: [
+      { feature: "Monthly performance report", getOnline: false, getFound: true, getBooked: true },
+      { feature: "Quarterly strategy call", getOnline: false, getFound: false, getBooked: true },
+      { feature: "Monthly content update", getOnline: false, getFound: false, getBooked: true },
+      { feature: "Support", getOnline: "Email", getFound: "Priority email", getBooked: "Phone + email" },
+    ],
   },
 ];
 
@@ -132,25 +83,26 @@ const guarantee = [
 export default function PricingPage() {
   return (
     <main>
-      {/* Hero */}
-      <section className="bg-snow py-xxl px-lg border-b border-fog">
-        <div className="max-w-container-max mx-auto text-center max-w-2xl mx-auto">
-          <span className="text-eyebrow text-primary block mb-md">PRICING</span>
-          <h1 className="text-h1 text-ink mb-lg">
-            One Price. No Surprises.{" "}
-            <span className="text-primary italic">You Own Everything.</span>
-          </h1>
-          <p className="text-body-lg text-slate">
-            Most agency quotes are padded with retainers you don&apos;t need and deliverables you can&apos;t measure. Ours aren&apos;t. Pick a tier, pay once, go live.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="TRANSPARENT PRICING"
+        title="One Price. No Surprises."
+        titleAccent="You Own Everything."
+        body="No retainers you don't need. No deliverables you can't measure. Pick a tier, pay once, go live in 14 days."
+        badge="No hidden fees · No lock-in contracts"
+        stats={[
+          { value: "$799", label: "Starting price" },
+          { value: "14 days", label: "To go live" },
+          { value: "0", label: "Hidden fees" },
+          { value: "100%", label: "You own it" },
+        ]}
+        variant="dark"
+      />
 
       {/* Tier cards */}
       <section className="py-xxxl px-lg bg-white">
         <div className="max-w-container-max mx-auto grid md:grid-cols-3 gap-lg items-end">
           {/* Get Online */}
-          <div className="bg-snow border border-fog rounded-2xl p-xl">
+          <div className="reveal stagger-1 bg-snow border border-fog rounded-2xl p-md sm:p-xl">
             <span className="text-eyebrow text-slate block mb-lg">GET ONLINE</span>
             <div className="mb-xl">
               <span className="text-h1 text-ink font-bold">$799</span>
@@ -167,9 +119,9 @@ export default function PricingPage() {
           </div>
 
           {/* Get Found — featured */}
-          <div className="bg-primary rounded-2xl p-xl relative -mt-4">
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-mint text-ink text-eyebrow px-md py-xs rounded-full font-bold whitespace-nowrap">
-              ⭐ MOST POPULAR
+          <div className="reveal stagger-2 bg-primary rounded-2xl p-md sm:p-xl relative sm:-mt-4">
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gold text-ink text-eyebrow px-md py-xs rounded-full font-bold whitespace-nowrap">
+              MOST POPULAR
             </div>
             <span className="text-eyebrow text-white/60 block mb-lg">GET FOUND</span>
             <div className="mb-xl">
@@ -187,7 +139,7 @@ export default function PricingPage() {
           </div>
 
           {/* Get Booked */}
-          <div className="bg-snow border border-fog rounded-2xl p-xl">
+          <div className="reveal stagger-3 bg-snow border border-fog rounded-2xl p-md sm:p-xl">
             <span className="text-eyebrow text-slate block mb-lg">GET BOOKED</span>
             <div className="mb-xl">
               <span className="text-h1 text-ink font-bold">$1,999</span>
@@ -208,35 +160,107 @@ export default function PricingPage() {
       {/* Comparison table */}
       <section className="py-xxxl px-lg bg-snow">
         <div className="max-w-container-max mx-auto">
-          <span className="text-eyebrow text-primary block mb-md">WHAT&apos;S INCLUDED</span>
-          <h2 className="text-h2 text-ink mb-xxl">Side-by-side comparison.</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full">
+          <div className="reveal mb-xxl">
+            <span className="text-eyebrow text-primary block mb-md">WHAT&apos;S INCLUDED</span>
+            <h2 className="text-h2 text-ink">Side-by-side comparison.</h2>
+          </div>
+
+          <div className="reveal-scale overflow-x-auto rounded-2xl border border-fog bg-white shadow-sm">
+            <table className="w-full min-w-[540px]">
+              {/* Sticky column headers */}
               <thead>
-                <tr className="border-b border-fog">
-                  <th className="text-left text-body-sm font-semibold text-slate py-md pr-xl w-1/2">Feature</th>
-                  <th className="text-center text-body-sm font-semibold text-slate py-md px-md">Get Online</th>
-                  <th className="text-center text-body-sm font-semibold text-primary py-md px-md bg-purple-xpale rounded-t-xl">Get Found</th>
-                  <th className="text-center text-body-sm font-semibold text-slate py-md px-md">Get Booked</th>
+                <tr className="border-b-2 border-fog">
+                  <th className="text-left py-lg px-xl w-[44%]" />
+                  <th className="py-lg px-md text-center w-[18%]">
+                    <span className="text-eyebrow text-slate block mb-xs">GET ONLINE</span>
+                    <span className="text-h4 font-bold text-ink">$799</span>
+                  </th>
+                  <th className="py-lg px-md text-center w-[20%] bg-primary/5 border-x border-primary/15">
+                    <span className="text-eyebrow text-primary block mb-xs">GET FOUND</span>
+                    <span className="text-h4 font-bold text-primary">$1,299</span>
+                    <span className="mt-xs inline-block bg-gold text-ink text-[10px] font-bold px-sm py-[2px] rounded-full leading-none">POPULAR</span>
+                  </th>
+                  <th className="py-lg px-md text-center w-[18%]">
+                    <span className="text-eyebrow text-slate block mb-xs">GET BOOKED</span>
+                    <span className="text-h4 font-bold text-ink">$1,999</span>
+                  </th>
                 </tr>
               </thead>
+
               <tbody>
-                {comparison.map((row, i) => (
-                  <tr key={row.feature} className={`border-b border-fog/50 ${i % 2 === 0 ? "bg-white" : ""}`}>
-                    <td className="text-body-sm text-ink py-md pr-xl">{row.feature}</td>
-                    {[row.getOnline, row.getFound, row.getBooked].map((val, j) => (
-                      <td key={j} className={`text-center py-md px-md ${j === 1 ? "bg-purple-xpale" : ""}`}>
-                        {val === true ? (
-                          <CheckCircle className="w-4 h-4 text-primary mx-auto" />
-                        ) : val === false ? (
-                          <XCircle className="w-4 h-4 text-fog mx-auto" />
-                        ) : (
-                          <span className="text-body-sm text-slate">{val}</span>
-                        )}
+                {comparisonGroups.map((group) => (
+                  <>
+                    {/* Category header row */}
+                    <tr key={group.category} className="bg-snow border-t border-b border-fog">
+                      <td colSpan={4} className="px-xl py-sm">
+                        <span className="text-eyebrow text-slate">{group.category.toUpperCase()}</span>
                       </td>
+                    </tr>
+
+                    {/* Feature rows */}
+                    {group.rows.map((row, i) => (
+                      <tr
+                        key={row.feature}
+                        className={`border-b border-fog/60 transition-colors hover:bg-snow/60 ${
+                          i === group.rows.length - 1 ? "border-0" : ""
+                        }`}
+                      >
+                        <td className="py-md px-xl text-body-sm text-ink">{row.feature}</td>
+                        {[row.getOnline, row.getFound, row.getBooked].map((val, j) => (
+                          <td
+                            key={j}
+                            className={`text-center py-md px-md ${
+                              j === 1 ? "bg-primary/5 border-x border-primary/10" : ""
+                            }`}
+                          >
+                            {val === true ? (
+                              <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary/10 mx-auto">
+                                <Check className="w-3.5 h-3.5 text-primary" strokeWidth={2.5} />
+                              </span>
+                            ) : val === false ? (
+                              <span className="inline-flex items-center justify-center w-6 h-6 mx-auto">
+                                <Minus className="w-3.5 h-3.5 text-fog" strokeWidth={2} />
+                              </span>
+                            ) : (
+                              <span className={`text-body-sm font-medium ${j === 1 ? "text-primary" : "text-slate"}`}>
+                                {val}
+                              </span>
+                            )}
+                          </td>
+                        ))}
+                      </tr>
                     ))}
-                  </tr>
+                  </>
                 ))}
+
+                {/* CTA row */}
+                <tr className="border-t-2 border-fog bg-snow">
+                  <td className="py-lg px-xl" />
+                  <td className="py-lg px-md text-center">
+                    <Link
+                      href="/contact"
+                      className="inline-flex items-center justify-center bg-snow border-2 border-primary text-primary px-lg py-sm rounded-full text-body-sm font-bold hover:bg-purple-xpale transition-all"
+                    >
+                      Get Started
+                    </Link>
+                  </td>
+                  <td className="py-lg px-md text-center bg-primary/5 border-x border-primary/15">
+                    <Link
+                      href="/contact"
+                      className="inline-flex items-center justify-center bg-primary text-white px-lg py-sm rounded-full text-body-sm font-bold hover:opacity-90 transition-all shadow-sm"
+                    >
+                      Get Started
+                    </Link>
+                  </td>
+                  <td className="py-lg px-md text-center">
+                    <Link
+                      href="/contact"
+                      className="inline-flex items-center justify-center bg-snow border-2 border-primary text-primary px-lg py-sm rounded-full text-body-sm font-bold hover:bg-purple-xpale transition-all"
+                    >
+                      Get Started
+                    </Link>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>

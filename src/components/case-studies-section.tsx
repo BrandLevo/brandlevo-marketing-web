@@ -26,7 +26,7 @@ export default function CaseStudiesSection() {
       <div className="max-w-container-max mx-auto">
 
         {/* Header */}
-        <div className="flex justify-between items-end mb-xxl">
+        <div className="reveal flex justify-between items-end mb-xxl">
           <div>
             <span className="text-eyebrow text-primary block mb-md">CASE STUDIES</span>
             <h2 className="text-h2 text-ink">Real businesses. Real results.</h2>
@@ -39,8 +39,11 @@ export default function CaseStudiesSection() {
 
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-xl">
-          {cases.map((c) => (
-            <div key={c.title} className="group cursor-pointer">
+          {cases.map((c, i) => (
+            <div
+              key={c.title}
+              className={`${i === 0 ? "reveal-left" : "reveal-right"} group cursor-pointer`}
+            >
               <div className="aspect-[16/10] overflow-hidden rounded-2xl mb-lg relative">
                 <Image
                   alt={c.title}
@@ -73,10 +76,10 @@ export default function CaseStudiesSection() {
         </div>
 
         {/* Bottom banner */}
-        <div className="mt-xxl bg-purple-xpale border border-fog rounded-2xl p-xl flex flex-col md:flex-row items-center justify-between gap-lg">
+        <div className="reveal mt-xxl bg-purple-xpale border border-fog rounded-2xl p-xl flex flex-col md:flex-row items-center justify-between gap-lg">
           <div>
             <p className="text-h4 text-ink font-bold mb-xs">
-              Could your business be next?
+              Could your brand be next?
             </p>
             <p className="text-body text-slate">
               We take on a limited number of new clients each quarter to ensure quality results.

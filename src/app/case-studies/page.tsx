@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Clock, TrendingUp, Star } from "lucide-react";
+import PageHero from "@/components/page-hero";
 
 export const metadata: Metadata = {
   title: "Case Studies | BrandLevo",
@@ -88,30 +89,29 @@ const testimonials = [
 export default function CaseStudiesPage() {
   return (
     <main>
-      {/* Hero */}
-      <section className="bg-snow py-xxl px-lg border-b border-fog">
-        <div className="max-w-container-max mx-auto">
-          <div className="inline-flex items-center gap-sm bg-white border border-fog rounded-full px-md py-sm mb-xl shadow-sm">
-            <Clock className="w-3.5 h-3.5 text-primary" />
-            <span className="text-eyebrow text-ink">FULL CASE STUDIES COMING Q3 2025</span>
-          </div>
-          <h1 className="text-h1 text-ink mb-lg max-w-2xl">
-            80+ Businesses. Real Numbers.{" "}
-            <span className="text-primary italic">Zero Padding.</span>
-          </h1>
-          <p className="text-body-lg text-slate max-w-xl">
-            We&apos;re documenting the full stories — the before, the build, the after. Proper case studies with analytics screenshots, client interviews, and honest timelines. Back soon.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="CLIENT RESULTS"
+        title="Real Brands."
+        titleAccent="Unstoppable Growth."
+        body="80+ businesses transformed. Full case studies with analytics screenshots, client interviews, and honest timelines — no padding, no spin."
+        badge="Full case studies coming Q3 2025"
+        cta={{ label: "Get Similar Results", href: "/contact" }}
+        stats={[
+          { value: "80+", label: "Brands launched" },
+          { value: "+420%", label: "Best traffic growth" },
+          { value: "3.4×", label: "Avg lead increase" },
+          { value: "4.9★", label: "Client rating" },
+        ]}
+        variant="dark"
+      />
 
       {/* Results strip */}
       <section className="py-xxl px-lg bg-white">
         <div className="max-w-container-max mx-auto">
           <span className="text-eyebrow text-primary block mb-xl">NUMBERS SO FAR</span>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-md">
-            {results.map((r) => (
-              <div key={r.metric} className={`rounded-2xl p-xl ${r.bg}`}>
+            {results.map((r, i) => (
+              <div key={r.metric} className={`reveal stagger-${i + 1} rounded-2xl p-xl ${r.bg}`}>
                 <p className={`text-h2 font-bold leading-none mb-xs ${r.text}`}>{r.metric}</p>
                 <p className={`text-body-sm font-semibold mb-xs ${r.text}`}>{r.label}</p>
                 <p className={`text-eyebrow ${r.sub}`}>{r.context}</p>
@@ -151,7 +151,7 @@ export default function CaseStudiesPage() {
           </h2>
           <div className="grid md:grid-cols-3 gap-lg">
             {testimonials.map((t) => (
-              <div key={t.name} className="bg-snow border border-fog rounded-2xl p-xl flex flex-col">
+              <div key={t.name} className="bg-snow border border-fog rounded-2xl p-md sm:p-xl flex flex-col">
                 <div className="flex mb-md">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 fill-primary text-primary" />

@@ -1,5 +1,10 @@
 import { Search, PhoneOff, TrendingDown } from "lucide-react";
 
+const dotPattern = {
+  backgroundImage: "radial-gradient(circle, rgba(123,69,245,0.14) 1.5px, transparent 1.5px)",
+  backgroundSize: "22px 22px",
+};
+
 const pains = [
   {
     icon: Search,
@@ -30,10 +35,10 @@ export default function ProblemSection() {
       <div className="max-w-container-max mx-auto">
 
         {/* Header */}
-        <div className="max-w-2xl mb-xxl">
+        <div className="reveal max-w-2xl mb-xxl">
           <span className="text-eyebrow text-primary block mb-md">THE PROBLEM</span>
           <h2 className="text-h2 text-ink mb-lg">
-            Every Day Without a Website, You're Invisible to{" "}
+            Every Day Without a Presence, You're Invisible to{" "}
             <span className="text-primary italic">80% of Your Future Customers.</span>
           </h2>
           <p className="text-body-lg text-slate">
@@ -43,24 +48,26 @@ export default function ProblemSection() {
 
         {/* Pain cards */}
         <div className="grid md:grid-cols-3 gap-lg mb-xxl">
-          {pains.map((p) => (
+          {pains.map((p, i) => (
             <div
               key={p.bold}
-              className="bg-snow border border-fog rounded-2xl p-xl hover:border-mist hover:shadow-md transition-all bento-card"
+              style={dotPattern}
+              className={`reveal stagger-${i + 1} relative overflow-hidden bg-white border border-fog rounded-2xl p-xl`}
             >
-              <div className="w-12 h-12 bg-purple-xpale rounded-xl flex items-center justify-center mb-lg">
-                <p.icon className="w-5 h-5 text-primary" />
+              <div className="relative z-10">
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-lg border border-fog bg-snow">
+                  <p.icon className="w-5 h-5 text-primary" />
+                </div>
+                <h3 className="text-h4 text-ink mb-sm">{p.bold}</h3>
+                <p className="text-body text-slate leading-relaxed">{p.body}</p>
               </div>
-              <h3 className="text-h4 text-ink mb-sm">{p.bold}</h3>
-              <p className="text-body text-slate">{p.body}</p>
             </div>
           ))}
         </div>
 
-        {/* Opportunity block — harmonious with brand primary */}
-        <div className="bg-primary rounded-2xl overflow-hidden">
-          {/* Header row */}
-          <div className="px-xl pt-xl pb-lg grid md:grid-cols-2 gap-xl items-center border-b border-white/15">
+        {/* Opportunity block */}
+        <div className="reveal-scale stagger-4 bg-primary rounded-2xl overflow-hidden">
+          <div className="px-md sm:px-xl pt-md sm:pt-xl pb-lg grid md:grid-cols-2 gap-lg sm:gap-xl items-center border-b border-white/15">
             <div>
               <span className="text-eyebrow text-purple-pale block mb-sm">THE OPPORTUNITY</span>
               <h3 className="text-h3 text-white">
@@ -72,10 +79,9 @@ export default function ProblemSection() {
             </p>
           </div>
 
-          {/* Stats row */}
           <div className="grid sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/15">
             {stats.map((s) => (
-              <div key={s.value} className="px-xl py-lg">
+              <div key={s.value} className="px-md sm:px-xl py-lg">
                 <p className="text-h1 text-white font-bold leading-none mb-sm">{s.value}</p>
                 <p className="text-body-sm text-purple-pale leading-relaxed">{s.label}</p>
               </div>
