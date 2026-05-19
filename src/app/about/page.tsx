@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Heart, Target, Zap, Users } from "lucide-react";
+import { ArrowRight, Target, Eye, Zap, Handshake } from "lucide-react";
 import PageHero from "@/components/page-hero";
 
 export const metadata: Metadata = {
@@ -11,24 +11,24 @@ export const metadata: Metadata = {
 
 const values = [
   {
-    icon: Heart,
-    title: "We treat your business like our own.",
-    body: "We don't clock out at 5pm when your site has a bug. We've owned small businesses. We know what a quiet phone means.",
+    icon: Target,
+    title: "Precision",
+    body: "Every strategy is built around your specific ICP, market, and goals — never a template.",
   },
   {
-    icon: Target,
-    title: "Results over aesthetics.",
-    body: "A beautiful site that doesn't rank or convert is a liability. Every decision — design, copy, SEO — is made with one question: does this help the phone ring?",
+    icon: Eye,
+    title: "Transparency",
+    body: "You always know what we're doing, why, and what results to expect. No black boxes.",
   },
   {
     icon: Zap,
-    title: "Speed without shortcuts.",
-    body: "14 days to launch is non-negotiable. We run parallel workflows — design, copy, and dev happening simultaneously — so you don't wait months for a website.",
+    title: "Speed",
+    body: "We move fast without cutting corners. Most clients are live and generating leads within 14 days.",
   },
   {
-    icon: Users,
-    title: "No jargon, ever.",
-    body: "If we can't explain what we're doing in plain English, we shouldn't be doing it. You'll always know what's happening and why.",
+    icon: Handshake,
+    title: "Partnership",
+    body: "We're not a vendor — we're an extension of your team. Your wins are our wins.",
   },
 ];
 

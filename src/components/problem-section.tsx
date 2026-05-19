@@ -1,4 +1,4 @@
-import { Search, PhoneOff, TrendingDown } from "lucide-react";
+import { Search, Monitor, BarChart2, Sparkles } from "lucide-react";
 
 const dotPattern = {
   backgroundImage: "radial-gradient(circle, rgba(123,69,245,0.14) 1.5px, transparent 1.5px)",
@@ -8,25 +8,24 @@ const dotPattern = {
 const pains = [
   {
     icon: Search,
-    bold: "You're Hard to Find",
-    body: "Customers searching for your services in your town can't find you — they're finding your competitors instead.",
+    bold: "You're Invisible on AI Search",
+    body: "60% of searches now end without a click — because AI gives the answer directly. If you're not in that answer, your competitors are.",
   },
   {
-    icon: PhoneOff,
-    bold: "You Look Less Trustworthy",
-    body: "84% of people check a business online before they buy. No website — or a broken one — makes you look closed, sketchy, or unprofessional.",
+    icon: Monitor,
+    bold: "Your Website Is Working Against You",
+    body: "An outdated site signals to both humans and AI engines that your business is behind. 84% of buyers research online before purchasing. A weak digital presence costs you deals every day.",
   },
   {
-    icon: TrendingDown,
-    bold: "The Phone Stays Quiet",
-    body: "Word-of-mouth is great, but it caps your growth. Without a digital front door, you're leaving money — and momentum — on the table.",
+    icon: BarChart2,
+    bold: "You Have No Repeatable Sales System",
+    body: "Word-of-mouth and referrals are unpredictable. Without a defined ICP, a clear funnel, and a digital engine driving leads, your growth has a ceiling — and it's frustratingly low.",
   },
-];
-
-const stats = [
-  { value: "76%", label: "of local searches end in a store visit within 24 hours" },
-  { value: "28%", label: "of those searchers buy the same day" },
-  { value: "80%", label: "of customers research online before choosing a local business" },
+  {
+    icon: Sparkles,
+    bold: "Your Brand Doesn't Reflect Your Value",
+    body: "You've built something genuinely excellent. But your visual identity, messaging, and online presence don't say that. First impressions form in 0.05 seconds — outdated branding is silently costing you trust.",
+  },
 ];
 
 export default function ProblemSection() {
@@ -38,16 +37,16 @@ export default function ProblemSection() {
         <div className="reveal max-w-2xl mb-xxl">
           <span className="text-eyebrow text-primary block mb-md">THE PROBLEM</span>
           <h2 className="text-h2 text-ink mb-lg">
-            Every Day Without a Presence, You're Invisible to{" "}
-            <span className="text-primary italic">80% of Your Future Customers.</span>
+            Your Competitors Are Being Found.{" "}
+            <span className="text-primary italic">You&apos;re Being Skipped.</span>
           </h2>
           <p className="text-body-lg text-slate">
-            When someone needs a plumber, a hairdresser, or a café — they Google it. If you're not there, they're calling someone else. It's not your fault: nobody told you that running a business in 2026 also means running a marketing department.
+            In 2026, buying decisions don&apos;t start on page one of Google — they start with an AI. When someone asks ChatGPT for the best accountant in their city, or Perplexity for a trusted web design agency, your name needs to appear. If it doesn&apos;t, you&apos;ve already lost the sale before a single click.
           </p>
         </div>
 
         {/* Pain cards */}
-        <div className="grid md:grid-cols-3 gap-lg mb-xxl">
+        <div className="grid md:grid-cols-2 gap-lg mb-xxl">
           {pains.map((p, i) => (
             <div
               key={p.bold}
@@ -65,27 +64,15 @@ export default function ProblemSection() {
           ))}
         </div>
 
-        {/* Opportunity block */}
-        <div className="reveal-scale stagger-4 bg-primary rounded-2xl overflow-hidden">
-          <div className="px-md sm:px-xl pt-md sm:pt-xl pb-lg grid md:grid-cols-2 gap-lg sm:gap-xl items-center border-b border-white/15">
-            <div>
-              <span className="text-eyebrow text-purple-pale block mb-sm">THE OPPORTUNITY</span>
-              <h3 className="text-h3 text-white">
-                Your future customers are already searching. They just can't find you yet.
-              </h3>
+        {/* Stat callout */}
+        <div className="reveal-scale stagger-5 bg-primary rounded-2xl overflow-hidden">
+          <div className="px-md sm:px-xl py-xl sm:py-xxl flex flex-col md:flex-row items-center gap-xl">
+            <div className="shrink-0 text-center md:text-left">
+              <p className="text-[72px] sm:text-[96px] font-bold text-white leading-none font-display">80<span className="text-coral">%</span></p>
             </div>
-            <p className="text-body text-purple-pale leading-relaxed">
-              You've built a great reputation. Now let's make sure that when someone searches for what you do in your city, your name is the first thing they see.
+            <p className="text-body-lg text-white/90 leading-relaxed max-w-lg">
+              of customers research a business online before making contact. If your digital presence doesn&apos;t inspire confidence, they move on.
             </p>
-          </div>
-
-          <div className="grid sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/15">
-            {stats.map((s) => (
-              <div key={s.value} className="px-md sm:px-xl py-lg">
-                <p className="text-h1 text-white font-bold leading-none mb-sm">{s.value}</p>
-                <p className="text-body-sm text-purple-pale leading-relaxed">{s.label}</p>
-              </div>
-            ))}
           </div>
         </div>
       </div>

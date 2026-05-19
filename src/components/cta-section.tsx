@@ -1,9 +1,10 @@
 import { Calendar, Phone, CheckCircle, Clock, MessageCircle } from "lucide-react";
 
 const promises = [
-  "20 minutes. No tech jargon. No hard sell.",
-  "We show you exactly what's costing you customers online.",
-  "You'll leave with a clear action plan — whether you hire us or not.",
+  "Full AEO + SEO visibility audit included",
+  "Competitor analysis and positioning review",
+  "Clear, prioritised action plan — no tech jargon",
+  "Zero obligation. Zero hard sell.",
 ];
 
 export default function CtaSection() {
@@ -15,15 +16,15 @@ export default function CtaSection() {
 
           {/* Left — copy */}
           <div>
-            <span className="hero-eyebrow text-eyebrow text-purple-pale block mb-md">
+            <span className="hero-eyebrow text-eyebrow text-white block mb-md">
               YOUR NEXT CUSTOMERS ARE SEARCHING RIGHT NOW
             </span>
             <h2 className="hero-title text-h1 text-white mb-lg">
-              Let&apos;s Make Sure They{" "}
-              <span className="italic">Find You.</span>
+              Let&apos;s Make Sure They Find You —{" "}
+              <span className="italic">Not Your Competitors.</span>
             </h2>
-            <p className="hero-body text-body-lg text-purple-pale mb-xl leading-relaxed">
-              Book a free 20-minute call. We&apos;ll audit your current online presence, show you exactly what&apos;s costing you customers, and give you a clear plan — whether you hire us or not.
+            <p className="hero-body text-body-lg text-white mb-xl leading-relaxed">
+              Book a free 20-minute Brand Audit. We&apos;ll analyse your current digital presence, check your AI search visibility, map your competitor gaps, and give you a clear action plan — whether you hire us or not.
             </p>
             <ul className="space-y-md">
               {promises.map((p, i) => (
@@ -38,7 +39,7 @@ export default function CtaSection() {
           {/* Right — booking card */}
           <div className="reveal-scale bg-white rounded-2xl p-md sm:p-xl shadow-2xl flex flex-col gap-lg">
             <div>
-              <h3 className="text-h3 text-ink mb-xs">Book Your Free Discovery Call</h3>
+              <h3 className="text-h3 text-ink mb-xs">Book Your Free Brand Audit</h3>
               <div className="flex items-center gap-sm text-body-sm text-slate">
                 <Clock className="w-4 h-4 text-primary" />
                 20 minutes · Free · No obligation
@@ -84,7 +85,7 @@ export default function CtaSection() {
             </a>
 
             <p className="text-eyebrow text-slate text-center">
-              We typically respond within a few hours.
+              Schedule on Calendly — 20 minutes · Free · No obligation
             </p>
           </div>
         </div>

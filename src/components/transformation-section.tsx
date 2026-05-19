@@ -1,19 +1,25 @@
 import { X, Check } from "lucide-react";
 
 const before = [
-  "No website (or one that embarrasses you)",
-  "Invisible on Google — page 3 or worse",
-  "Word-of-mouth is your only marketing",
-  "Quiet weeks make you anxious",
-  "Watching competitors get the calls",
+  "A website that embarrasses you — or no website at all",
+  "Invisible on Google, absent from AI search entirely",
+  "No idea who your Ideal Customer Profile really is",
+  "Word-of-mouth only — unpredictable, capped by geography",
+  "Competitors with half your quality getting all the visibility",
+  "A brand that doesn't reflect the value you actually deliver",
+  "Quiet weeks that make you wonder what's wrong",
+  "No system for converting leads into clients at scale",
 ];
 
 const after = [
-  "A modern brand presence you're proud to share",
-  "Top of Google for searches in your town",
-  "A steady stream of leads from your site",
-  "Predictable bookings — every single week",
-  "Confidence that your business is built to grow",
+  "A premium digital presence you're proud to send anyone to",
+  "Ranking on Google AND appearing in AI-generated answers",
+  "A clear ICP strategy so every marketing dollar targets the right people",
+  "A predictable pipeline of warm, qualified leads every month",
+  "The undisputed authority in your category in your market",
+  "A brand identity that signals trust, quality, and confidence",
+  "A full calendar and sustainable, predictable growth",
+  "A sales system that converts visibility into revenue — consistently",
 ];
 
 export default function TransformationSection() {
@@ -24,7 +30,7 @@ export default function TransformationSection() {
         <div className="reveal text-center max-w-xl mx-auto mb-xxl">
           <span className="text-eyebrow text-primary block mb-md">THE TRANSFORMATION</span>
           <h2 className="text-h2 text-ink">
-            Imagine Your Brand in{" "}
+            Picture Your Brand in{" "}
             <span className="text-primary italic">90 Days.</span>
           </h2>
         </div>
@@ -70,9 +76,9 @@ export default function TransformationSection() {
           </div>
         </div>
 
-        <p className="reveal text-center text-body-sm text-slate mt-xl max-w-md mx-auto">
-          Our clients don't just buy a website — they buy the future version of their business that's found, trusted, and booked.
-        </p>
+        <blockquote className="reveal text-center text-body text-slate mt-xxl max-w-xl mx-auto italic">
+          &ldquo;Our clients don&apos;t just buy a service — they buy the future version of their business: found, trusted, and booked.&rdquo;
+        </blockquote>
       </div>
     </section>
   );

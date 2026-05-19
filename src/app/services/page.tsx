@@ -1,122 +1,141 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
-  Globe,
-  Search,
-  MapPin,
   Cpu,
+  Search,
+  Globe,
+  Target,
+  TrendingUp,
+  Sparkles,
   PenLine,
   Shield,
   ArrowRight,
   CheckCircle,
   Clock,
-  BarChart3,
-  Zap,
 } from "lucide-react";
 import PageHero from "@/components/page-hero";
 
 export const metadata: Metadata = {
   title: "Services | BrandLevo",
   description:
-    "Full-stack digital services for local businesses — web design, local SEO, Google Business Profile, AEO, content, and hosting. Everything under one roof.",
+    "Full-stack AI-powered digital services — AEO, SEO, website development, ICP strategy, sales consultation, brand uplift, content, and hosting. Everything under one roof.",
 };
 
 const services = [
   {
-    icon: Globe,
-    tag: "Foundation",
-    title: "Website Design & Development",
-    headline: "A site that actually converts visitors into calls.",
+    icon: Cpu,
+    tag: "NEW ERA",
+    title: "AEO — Answer Engine Optimisation",
+    headline: "Be the answer ChatGPT, Perplexity, and Google AI give for your category.",
     description:
-      "Most local business websites look fine but do nothing. We build from a conversion-first brief — clear headline, trust signals above the fold, a booking path that takes under 3 clicks. Mobile-first, fast-loading, and built to rank.",
+      "When a potential customer asks ChatGPT, Perplexity, or Google AI 'who's the best [your service] in [your city]?' — your brand should be the answer. We engineer your content, schema, and digital authority so AI engines cite you as the trusted source.",
     includes: [
-      "Custom design (no templates)",
-      "Up to 10 pages of copywritten content",
-      "Mobile-first responsive build",
-      "Core Web Vitals optimised (LCP, CLS, FID)",
-      "SSL, sitemap, robots.txt",
-      "Google Analytics 4 + Search Console setup",
-      "Contact form + click-to-call integration",
+      "AI visibility audit across ChatGPT, Perplexity, Claude & Google AI Mode",
+      "Content restructuring for AI citation (FAQs, summaries, schema markup)",
+      "Entity and authority building for LLM recognition",
+      "Ongoing citation tracking and share-of-voice monitoring",
     ],
-    outcome: "Live in 14 days. Designed to rank and convert from day one.",
-    timeline: "10–14 days",
+    outcome: "Clients appear in AI-generated answers for 20–40 local queries within 6 months.",
+    timeline: "Initial setup 2 weeks · Quarterly reviews",
     color: "bg-primary",
   },
   {
     icon: Search,
-    tag: "Visibility",
-    title: "Local SEO",
-    headline: "Rank when it matters — when someone nearby is searching.",
+    tag: "FOUNDATION",
+    title: "SEO & Local Search Domination",
+    headline: "Rank when it matters — on the page and in the AI overview above it.",
     description:
-      "Local SEO is not about gaming an algorithm. It's about making sure that when someone 3 miles away searches for what you do, your business appears before a competitor. We handle on-page signals, citations, backlinks, and review strategy.",
+      "Traditional search isn't dead — it's the foundation every AI answer is built on. We combine technical SEO, keyword strategy, local SEO, and Google Business Profile optimisation so you rank on the page and in the AI overview above it.",
     includes: [
-      "Keyword research (local intent + service terms)",
-      "On-page optimisation across all pages",
-      "Google Business Profile optimisation",
-      "Local citation building (50+ directories)",
-      "NAP consistency audit and fixes",
-      "Review acquisition strategy",
-      "Monthly performance reports",
+      "Technical SEO audit and on-page optimisation",
+      "Local SEO — dominate searches in your city and region",
+      "Google Business Profile management and review strategy",
+      "Keyword clustering and topical authority building",
     ],
     outcome: "Most clients see first-page movement within 60–90 days.",
     timeline: "Ongoing — results compound monthly",
     color: "bg-purple-dark",
   },
   {
-    icon: MapPin,
-    tag: "Maps",
-    title: "Google Business Profile",
-    headline: "Own the map pack before your competitor does.",
+    icon: Globe,
+    tag: "MOST POPULAR",
+    title: "Website Revamp & Development",
+    headline: "Your most important salesperson — rebuilt to rank, convert, and impress.",
     description:
-      "The Google Maps 3-pack sits above organic results. Showing up there puts you in front of the highest-intent local searchers. We set up, optimise, and actively manage your GBP — posts, photos, Q&A, and review responses.",
+      "Your website is your most important salesperson. We build and revamp sites that load fast, look exceptional on every device, convert visitors into enquiries, and are technically structured for AI and search engine discovery from day one.",
     includes: [
-      "Full GBP setup or audit and rebuild",
-      "Category and attribute optimisation",
-      "Weekly Google Posts (offers, events, updates)",
-      "Photo and video uploads",
-      "Q&A seeding and monitoring",
-      "Review response management",
-      "Insights reporting",
+      "Custom design — mobile-first, fast-loading, conversion-focused",
+      "Full copywriting and content included",
+      "SEO and AEO-ready architecture from the ground up",
+      "Secure, hosted, and maintained — zero tech headaches",
     ],
-    outcome: "Typical 2–3× increase in direction requests and calls within 90 days.",
-    timeline: "Setup in 5 days · Ongoing management",
+    outcome: "Live in 14 days. Designed to rank, convert, and impress from day one.",
+    timeline: "10–14 days",
     color: "bg-primary",
   },
   {
-    icon: Cpu,
-    tag: "AI Search",
-    title: "AEO — Answer Engine Optimisation",
-    headline: "Be the answer ChatGPT and Perplexity give for your category.",
+    icon: Target,
+    tag: "HIGH IMPACT",
+    title: "ICP Strategy Development",
+    headline: "Stop marketing to everyone. Start owning your ideal customer.",
     description:
-      "Over 30% of searches now happen through AI assistants — and AI search doesn't show ten blue links. It names one business. AEO is about structuring your content so AI models cite you as the authoritative answer for your local niche.",
+      "You can't market to everyone — and trying to is why most campaigns fail. We define your Ideal Customer Profile with precision: who they are, what they're searching for, what objections they have, and how to reach them before competitors do.",
     includes: [
-      "Structured data / schema markup (LocalBusiness, FAQPage, Service)",
-      "Conversational content rewrites",
-      "Featured snippet targeting",
-      "FAQ page optimisation",
-      "Entity optimisation (Google Knowledge Graph)",
-      "ChatGPT, Perplexity, and Gemini visibility audit",
-      "Quarterly AI-search ranking checks",
+      "Deep-dive ICP research using AI and market data",
+      "Customer persona development (demographics, psychographics, buying triggers)",
+      "Search intent mapping aligned to your ICP's buyer journey",
+      "Content and channel strategy built around your best-fit customer",
     ],
-    outcome: "Clients appear in AI-generated answers for 20–40 local queries within 6 months.",
-    timeline: "Initial setup 2 weeks · Quarterly reviews",
+    outcome: "Typically delivered within 7–10 business days. Standalone or as part of a broader package.",
+    timeline: "7–10 business days",
+    color: "bg-purple-dark",
+  },
+  {
+    icon: TrendingUp,
+    tag: "REVENUE FOCUS",
+    title: "Sales Consultation & Pipeline Strategy",
+    headline: "Turn visibility into revenue with a repeatable sales system.",
+    description:
+      "Leads are worthless without a system to convert them. We audit your current sales process, identify the drop-off points, and build a repeatable outbound and inbound pipeline strategy that turns your marketing investment into closed revenue.",
+    includes: [
+      "Sales process audit and conversion gap analysis",
+      "Outbound playbook — ICP list building, outreach scripts, follow-up sequences",
+      "Inbound lead qualification and nurture flow design",
+      "CRM setup guidance and pipeline reporting framework",
+    ],
+    outcome: "A documented, repeatable pipeline — not one that depends on referrals or luck.",
+    timeline: "2–3 weeks · Ongoing support available",
+    color: "bg-primary",
+  },
+  {
+    icon: Sparkles,
+    tag: "PERCEPTION SHIFT",
+    title: "Brand Uplift & Identity",
+    headline: "Make your brand communicate authority before they read a single word.",
+    description:
+      "Your brand is what people feel before they read a single word. We refresh or rebuild your visual identity, messaging framework, and brand voice so that every touchpoint communicates authority, trust, and premium value.",
+    includes: [
+      "Brand audit — logo, colours, typography, tone of voice",
+      "Visual identity refresh or full brand design",
+      "Messaging framework and brand positioning statement",
+      "Brand guidelines document for consistent application",
+    ],
+    outcome: "A brand identity that signals trust, quality, and confidence — consistently.",
+    timeline: "2–4 weeks depending on scope",
     color: "bg-purple-dark",
   },
   {
     icon: PenLine,
-    tag: "Content",
+    tag: "ALWAYS ON",
     title: "Content & Copywriting",
-    headline: "Words that sell — written by humans, optimised for machines.",
+    headline: "Words that fuel AEO, SEO, and brand authority simultaneously.",
     description:
-      "Generic AI content is killing local business rankings. We write copy that sounds like you, answers real customer questions, and signals expertise to Google. Landing pages, service pages, blog posts, and Google Post copy — all handled.",
+      "Great content is the fuel that powers AEO, SEO, and brand authority simultaneously. We write every word — landing pages, service pages, blogs, email sequences, and social content — in a voice that sounds like you, but sharper.",
     includes: [
-      "Homepage and service page rewrites",
-      "Location landing pages (multi-area targeting)",
-      "Blog posts (800–1,500 words, SEO-researched topics)",
-      "Google Posts copy (weekly)",
-      "Email newsletter copy",
-      "Social media caption packs",
-      "Brand voice guide",
+      "AEO-structured blog content designed to earn AI citations",
+      "Landing page and service page copywriting",
+      "Email marketing sequences and nurture campaigns",
+      "Monthly content calendar and editorial planning",
     ],
     outcome: "Pages with our copy average 2.3× longer session time and 40% lower bounce rate.",
     timeline: "Delivered in batches · Ongoing content calendar",
@@ -124,21 +143,18 @@ const services = [
   },
   {
     icon: Shield,
-    tag: "Peace of Mind",
+    tag: "SET & FORGET",
     title: "Hosting, Maintenance & Support",
-    headline: "We keep the lights on so you don't have to think about it.",
+    headline: "We keep the lights on so you never have to think about it.",
     description:
-      "A broken site at 9pm on a Saturday costs you customers. We host on enterprise-grade infrastructure, monitor uptime 24/7, push security patches automatically, and are on-call for anything that goes wrong. You focus on the business.",
+      "We handle all the technical infrastructure so you never have to think about it. Fast, secure hosting; regular backups; proactive security monitoring; and a support team that fixes issues before they affect your customers.",
     includes: [
-      "99.9% uptime SLA hosting (AWS-backed)",
-      "Daily automated backups (30-day retention)",
-      "SSL certificate renewal",
-      "WordPress / CMS core + plugin updates",
-      "Malware scanning and removal",
-      "Monthly performance audit",
-      "Priority email + phone support",
+      "Premium managed hosting with 99.9% uptime SLA",
+      "SSL, security monitoring, and automatic backups",
+      "Monthly technical updates and performance optimisation",
+      "Priority support with same-day response time",
     ],
-    outcome: "Zero planned downtime. Average response time under 4 hours.",
+    outcome: "Zero planned downtime. Same-day response time.",
     timeline: "Always on",
     color: "bg-purple-dark",
   },
@@ -156,14 +172,14 @@ export default function ServicesPage() {
     <main>
       <PageHero
         eyebrow="WHAT WE DO"
-        title="Full-Stack Brand Growth,"
-        titleAccent="All Under One Roof."
-        body="One agency. No hand-offs. We handle design, copy, SEO, AEO, and hosting — so every piece works together instead of pulling in different directions."
-        cta={{ label: "Book a Free Audit", href: "/contact" }}
+        title="Every Service Your Brand Needs to Dominate —"
+        titleAccent="Under One Roof."
+        body="No patchwork contractors. No handoff gaps. Pick what fits your stage and goals — we handle the strategy, the execution, and the results."
+        cta={{ label: "Book a Free Brand Audit", href: "/contact" }}
         secondaryCta={{ label: "See all services", href: "#services-list" }}
         stats={[
           { value: "14 days", label: "Average launch" },
-          { value: "6", label: "Core services" },
+          { value: "8", label: "Core services" },
           { value: "3.4×", label: "Lead growth" },
           { value: "80+", label: "Clients served" },
         ]}
@@ -245,14 +261,14 @@ export default function ServicesPage() {
           <div>
             <h2 className="text-h3 text-white mb-sm">Not sure which services you need?</h2>
             <p className="text-body text-white/70">
-              Book a free 20-minute call. We&apos;ll audit your current presence and tell you exactly what to prioritise.
+              Book a free 20-minute Brand Audit. We&apos;ll audit your current presence and tell you exactly what to prioritise.
             </p>
           </div>
           <Link
             href="/contact"
             className="shrink-0 inline-flex items-center gap-sm bg-white text-primary px-xl py-md rounded-full font-bold hover:bg-snow transition-all"
           >
-            Book a Free Audit
+            Book a Free Brand Audit
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

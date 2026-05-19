@@ -2,10 +2,10 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle, TrendingUp, Zap, Star, Users } from "lucide-react";
 
 const stats = [
-  { value: "80+", label: "Brands elevated" },
-  { value: "14 days", label: "Average launch" },
-  { value: "3.4×", label: "Lead growth" },
-  { value: "4.9★", label: "Satisfaction" },
+  { value: "80+", label: "Brands Elevated" },
+  { value: "3.4×", label: "Avg Lead Growth" },
+  { value: "4.9★", label: "Client Satisfaction" },
+  { value: "14 Days", label: "Average Launch" },
 ];
 
 export default function HeroSection() {
@@ -26,34 +26,35 @@ export default function HeroSection() {
 
           {/* Left: Copy */}
           <div className="pb-xl lg:pb-xxl">
+            <span className="text-eyebrow text-primary block mb-md">AI-Powered Digital Marketing</span>
             <h1 className="hero-title text-h1 text-ink mb-lg leading-tight">
-              The AI Engine That{" "}
-              <span className="text-primary">Lifts Your Brand Higher.</span>
+              Your Brand. Found Everywhere.{" "}
+              <span className="text-primary">Growing on Autopilot.</span>
             </h1>
 
             <p className="hero-body text-body-lg text-slate max-w-md mb-xl leading-relaxed">
-              Smarter campaigns, sharper insights, unstoppable growth — all on autopilot. Where intelligence meets elevation.
+              BrandLevo combines AI strategy, AEO, SEO, and full-stack brand development to put your business in front of the right people — on Google, ChatGPT, Perplexity, and every platform your future customers already trust.
             </p>
 
             <div className="hero-cta flex flex-wrap items-center gap-md mb-xl">
               <Link
-                href="#audit"
+                href="/contact"
                 className="animate-pulse-ring inline-flex items-center gap-sm bg-primary text-white px-xl py-md rounded-full font-semibold shadow-sm hover:opacity-90 hover:-translate-y-px transition-all active:scale-95"
               >
-                Book a Free Discovery Call
+                Get Your Free Brand Audit
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 href="#process"
                 className="text-body-sm font-semibold text-slate hover:text-primary transition-colors"
               >
-                See how it works →
+                See How It Works →
               </Link>
             </div>
 
             {/* Trust checks */}
             <div className="hero-trust flex flex-wrap gap-md">
-              {["No long-term contracts", "Live in 14 days", "No tech skills needed"].map((t) => (
+              {["No long-term contracts", "Live in 14 days", "AI-native from day one"].map((t) => (
                 <div key={t} className="flex items-center gap-xs">
                   <CheckCircle className="w-4 h-4 text-mint shrink-0" />
                   <span className="text-body-sm text-slate">{t}</span>
@@ -93,8 +94,8 @@ export default function HeroSection() {
                 <Star className="w-4 h-4 text-gold fill-gold" />
               </div>
               <div>
-                <p className="text-body-sm font-bold text-ink leading-none">4.9 / 5.0</p>
-                <p className="text-eyebrow text-slate">Satisfaction</p>
+                <p className="text-body-sm font-bold text-ink leading-none">4.9★</p>
+                <p className="text-eyebrow text-slate">Client Satisfaction</p>
               </div>
             </div>
 
@@ -105,8 +106,8 @@ export default function HeroSection() {
                 <TrendingUp className="w-4 h-4 text-mint" />
               </div>
               <div>
-                <p className="text-body-sm font-bold text-ink leading-none">+180% Enquiries</p>
-                <p className="text-eyebrow text-slate">Bella&apos;s Studio · 90 days</p>
+                <p className="text-body-sm font-bold text-ink leading-none">3.4× Lead Growth</p>
+                <p className="text-eyebrow text-slate">Avg / 90 days</p>
               </div>
             </div>
 

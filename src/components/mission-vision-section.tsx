@@ -1,109 +1,82 @@
-import Image from "next/image";
-
 const stats = [
-  { value: "80+", label: "Local Businesses Launched" },
-  { value: "14 days", label: "Average Launch Time" },
-  { value: "3.4×", label: "More Leads in 90 Days" },
-  { value: "4.9★", label: "Average Google Rating" },
+  { value: "80+", label: "Businesses Launched" },
+  { value: "14 days", label: "Avg Launch Time" },
+  { value: "3.4×", label: "Lead Growth / 90 Days" },
+  { value: "4.9★", label: "Client Rating" },
 ];
 
-const images = [
+const differentiators = [
   {
-    src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop&q=80",
-    alt: "Client success story",
-    className: "col-span-2 row-span-2",
+    title: "AI-Native, Not AI-Bolted-On",
+    body: "We don't use AI as a shortcut. We use it as a strategic core — for ICP research, content structuring, AEO citation engineering, and campaign intelligence.",
   },
   {
-    src: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop&q=80",
-    alt: "Our work in action",
-    className: "col-span-1 row-span-1",
+    title: "Full-Funnel Thinking",
+    body: "From brand identity to sales pipeline, we don't leave gaps. Our work connects your brand presence to actual revenue — not just traffic and vanity metrics.",
   },
   {
-    src: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop&q=80",
-    alt: "Brand design",
-    className: "col-span-1 row-span-1",
+    title: "Compounding Returns",
+    body: "SEO, AEO, and content marketing are long-game plays. We structure everything to compound so the work we do in month one keeps paying off in month twelve and beyond.",
+  },
+  {
+    title: "No Jargon. No Fluff.",
+    body: "We translate strategy into plain language. You'll always know what we're doing, why we're doing it, and what results to expect — before we touch anything.",
   },
 ];
 
 export default function ValuePropositionSection() {
   return (
     <section className="py-xxxl px-lg bg-snow">
-      <div className="max-w-container-max mx-auto grid md:grid-cols-2 gap-xxl items-center">
+      <div className="max-w-container-max mx-auto">
 
-        {/* Left: Image collage */}
-        <div className="reveal-left relative h-[280px] sm:h-[420px] sm:grid sm:grid-cols-3 sm:grid-rows-2 sm:gap-sm">
-          {images.map((img, i) => (
-            <div
-              key={i}
-              className={[
-                "relative rounded-2xl overflow-hidden",
-                i === 0
-                  ? "h-full sm:h-auto sm:col-span-2 sm:row-span-2"
-                  : "hidden sm:block",
-              ].join(" ")}
-            >
-              <Image
-                src={img.src}
-                alt={img.alt}
-                fill
-                unoptimized
-                className="object-cover"
-              />
-            </div>
-          ))}
-
-          {/* Floating authority badge */}
-          <div className="absolute -bottom-md -right-0 sm:-right-md bg-surface rounded-xl shadow-xl border border-fog p-md z-10 min-w-[160px]">
-            <p className="text-eyebrow text-primary mb-xs">OUR TRACK RECORD</p>
-            <div className="flex gap-md">
-              {stats.slice(0, 2).map((s) => (
-                <div key={s.value}>
-                  <p className="text-h4 text-ink font-bold leading-tight">{s.value}</p>
-                  <p className="text-eyebrow text-slate">{s.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Right: Copy */}
-        <div className="reveal-right">
+        {/* Header */}
+        <div className="reveal max-w-3xl mb-xxl">
           <span className="text-eyebrow text-primary block mb-md">WHY BRANDLEVO</span>
           <h2 className="text-h2 text-ink mb-lg">
-            We Get It. Building a Website Feels Overwhelming.{" "}
-            <span className="text-primary italic">That's Why We Made It Simple.</span>
+            We Don&apos;t Just Build Websites.{" "}
+            <span className="text-primary italic">We Build the Machine That Grows Your Business.</span>
           </h2>
-          <p className="text-body-lg text-slate mb-lg">
-            At BrandLevo, we've helped over 80 small businesses — from family bakeries to two-person law firms — go from "we don't have a website" to "we're booked out three weeks." We don't speak in tech jargon. We don't disappear after launch. And we don't lock you into a contract you'll regret.
+          <p className="text-body-lg text-slate leading-relaxed">
+            Most agencies hand you a finished site and disappear. BrandLevo is built differently. We&apos;re an AI-native growth partner — combining brand strategy, technical SEO, answer engine optimisation, ICP development, and sales consultation into one cohesive engine that compounds over time.
           </p>
-          <p className="text-body text-slate mb-xxl">
-            We handle the design, the words, the photos, the SEO, and the hosting — so you can keep doing what you do best.
-          </p>
+        </div>
 
-          {/* Stats grid */}
-          <div className="grid grid-cols-2 gap-md">
-            {stats.map((s, i) => (
-              <div
-                key={s.value}
+        {/* Differentiators grid */}
+        <div className="grid md:grid-cols-2 gap-lg mb-xxl">
+          {differentiators.map((d, i) => (
+            <div
+              key={d.title}
+              className={`reveal stagger-${i + 1} bg-white border border-fog rounded-2xl p-xl`}
+            >
+              <h3 className="text-h4 text-ink mb-sm">{d.title}</h3>
+              <p className="text-body text-slate leading-relaxed">{d.body}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Stats grid */}
+        <div className="reveal grid grid-cols-2 md:grid-cols-4 gap-md">
+          {stats.map((s, i) => (
+            <div
+              key={s.value}
+              className={[
+                "rounded-xl p-lg text-center",
+                i === 0 ? "bg-primary" : "bg-white border border-fog",
+              ].join(" ")}
+            >
+              <p
                 className={[
-                  "rounded-xl p-lg",
-                  i === 0 ? "bg-primary" : "bg-purple-xpale border border-fog",
+                  "text-h3 font-bold mb-xs leading-none",
+                  i === 0 ? "text-white" : "text-primary",
                 ].join(" ")}
               >
-                <p
-                  className={[
-                    "text-h3 font-bold mb-xs leading-none",
-                    i === 0 ? "text-white" : "text-primary",
-                  ].join(" ")}
-                >
-                  {s.value}
-                </p>
-                <p className={["text-eyebrow", i === 0 ? "text-purple-pale" : "text-slate"].join(" ")}>
-                  {s.label}
-                </p>
-              </div>
-            ))}
-          </div>
+                {s.value}
+              </p>
+              <p className={["text-eyebrow", i === 0 ? "text-white/90" : "text-slate"].join(" ")}>
+                {s.label}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

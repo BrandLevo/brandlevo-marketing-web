@@ -2,10 +2,13 @@ import Link from "next/link";
 import { Hash, Globe, AtSign, Share2, Mail, Phone } from "lucide-react";
 
 const services = [
-  { label: "Web Design & Dev", href: "/services" },
-  { label: "Local SEO", href: "/services" },
-  { label: "Google Business Profile", href: "/services" },
   { label: "AEO — AI Search", href: "/services" },
+  { label: "SEO & Local Search", href: "/services" },
+  { label: "Website Development", href: "/services" },
+  { label: "ICP Strategy", href: "/services" },
+  { label: "Sales Consultation", href: "/services" },
+  { label: "Brand Uplift", href: "/services" },
+  { label: "Content & Copywriting", href: "/services" },
   { label: "Hosting & Support", href: "/services" },
 ];
 
@@ -39,7 +42,7 @@ export default function Footer() {
               <img src="/Original.svg" alt="BrandLevo" className="h-9 w-auto" />
             </Link>
             <p className="text-body-sm text-slate leading-relaxed max-w-[220px]">
-              Where intelligence meets elevation. AI-powered growth for brands ready to rise.
+              Where Intelligence Meets Elevation. AI-native strategy for brands ready to dominate.
             </p>
           </div>
 

@@ -66,7 +66,7 @@ export default function PricingSection() {
             <span className="text-primary italic">No Surprises.</span>
           </h2>
           <p className="text-body text-slate">
-            One of these will fit. If not, we'll build something custom — just ask.
+            One of these will fit. If not, we&apos;ll build something custom — just ask.
           </p>
         </div>
 
@@ -88,7 +88,7 @@ export default function PricingSection() {
               )}
 
               <div className="mb-xl">
-                <p className={["text-eyebrow mb-xs", plan.featured ? "text-purple-pale" : "text-primary"].join(" ")}>
+                <p className={["text-eyebrow mb-xs", plan.featured ? "text-white/90" : "text-primary"].join(" ")}>
                   {plan.tagline}
                 </p>
                 <h3 className={["text-h2 mb-sm", plan.featured ? "text-white" : "text-ink"].join(" ")}>
@@ -98,11 +98,11 @@ export default function PricingSection() {
                   <span className={["text-h1 font-bold", plan.featured ? "text-white" : "text-ink"].join(" ")}>
                     {plan.price}
                   </span>
-                  <span className={["text-body-sm", plan.featured ? "text-purple-pale" : "text-slate"].join(" ")}>
+                  <span className={["text-body-sm", plan.featured ? "text-white/90" : "text-slate"].join(" ")}>
                     {plan.period}
                   </span>
                 </div>
-                <p className={["text-body-sm mt-sm", plan.featured ? "text-purple-pale" : "text-slate"].join(" ")}>
+                <p className={["text-body-sm mt-sm", plan.featured ? "text-white/90" : "text-slate"].join(" ")}>
                   {plan.best}
                 </p>
               </div>
@@ -139,7 +139,7 @@ export default function PricingSection() {
           <Link href="#audit" className="font-semibold text-primary hover:underline">
             Book a free call →
           </Link>{" "}
-          We'll tell you honestly.
+          We&apos;ll tell you honestly.
         </p>
       </div>
     </section>

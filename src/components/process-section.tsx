@@ -5,23 +5,41 @@ const steps = [
   {
     number: "01",
     icon: PhoneCall,
-    title: "Book a Free 20-Minute Call",
-    body: "Tell us about your business. We'll show you exactly what's missing online and what to fix first. No sales pitch. No tech-speak.",
-    deliverables: ["Digital audit of your current presence", "Competitor snapshot", "Clear action plan", "No obligation — ever"],
+    title: "Book Your Free Brand Audit",
+    tag: "20 minutes. Honest insights. No sales pitch.",
+    body: "We dig into your current digital presence — website, SEO health, AI search visibility, brand consistency, and competitor landscape. You'll leave with a clear picture of what's holding you back and exactly what to fix first.",
+    deliverables: [
+      "Full digital audit (website, SEO, AEO, brand)",
+      "AI search visibility check across ChatGPT, Perplexity & Google",
+      "Competitor snapshot and gap analysis",
+      "Clear, prioritised action plan — no obligation",
+    ],
   },
   {
     number: "02",
     icon: Rocket,
-    title: "We Build Your Strategy",
-    body: "In 14 days, we design, write, and launch a clean, mobile-friendly presence built to rank on Google and turn visitors into customers.",
-    deliverables: ["Custom mobile-first website", "SEO-ready from day one", "Copywriting included", "Hosted, secured & live"],
+    title: "We Build Your Growth Strategy",
+    tag: "Tailored to your ICP, market, and goals.",
+    body: "Based on your audit, we design and deliver the right combination of services — from a full website revamp and AEO/SEO strategy to ICP development, brand uplift, and sales consultation. Everything is built to work together.",
+    deliverables: [
+      "Custom website or revamp — mobile-first and conversion-optimised",
+      "AEO + SEO strategy mapped to your Ideal Customer Profile",
+      "Brand identity refresh or full brand build",
+      "Sales pipeline and outreach playbook",
+    ],
   },
   {
     number: "03",
     icon: TrendingUp,
     title: "Watch the Growth Come In",
-    body: "We hand you a simple dashboard, train you on the basics, and stick around for support. You focus on customers; we keep things running.",
-    deliverables: ["Monthly performance reports", "SEO & marketing campaigns", "Ongoing technical support", "Strategy calls on demand"],
+    tag: "We stay. We report. We optimise.",
+    body: "We hand you a clean dashboard, train your team on the essentials, and remain your ongoing strategic partner. Monthly performance reviews, proactive strategy calls, and continuous AEO/SEO refinement keep you ahead of competitors.",
+    deliverables: [
+      "Monthly AI & search visibility reports",
+      "Ongoing SEO, AEO & content campaigns",
+      "Quarterly brand and strategy reviews",
+      "Dedicated support — not a ticket queue",
+    ],
   },
 ];
 
@@ -34,11 +52,11 @@ export default function ProcessSection() {
         <div className="reveal text-center max-w-2xl mx-auto mb-xxl">
           <span className="text-eyebrow text-primary block mb-md">HOW IT WORKS</span>
           <h2 className="text-h2 text-ink mb-lg">
-            Getting Online Shouldn't Feel Like Climbing a Mountain.{" "}
-            <span className="text-primary italic">Here's How Easy We Make It:</span>
+            From Invisible to Unstoppable{" "}
+            <span className="text-primary italic">in Three Clear Steps.</span>
           </h2>
           <p className="text-body-lg text-slate">
-            Three steps. No jargon. No long-winded discovery decks. Just a clear path from invisible to fully booked.
+            No jargon. No 80-page strategy decks. Just a clear path from where you are to where you want to be.
           </p>
         </div>
 
@@ -59,13 +77,14 @@ export default function ProcessSection() {
                   </span>
                 </div>
 
-                <h3 className="text-h3 text-ink mb-md">{step.title}</h3>
+                <h3 className="text-h3 text-ink mb-xs">{step.title}</h3>
+                <p className="text-body-sm text-primary italic mb-md">{step.tag}</p>
                 <p className="text-body text-slate mb-lg">{step.body}</p>
 
                 <ul className="space-y-sm">
                   {step.deliverables.map((d) => (
-                    <li key={d} className="flex items-center gap-sm text-body-sm text-ink">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                    <li key={d} className="flex items-start gap-sm text-body-sm text-ink">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-1.5" />
                       {d}
                     </li>
                   ))}
@@ -75,16 +94,17 @@ export default function ProcessSection() {
           </div>
         </div>
 
-        {/* CTA */}
+        {/* Footer note + CTA */}
         <div className="reveal mt-xxl text-center">
           <Link
-            href="#audit"
+            href="/contact"
             className="inline-flex items-center gap-sm bg-primary text-on-primary px-xl py-md rounded-lg font-semibold shadow-md hover:opacity-90 transition-all"
           >
-            Book My Free Call
+            Book My Free Brand Audit
           </Link>
           <p className="text-body-sm text-slate mt-md">
-            Most clients are live within <span className="font-semibold text-ink">14 days</span>. No surprises.
+            ✓ Most clients are live and generating leads within{" "}
+            <span className="font-semibold text-ink">14 days</span> of kickoff.
           </p>
         </div>
       </div>

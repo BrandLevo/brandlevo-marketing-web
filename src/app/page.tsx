@@ -1,5 +1,6 @@
 import HeroSection from "@/components/hero-section";
 import ProblemSection from "@/components/problem-section";
+import OpportunitySection from "@/components/opportunity-section";
 import ValuePropositionSection from "@/components/mission-vision-section";
 import ProcessSection from "@/components/process-section";
 import ServicesSection from "@/components/services-section";
@@ -12,25 +13,27 @@ import CtaSection from "@/components/cta-section";
 export default function Home() {
   return (
     <main>
-      {/* 1. Hero — one-liner + problem + CTA */}
+      {/* 1. Hero — headline + CTA */}
       <HeroSection />
-      {/* 2. Stakes — agitate the cost of inaction */}
+      {/* 2. The Problem — 4 pain points */}
       <ProblemSection />
-      {/* 3. Guide — empathy + authority */}
+      {/* 3. The Opportunity — AI search market context */}
+      <OpportunitySection />
+      {/* 4. Why BrandLevo — positioning + differentiators */}
       <ValuePropositionSection />
-      {/* 4. Plan — 3 clear steps */}
+      {/* 5. How It Works — 3-step process */}
       <ProcessSection />
-      {/* 5. Services — what we deliver */}
+      {/* 6. Services — 8 services */}
       <ServicesSection />
-      {/* 6. Transformation — before/after success vision */}
+      {/* 7. Transformation — before/after */}
       <TransformationSection />
-      {/* 7. Social proof */}
+      {/* 8. Social proof — 4 testimonials */}
       <TestimonialsSection />
-      {/* 9. About — brief guide credentials */}
+      {/* 9. About — brand story + values */}
       <AboutSection />
-      {/* 10. FAQ — handle objections */}
+      {/* 10. FAQ — objection handling */}
       <FaqSection />
-      {/* 11. Final CTA — same direct CTA repeated */}
+      {/* 11. Final CTA */}
       <CtaSection />
     </main>
   );

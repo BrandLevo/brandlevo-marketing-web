@@ -75,7 +75,7 @@ export default function Navbar() {
                 href="/contact"
                 className="hidden lg:inline-flex items-center bg-primary text-white px-lg py-[9px] rounded-full text-body-sm font-semibold hover:opacity-90 hover:-translate-y-px transition-all active:scale-95 shadow-sm"
               >
-                Book a Free Call
+                Book a Free Brand Audit
               </Link>
 
               {/* Compact CTA on md only (between 768–1024px) */}
@@ -83,7 +83,7 @@ export default function Navbar() {
                 href="/contact"
                 className="hidden md:inline-flex lg:hidden items-center bg-primary text-white px-md py-[7px] rounded-full text-body-sm font-semibold hover:opacity-90 transition-all"
               >
-                Book a Call
+                Free Audit
               </Link>
 
               {/* Hamburger — below lg */}
@@ -149,7 +149,7 @@ export default function Navbar() {
             onClick={close}
             className="inline-flex justify-center items-center bg-primary text-white px-xl py-[10px] rounded-full text-body-sm font-semibold hover:opacity-90 transition-all active:scale-95"
           >
-            Book a Free Call
+            Book a Free Brand Audit
           </Link>
         </nav>
       </div>
