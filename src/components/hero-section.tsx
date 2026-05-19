@@ -71,7 +71,7 @@ export default function HeroSection() {
             <div className="relative w-[200px] h-[200px] rounded-full bg-gradient-to-br from-primary/15 to-purple-pale border border-primary/20 flex items-center justify-center shadow-xl shadow-primary/10">
               <div className="w-[160px] h-[160px] rounded-full bg-gradient-to-br from-primary/20 to-transparent border border-primary/10 flex items-center justify-center">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/Original.svg" alt="" className="h-14 w-auto opacity-90" />
+                <img src="/logo.svg" alt="" className="h-14 w-auto opacity-90" />
               </div>
             </div>
 

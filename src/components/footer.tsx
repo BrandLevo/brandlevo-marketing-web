@@ -20,11 +20,13 @@ const company = [
   { label: "Contact", href: "/contact" },
 ];
 
+// TODO [SOCIAL]: Replace "#" hrefs with real profile URLs before launch
+// Also update Organization schema sameAs in src/lib/schema.ts to match
 const socials = [
-  { icon: Hash, href: "#", label: "X (Twitter)" },
-  { icon: Globe, href: "#", label: "LinkedIn" },
-  { icon: AtSign, href: "#", label: "Instagram" },
-  { icon: Share2, href: "#", label: "Facebook" },
+  { icon: Hash, href: "#", label: "X (Twitter)" },       // TODO: https://twitter.com/brandlevo
+  { icon: Globe, href: "#", label: "LinkedIn" },          // TODO: https://linkedin.com/company/brandlevo
+  { icon: AtSign, href: "#", label: "Instagram" },        // TODO: https://instagram.com/brandlevo
+  { icon: Share2, href: "#", label: "Facebook" },         // TODO: https://facebook.com/brandlevo
 ];
 
 export default function Footer() {
@@ -39,7 +41,7 @@ export default function Footer() {
           <div>
             <Link href="/" className="block mb-lg">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/Original.svg" alt="BrandLevo" className="h-9 w-auto" />
+              <img src="/logo.svg" alt="BrandLevo" className="h-9 w-auto" />
             </Link>
             <p className="text-body-sm text-slate leading-relaxed max-w-[220px]">
               Where Intelligence Meets Elevation. AI-native strategy for brands ready to dominate.
@@ -81,15 +83,15 @@ export default function Footer() {
               <p className="text-eyebrow text-slate font-semibold tracking-widest uppercase mb-md">Contact</p>
               <ul className="space-y-sm">
                 <li>
-                  <a href="mailto:hello@brandlevo.com" className="flex items-center gap-xs text-body-sm text-slate hover:text-primary transition-colors">
+                  <a href="mailto:sales@brandlevo.com" className="flex items-center gap-xs text-body-sm text-slate hover:text-primary transition-colors">
                     <Mail className="w-3.5 h-3.5 shrink-0" />
-                    hello@brandlevo.com
+                    sales@brandlevo.com
                   </a>
                 </li>
                 <li>
-                  <a href="tel:+15551234567" className="flex items-center gap-xs text-body-sm text-slate hover:text-primary transition-colors">
+                  <a href="tel:+919895883315" className="flex items-center gap-xs text-body-sm text-slate hover:text-primary transition-colors">
                     <Phone className="w-3.5 h-3.5 shrink-0" />
-                    +1 (555) 123-4567
+                    +91 98958 83315
                   </a>
                 </li>
               </ul>

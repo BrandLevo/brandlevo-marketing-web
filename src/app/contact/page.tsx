@@ -2,11 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Mail, Phone, MessageCircle, Clock, CheckCircle, CalendarDays, ArrowRight } from "lucide-react";
 import PageHero from "@/components/page-hero";
+import { localBusinessSchema, faqSchema, schemaScript } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Book a Free Call | BrandLevo",
   description:
     "Book a free 20-minute discovery call. We'll audit your online presence, show you what's costing you customers, and give you a clear action plan.",
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 const steps = [
@@ -54,7 +58,18 @@ const faqs = [
 ];
 
 export default function ContactPage() {
+  const localBizSchema = localBusinessSchema();
+  const faqJson = faqSchema(faqs);
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: schemaScript(localBizSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: schemaScript(faqJson) }}
+      />
     <main>
       <PageHero
         eyebrow="BOOK A FREE CALL"
@@ -62,7 +77,7 @@ export default function ContactPage() {
         titleAccent="A Plan You Can Use Today."
         body="We audit your online presence live — Google ranking, website, local SEO — and hand you a clear action plan. No pitch deck. No obligation. Ever."
         badge="Next slot available within 48 hours"
-        cta={{ label: "Schedule on Calendly", href: "https://calendly.com/brandlevo/free-discovery" }}
+        cta={{ label: "Schedule on Calendly", href: "#contact-form" }}
         secondaryCta={{ label: "Or scroll down to call us", href: "#contact-form" }}
         variant="dark"
       />
@@ -99,14 +114,12 @@ export default function ContactPage() {
               </p>
             </div>
 
-            {/* Calendly placeholder */}
+            {/* TODO: Replace href with real Calendly link once set up */}
             <a
-              href="https://calendly.com"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#contact-form"
               className="block w-full text-center bg-primary text-white px-xl py-md rounded-full font-bold hover:opacity-90 transition-all mb-lg"
             >
-              Pick a Time on Calendly
+              Book a Free Call
             </a>
 
             <div className="flex items-center gap-md text-body-sm text-slate justify-center mb-xl">
@@ -123,21 +136,21 @@ export default function ContactPage() {
             <div className="border-t border-fog pt-lg space-y-sm">
               <p className="text-eyebrow text-slate mb-md">OR REACH US DIRECTLY</p>
               <a
-                href="tel:+15551234567"
+                href="tel:+919895883315"
                 className="flex items-center gap-sm text-body-sm text-slate hover:text-primary transition-colors"
               >
                 <Phone className="w-4 h-4 text-primary" />
-                +1 (555) 123-4567
+                +91 98958 83315
               </a>
               <a
-                href="mailto:hello@brandlevo.com"
+                href="mailto:sales@brandlevo.com"
                 className="flex items-center gap-sm text-body-sm text-slate hover:text-primary transition-colors"
               >
                 <Mail className="w-4 h-4 text-primary" />
-                hello@brandlevo.com
+                sales@brandlevo.com
               </a>
               <a
-                href="https://wa.me/15551234567"
+                href="https://wa.me/919895883315"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-sm text-body-sm text-slate hover:text-primary transition-colors"
@@ -262,5 +275,6 @@ export default function ContactPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

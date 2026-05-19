@@ -2,11 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Check, CheckCircle, Minus, ArrowRight, HelpCircle, Shield } from "lucide-react";
 import PageHero from "@/components/page-hero";
+import { faqSchema, schemaScript } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Pricing | BrandLevo",
   description:
     "Transparent, one-time pricing for local business websites and digital marketing. No retainers, no surprises, no contracts.",
+  alternates: {
+    canonical: "/pricing",
+  },
 };
 
 const comparisonGroups = [
@@ -81,7 +85,13 @@ const guarantee = [
 ];
 
 export default function PricingPage() {
+  const schema = faqSchema(faqs);
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: schemaScript(schema) }}
+      />
     <main>
       <PageHero
         eyebrow="TRANSPARENT PRICING"
@@ -330,5 +340,6 @@ export default function PricingPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

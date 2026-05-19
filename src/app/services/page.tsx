@@ -14,11 +14,15 @@ import {
   Clock,
 } from "lucide-react";
 import PageHero from "@/components/page-hero";
+import { faqSchema, serviceSchema, schemaScript } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Services | BrandLevo",
   description:
     "Full-stack AI-powered digital services — AEO, SEO, website development, ICP strategy, sales consultation, brand uplift, content, and hosting. Everything under one roof.",
+  alternates: {
+    canonical: "/services",
+  },
 };
 
 const services = [
@@ -167,8 +171,52 @@ const tools = [
   { category: "Hosting", items: ["AWS", "Vercel", "Cloudflare", "WP Engine"] },
 ];
 
+const servicesFaqs = [
+  {
+    q: "What is AEO and why does my business need it?",
+    a: "AEO (Answer Engine Optimization) is the practice of structuring your content so AI tools like ChatGPT, Perplexity, and Google AI Overviews cite your business as the answer when customers ask questions in your category. With over 60% of searches now triggering AI-generated answers, AEO is as essential as traditional SEO was five years ago.",
+  },
+  {
+    q: "How long does website development take?",
+    a: "Most local business websites are completed within 10–14 days from brief to launch. The process includes design, copywriting (included), development, testing, and deployment. We keep the process lean by using a structured brief and limiting revision rounds to two included rounds.",
+  },
+  {
+    q: "Can I order just one service, or do I need a bundle?",
+    a: "Every service is available individually. You can start with just a website revamp, just AEO, or just an ICP strategy session — then add services as you see results. There are no mandatory bundles.",
+  },
+  {
+    q: "Do your services include ongoing support?",
+    a: "Yes — all ongoing services (SEO, AEO, hosting, content) are month-to-month with no lock-in contracts. Project work (websites, brand, ICP) is one-time. Ongoing support plans include priority email and phone support.",
+  },
+  {
+    q: "What results can I realistically expect?",
+    a: "Most clients see meaningful improvements in enquiries within 60–90 days. Website projects typically improve lead conversion rates by 2–3×. AEO clients begin appearing in AI-generated answers for local queries within 90 days. SEO clients typically see first-page movement within 60–90 days.",
+  },
+];
+
 export default function ServicesPage() {
+  const serviceSchemas = services.map((s) =>
+    serviceSchema({
+      name: s.title,
+      description: s.description,
+      url: `https://brandlevo.com/services#${s.title.toLowerCase().replace(/\s+/g, "-")}`,
+    })
+  );
+  const faqJson = faqSchema(servicesFaqs);
+
   return (
+    <>
+      {serviceSchemas.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: schemaScript(schema) }}
+        />
+      ))}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: schemaScript(faqJson) }}
+      />
     <main>
       <PageHero
         eyebrow="WHAT WE DO"
@@ -255,6 +303,33 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="py-xxl px-lg bg-snow border-t border-fog">
+        <div className="max-w-container-max mx-auto">
+          <span className="text-eyebrow text-primary block mb-md">FAQ</span>
+          <h2 className="text-h3 text-ink mb-xl">Common Questions About Our Services</h2>
+          <div className="max-w-2xl divide-y divide-fog">
+            {servicesFaqs.map((faq) => (
+              <details key={faq.q} className="group py-lg cursor-pointer">
+                <summary className="flex justify-between items-center gap-lg list-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 rounded-lg">
+                  <span className="text-h4 text-ink group-open:text-primary transition-colors">
+                    {faq.q}
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    className="shrink-0 w-8 h-8 rounded-full bg-purple-xpale flex items-center justify-center text-primary font-bold text-lg group-open:bg-primary group-open:text-white transition-all"
+                  >
+                    <span className="group-open:hidden">+</span>
+                    <span className="hidden group-open:block">−</span>
+                  </span>
+                </summary>
+                <p className="text-body text-slate mt-md pr-xl leading-relaxed">{faq.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-xxl px-lg bg-primary">
         <div className="max-w-container-max mx-auto flex flex-col md:flex-row items-center justify-between gap-xl">
@@ -274,5 +349,6 @@ export default function ServicesPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

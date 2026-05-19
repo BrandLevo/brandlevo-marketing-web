@@ -2,11 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Target, Eye, Zap, Handshake } from "lucide-react";
 import PageHero from "@/components/page-hero";
+import { personSchema, schemaScript } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "About Us | BrandLevo",
   description:
     "Built for small businesses, by people who've run them. Meet BrandLevo — the agency that treats a two-person bakery with the same urgency as a Fortune 500.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 const values = [
@@ -80,7 +84,23 @@ const stats = [
 ];
 
 export default function AboutPage() {
+  const teamSchemas = team.map((member) =>
+    personSchema({
+      name: member.name,
+      jobTitle: member.role,
+      url: "https://brandlevo.com/about",
+    })
+  );
+
   return (
+    <>
+      {teamSchemas.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: schemaScript(schema) }}
+        />
+      ))}
     <main>
       <PageHero
         eyebrow="ABOUT BRANDLEVO"
@@ -186,5 +206,6 @@ export default function AboutPage() {
       </section>
 
     </main>
+    </>
   );
 }

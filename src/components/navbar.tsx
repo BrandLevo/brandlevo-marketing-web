@@ -45,7 +45,7 @@ export default function Navbar() {
             {/* Logo */}
             <Link href="/" onClick={close} className="shrink-0">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/Original.svg" alt="BrandLevo" className="h-9 w-auto" />
+              <img src="/logo.svg" alt="BrandLevo" className="h-9 w-auto" />
             </Link>
 
             {/* Pill nav — desktop (lg+) */}

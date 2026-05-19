@@ -1,76 +1,32 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Clock, BookOpen, TrendingUp, Zap, Users } from "lucide-react";
+import { featuredArticle, listedArticles } from "@/lib/articles";
+import { collectionPageSchema, schemaScript } from "@/lib/schema";
 
-const featured = {
-  tag: "LOCAL SEO",
-  title: "Why Your Google Reviews Aren't Enough to Win Online",
-  excerpt:
-    "You've got 4.9 stars and 200 reviews. Customers love you. So why is the phone still quiet on Tuesdays? The problem isn't your reputation — it's your visibility.",
-  readTime: "6 min read",
-  date: "April 2025",
-  slug: "google-reviews-not-enough",
+export const metadata: Metadata = {
+  title: "Blog",
+  description:
+    "Practical digital marketing insights for local businesses — AEO, SEO, website conversion, and brand strategy. Actionable the same day you read it.",
+  alternates: {
+    canonical: "/blog",
+  },
 };
 
-const posts = [
-  {
-    tag: "AEO",
-    accent: "bg-[#00D4FF]/10 text-[#0099b8]",
-    bar: "bg-[#00D4FF]",
-    title: "AEO: The New SEO Your Competitors Don't Know About Yet",
-    excerpt:
-      "ChatGPT, Perplexity, and Google's AI Overviews are sending traffic to one business per category. That business isn't chosen by who ranks #1 — it's chosen by who answers questions best.",
-    readTime: "8 min read",
-    date: "March 2025",
-    slug: "aeo-new-seo",
-  },
-  {
-    tag: "WEB DESIGN",
-    accent: "bg-mint/10 text-[#0fa870]",
-    bar: "bg-mint",
-    title: "What Makes a Local Business Website Actually Convert",
-    excerpt:
-      "Most local business websites convert at under 1%. That means 99 out of 100 visitors leave without calling. The fix isn't a redesign — it's five specific changes most developers never make.",
-    readTime: "5 min read",
-    date: "March 2025",
-    slug: "local-business-website-convert",
-  },
-  {
-    tag: "GOOGLE BUSINESS",
-    accent: "bg-gold/10 text-amber-700",
-    bar: "bg-gold",
-    title: "The GBP Mistakes Costing Local Businesses Customers Every Day",
-    excerpt:
-      "An incomplete or poorly-managed GBP profile is invisible to local searchers. Seven specific errors — and exactly how to fix them in an afternoon.",
-    readTime: "7 min read",
-    date: "February 2025",
-    slug: "google-business-profile-mistakes",
-  },
-  {
-    tag: "LOCAL SEO",
-    accent: "bg-primary/10 text-primary",
-    bar: "bg-primary",
-    title: "How Local Citations Work (And Why Inconsistency Tanks Your Rankings)",
-    excerpt:
-      "Your business name, address, and phone number appear in hundreds of places online. If they don't match, Google doesn't trust you — and neither do the maps.",
-    readTime: "5 min read",
-    date: "February 2025",
-    slug: "local-citations-guide",
-  },
-  {
-    tag: "STRATEGY",
-    accent: "bg-purple-pale text-purple-700",
-    bar: "bg-purple-500",
-    title: "The 90-Day Digital Blueprint for New Local Businesses",
-    excerpt:
-      "Month one: get found. Month two: get trusted. Month three: get booked. A week-by-week action plan for any local business starting from scratch online.",
-    readTime: "10 min read",
-    date: "January 2025",
-    slug: "90-day-digital-blueprint",
-  },
-];
-
 export default function BlogPage() {
+  const featured = featuredArticle;
+  const posts = listedArticles;
+  const schema = collectionPageSchema(
+    "BrandLevo Blog — Digital Marketing Insights for Local Businesses",
+    "Practical AEO, SEO, web design, and brand strategy articles for local business owners.",
+    "https://brandlevo.com/blog"
+  );
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: schemaScript(schema) }}
+      />
     <main>
 
       {/* ── Hero ─────────────────────────────────────────────────── */}
@@ -135,8 +91,8 @@ export default function BlogPage() {
                   <Users className="w-4 h-4 text-primary" />
                 </div>
                 <div>
-                  <p className="text-body-sm font-bold text-ink leading-none">5 Articles</p>
-                  <p className="text-eyebrow text-slate">Published this month</p>
+                  <p className="text-body-sm font-bold text-ink leading-none">{posts.length + 1} Articles</p>
+                  <p className="text-eyebrow text-slate">Published</p>
                 </div>
               </div>
 
@@ -340,5 +296,6 @@ export default function BlogPage() {
       </section>
 
     </main>
+    </>
   );
 }

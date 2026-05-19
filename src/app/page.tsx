@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import HeroSection from "@/components/hero-section";
 import ProblemSection from "@/components/problem-section";
 import OpportunitySection from "@/components/opportunity-section";
@@ -9,9 +10,24 @@ import TestimonialsSection from "@/components/testimonials-section";
 import AboutSection from "@/components/about-section";
 import FaqSection from "@/components/faq-section";
 import CtaSection from "@/components/cta-section";
+import { faqSchema, schemaScript } from "@/lib/schema";
+import { homepageFaqs } from "@/lib/faq-data";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default function Home() {
+  const schema = faqSchema(homepageFaqs);
+
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: schemaScript(schema) }}
+      />
     <main>
       {/* 1. Hero — headline + CTA */}
       <HeroSection />
@@ -36,5 +52,6 @@ export default function Home() {
       {/* 11. Final CTA */}
       <CtaSection />
     </main>
+    </>
   );
 }
