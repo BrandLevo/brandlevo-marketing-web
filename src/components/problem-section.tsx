@@ -1,80 +1,84 @@
-import { Search, Monitor, BarChart2, Sparkles } from "lucide-react";
-
-const dotPattern = {
-  backgroundImage: "radial-gradient(circle, rgba(123,69,245,0.14) 1.5px, transparent 1.5px)",
-  backgroundSize: "22px 22px",
-};
+import { EyeOff, TrendingDown, ShieldOff, FileX, BarChart2 } from "lucide-react";
 
 const pains = [
   {
-    icon: Search,
-    bold: "You're Invisible on AI Search",
-    body: "60% of searches now end without a click — because AI gives the answer directly. If you're not in that answer, your competitors are.",
+    icon: EyeOff,
+    num: "01",
+    title: "Invisible to AI",
+    local: "When someone asks ChatGPT for the best Ayurvedic clinic in Kochi, your name isn't there.",
+    body: "60% of searches now end without a click — AI gives the answer directly. If you're not being cited, your competitor is.",
   },
   {
-    icon: Monitor,
-    bold: "Your Website Is Working Against You",
-    body: "An outdated site signals to both humans and AI engines that your business is behind. 84% of buyers research online before purchasing. A weak digital presence costs you deals every day.",
+    icon: TrendingDown,
+    num: "02",
+    title: "Enquiries Dried Up",
+    local: "Google traffic dropped. Zomato and Swiggy take a cut. You don't own any channel.",
+    body: "You're paying rent on platforms that don't build your brand. Every lead through them is a lead you don't own.",
+  },
+  {
+    icon: ShieldOff,
+    num: "03",
+    title: "No Digital Reputation",
+    local: "You have a signboard. New patients and clients can't verify you exist online.",
+    body: "76% of local searches lead to a visit within 24 hours — but only if they can find and trust you first.",
+  },
+  {
+    icon: FileX,
+    num: "04",
+    title: "Generic or Missing Content",
+    local: "Your competitor has 200 Google reviews and a website. You have a phone number.",
+    body: "AI cites brands with specific, local, structured content. Generic pages and empty profiles get skipped entirely.",
   },
   {
     icon: BarChart2,
-    bold: "You Have No Repeatable Sales System",
-    body: "Word-of-mouth and referrals are unpredictable. Without a defined ICP, a clear funnel, and a digital engine driving leads, your growth has a ceiling — and it's frustratingly low.",
-  },
-  {
-    icon: Sparkles,
-    bold: "Your Brand Doesn't Reflect Your Value",
-    body: "You've built something genuinely excellent. But your visual identity, messaging, and online presence don't say that. First impressions form in 0.05 seconds — outdated branding is silently costing you trust.",
+    num: "05",
+    title: "No Way to Measure Any of It",
+    local: "You don't know how many people searched for you this month — or why they chose someone else.",
+    body: "Without visibility into your own numbers, you're guessing. Every month you wait is customers you'll never get back.",
   },
 ];
 
 export default function ProblemSection() {
   return (
-    <section className="py-xxxl px-lg bg-surface">
+    <section className="py-xxxl px-lg bg-snow">
       <div className="max-w-container-max mx-auto">
 
-        {/* Header */}
         <div className="reveal max-w-2xl mb-xxl">
           <span className="text-eyebrow text-primary block mb-md">THE PROBLEM</span>
           <h2 className="text-h2 text-ink mb-lg">
-            Your Competitors Are Being Found.{" "}
-            <span className="text-primary italic">You&apos;re Being Skipped.</span>
+            Your competitors are being found.{" "}
+            <span className="text-primary italic">You&apos;re being skipped.</span>
           </h2>
-          <p className="text-body-lg text-slate">
-            In 2026, buying decisions don&apos;t start on page one of Google — they start with an AI. When someone asks ChatGPT for the best accountant in their city, or Perplexity for a trusted web design agency, your name needs to appear. If it doesn&apos;t, you&apos;ve already lost the sale before a single click.
+          <p className="text-body-lg text-slate leading-relaxed">
+            Buying decisions don&apos;t start on page one of Google anymore — they start with an AI.
+            When someone in Kochi asks ChatGPT for a trusted clinic, salon, or vendor, your name
+            needs to come up. If it doesn&apos;t, you&apos;ve already lost the sale.
           </p>
         </div>
 
-        {/* Pain cards */}
-        <div className="grid md:grid-cols-2 gap-lg mb-xxl">
+        <div className="grid md:grid-cols-2 gap-lg">
           {pains.map((p, i) => (
             <div
-              key={p.bold}
-              style={dotPattern}
-              className={`reveal stagger-${i + 1} relative overflow-hidden bg-white border border-fog rounded-2xl p-xl`}
+              key={p.num}
+              className={[
+                `reveal stagger-${i + 1}`,
+                "bg-surface border border-fog rounded-2xl px-xl py-lg",
+                i === 4 ? "md:col-span-2" : "",
+              ].join(" ")}
             >
-              <div className="relative z-10">
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-lg border border-fog bg-snow">
-                  <p.icon className="w-5 h-5 text-primary" />
-                </div>
-                <h3 className="text-h4 text-ink mb-sm">{p.bold}</h3>
-                <p className="text-body text-slate leading-relaxed">{p.body}</p>
+              {/* Number + title on one line */}
+              <div className="flex items-baseline gap-md mb-md">
+                <span className="text-h2 font-bold text-primary leading-none shrink-0">{p.num}</span>
+                <h3 className="text-h3 text-ink leading-snug">{p.title}</h3>
               </div>
+              <p className="text-body text-slate italic mb-sm leading-relaxed">
+                &ldquo;{p.local}&rdquo;
+              </p>
+              <p className="text-body text-slate leading-relaxed">{p.body}</p>
             </div>
           ))}
         </div>
 
-        {/* Stat callout */}
-        <div className="reveal-scale stagger-5 bg-primary rounded-2xl overflow-hidden">
-          <div className="px-md sm:px-xl py-xl sm:py-xxl flex flex-col md:flex-row items-center gap-xl">
-            <div className="shrink-0 text-center md:text-left">
-              <p className="text-[72px] sm:text-[96px] font-bold text-white leading-none font-display">80<span className="text-coral">%</span></p>
-            </div>
-            <p className="text-body-lg text-white/90 leading-relaxed max-w-lg">
-              of customers research a business online before making contact. If your digital presence doesn&apos;t inspire confidence, they move on.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );
