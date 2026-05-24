@@ -170,7 +170,8 @@ export const allArticles: Article[] = [
     tag: "LOCAL SEO",
     accent: "bg-primary/10 text-primary",
     bar: "bg-primary",
-    title: "How Local Citations Work (And Why Inconsistency Tanks Your Rankings)",
+    title:
+      "How Local Citations Work (And Why Inconsistency Tanks Your Rankings)",
     excerpt:
       "Your business name, address, and phone number appear in hundreds of places online. If they don't match, Google doesn't trust you — and neither do the maps.",
     readTime: "5 min read",
@@ -242,7 +243,8 @@ export const allArticles: Article[] = [
     tag: "AEO",
     accent: "bg-[#00D4FF]/10 text-[#0099b8]",
     bar: "bg-[#00D4FF]",
-    title: "What Is Answer Engine Optimization? A Complete Guide for Local Businesses",
+    title:
+      "What Is Answer Engine Optimization? A Complete Guide for Local Businesses",
     excerpt:
       "AEO is the fastest-growing digital marketing strategy of 2026 — and most local businesses haven't heard of it yet. Here's exactly what it is and how to start appearing in AI-generated answers.",
     readTime: "9 min read",
@@ -282,7 +284,8 @@ export const allArticles: Article[] = [
     tag: "AEO",
     accent: "bg-[#00D4FF]/10 text-[#0099b8]",
     bar: "bg-[#00D4FF]",
-    title: "How to Get Your Local Business Found on ChatGPT, Perplexity & Google AI",
+    title:
+      "How to Get Your Local Business Found on ChatGPT, Perplexity & Google AI",
     excerpt:
       "AI search tools are where your customers are going first. Here's exactly how to make your local business visible on every major AI platform — step by step.",
     readTime: "8 min read",
@@ -394,7 +397,8 @@ export const allArticles: Article[] = [
     tag: "STRATEGY",
     accent: "bg-purple-pale text-purple-700",
     bar: "bg-purple-500",
-    title: "AEO vs SEO: What's the Difference and Which Does Your Business Need?",
+    title:
+      "AEO vs SEO: What's the Difference and Which Does Your Business Need?",
     excerpt:
       "SEO gets you ranked. AEO gets you cited. In 2026, you need both — but the order and priority depends on where your business is right now.",
     readTime: "7 min read",
@@ -430,11 +434,11 @@ export const allArticles: Article[] = [
 ];
 
 export const featuredArticle = allArticles.find(
-  (a) => a.slug === "google-reviews-not-enough"
+  (a) => a.slug === "google-reviews-not-enough",
 )!;
 
 export const listedArticles = allArticles.filter(
-  (a) => a.slug !== "google-reviews-not-enough"
+  (a) => a.slug !== "google-reviews-not-enough",
 );
 
 export function getArticleBySlug(slug: string): Article | undefined {

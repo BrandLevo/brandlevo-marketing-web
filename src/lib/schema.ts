@@ -18,10 +18,10 @@ export function organizationSchema() {
     },
     // TODO [SOCIAL]: Replace with real profile URLs — must match footer.tsx social links
     sameAs: [
-      "https://twitter.com/brandlevo",           // TODO: verify handle
-      "https://linkedin.com/company/brandlevo",  // TODO: verify handle
-      "https://facebook.com/brandlevo",           // TODO: verify handle
-      "https://instagram.com/brandlevo",          // TODO: verify handle
+      "https://twitter.com/brandlevo", // TODO: verify handle
+      "https://linkedin.com/company/brandlevo", // TODO: verify handle
+      "https://facebook.com/brandlevo", // TODO: verify handle
+      "https://instagram.com/brandlevo", // TODO: verify handle
     ],
     contactPoint: {
       "@type": "ContactPoint",
@@ -149,7 +149,11 @@ export function serviceSchema(service: ServiceData) {
   };
 }
 
-export function collectionPageSchema(name: string, description: string, url: string) {
+export function collectionPageSchema(
+  name: string,
+  description: string,
+  url: string,
+) {
   return {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
