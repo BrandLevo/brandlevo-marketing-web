@@ -87,7 +87,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${nunitoSans.variable} ${poppins.variable} scroll-smooth`}
+      className={`${nunitoSans.variable} ${poppins.variable} scroll-smooth dark`}
     >
       <body className="antialiased min-h-screen font-body text-on-surface">
         <script
