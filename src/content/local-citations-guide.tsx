@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities, @typescript-eslint/no-unused-vars */
 import { AnswerCapsule, H2, H3, P, UL, LI, OL, OLI, Strong } from "@/components/article-components";
 
 export default function ArticleContent() {
