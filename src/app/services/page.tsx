@@ -4,11 +4,8 @@ import {
   Cpu,
   Search,
   Globe,
-  Target,
-  TrendingUp,
   Sparkles,
   PenLine,
-  Shield,
   ArrowRight,
   CheckCircle,
   Clock,
@@ -32,7 +29,7 @@ const services = [
     title: "AEO — Answer Engine Optimisation",
     headline: "Be the answer ChatGPT, Perplexity, and Google AI give for your category.",
     description:
-      "When a potential customer asks ChatGPT, Perplexity, or Google AI 'who's the best [your service] in [your city]?' — your brand should be the answer. We engineer your content, schema, and digital authority so AI engines cite you as the trusted source.",
+      "When a potential customer asks ChatGPT, Perplexity, or Google AI who's the best in your city, your brand should be the answer. We engineer your content, schema, and digital authority so AI engines cite you as the trusted source.",
     includes: [
       "AI visibility audit across ChatGPT, Perplexity, Claude & Google AI Mode",
       "Content restructuring for AI citation (FAQs, summaries, schema markup)",
@@ -41,30 +38,32 @@ const services = [
     ],
     outcome: "Clients appear in AI-generated answers for 20–40 local queries within 6 months.",
     timeline: "Initial setup 2 weeks · Quarterly reviews",
+    icp: ["Clinics", "Coaches", "Wedding Vendors"],
     color: "bg-primary",
   },
   {
     icon: Search,
     tag: "FOUNDATION",
-    title: "SEO & Local Search Domination",
-    headline: "Rank when it matters — on the page and in the AI overview above it.",
+    title: "SEO & Local Search",
+    headline: "Dominate Google Maps, the local pack, and the AI overview above it.",
     description:
-      "Traditional search isn't dead — it's the foundation every AI answer is built on. We combine technical SEO, keyword strategy, local SEO, and Google Business Profile optimisation so you rank on the page and in the AI overview above it.",
+      "Traditional search is the foundation every AI answer is built on. We combine technical SEO, keyword strategy, local SEO, and Google Business Profile optimisation so you rank on the page and in the AI overview above it.",
     includes: [
       "Technical SEO audit and on-page optimisation",
-      "Local SEO — dominate searches in your city and region",
+      "Local SEO — dominate searches in Kochi and your region",
       "Google Business Profile management and review strategy",
       "Keyword clustering and topical authority building",
     ],
     outcome: "Most clients see first-page movement within 60–90 days.",
     timeline: "Ongoing — results compound monthly",
+    icp: ["Restaurants", "Salons", "Jewellers"],
     color: "bg-purple-dark",
   },
   {
     icon: Globe,
     tag: "MOST POPULAR",
-    title: "Website Revamp & Development",
-    headline: "Your most important salesperson — rebuilt to rank, convert, and impress.",
+    title: "Website Design & Development",
+    headline: "A fast, mobile-first site that converts visitors into enquiries from day one.",
     description:
       "Your website is your most important salesperson. We build and revamp sites that load fast, look exceptional on every device, convert visitors into enquiries, and are technically structured for AI and search engine discovery from day one.",
     includes: [
@@ -75,49 +74,16 @@ const services = [
     ],
     outcome: "Live in 14 days. Designed to rank, convert, and impress from day one.",
     timeline: "10–14 days",
-    color: "bg-primary",
-  },
-  {
-    icon: Target,
-    tag: "HIGH IMPACT",
-    title: "ICP Strategy Development",
-    headline: "Stop marketing to everyone. Start owning your ideal customer.",
-    description:
-      "You can't market to everyone — and trying to is why most campaigns fail. We define your Ideal Customer Profile with precision: who they are, what they're searching for, what objections they have, and how to reach them before competitors do.",
-    includes: [
-      "Deep-dive ICP research using AI and market data",
-      "Customer persona development (demographics, psychographics, buying triggers)",
-      "Search intent mapping aligned to your ICP's buyer journey",
-      "Content and channel strategy built around your best-fit customer",
-    ],
-    outcome: "Typically delivered within 7–10 business days. Standalone or as part of a broader package.",
-    timeline: "7–10 business days",
-    color: "bg-purple-dark",
-  },
-  {
-    icon: TrendingUp,
-    tag: "REVENUE FOCUS",
-    title: "Sales Consultation & Pipeline Strategy",
-    headline: "Turn visibility into revenue with a repeatable sales system.",
-    description:
-      "Leads are worthless without a system to convert them. We audit your current sales process, identify the drop-off points, and build a repeatable outbound and inbound pipeline strategy that turns your marketing investment into closed revenue.",
-    includes: [
-      "Sales process audit and conversion gap analysis",
-      "Outbound playbook — ICP list building, outreach scripts, follow-up sequences",
-      "Inbound lead qualification and nurture flow design",
-      "CRM setup guidance and pipeline reporting framework",
-    ],
-    outcome: "A documented, repeatable pipeline — not one that depends on referrals or luck.",
-    timeline: "2–3 weeks · Ongoing support available",
+    icp: ["No website yet", "Outdated sites"],
     color: "bg-primary",
   },
   {
     icon: Sparkles,
     tag: "PERCEPTION SHIFT",
-    title: "Brand Uplift & Identity",
-    headline: "Make your brand communicate authority before they read a single word.",
+    title: "Brand Identity & Uplift",
+    headline: "A brand that signals authority and trust before a single word is read.",
     description:
-      "Your brand is what people feel before they read a single word. We refresh or rebuild your visual identity, messaging framework, and brand voice so that every touchpoint communicates authority, trust, and premium value.",
+      "Your brand is what people feel before they read a single word. We refresh or rebuild your visual identity, messaging framework, and brand voice so that every touchpoint communicates authority, trust, and premium value — built for your market and your customers.",
     includes: [
       "Brand audit — logo, colours, typography, tone of voice",
       "Visual identity refresh or full brand design",
@@ -126,41 +92,26 @@ const services = [
     ],
     outcome: "A brand identity that signals trust, quality, and confidence — consistently.",
     timeline: "2–4 weeks depending on scope",
+    icp: ["Jewellers", "Wedding Vendors", "Premium Services"],
     color: "bg-purple-dark",
   },
   {
     icon: PenLine,
     tag: "ALWAYS ON",
-    title: "Content & Copywriting",
-    headline: "Words that fuel AEO, SEO, and brand authority simultaneously.",
+    title: "Content & AEO Writing",
+    headline: "Local, specific, structured content that earns AI citations and converts readers.",
     description:
-      "Great content is the fuel that powers AEO, SEO, and brand authority simultaneously. We write every word — landing pages, service pages, blogs, email sequences, and social content — in a voice that sounds like you, but sharper.",
+      "Great content is the fuel that powers AEO, SEO, and brand authority simultaneously. We write every word — landing pages, service pages, blogs, and social content — in a voice that is local, specific, and structured for AI discovery.",
     includes: [
       "AEO-structured blog content designed to earn AI citations",
       "Landing page and service page copywriting",
-      "Email marketing sequences and nurture campaigns",
+      "Local and specific content for Kochi and Kerala markets",
       "Monthly content calendar and editorial planning",
     ],
-    outcome: "Pages with our copy average 2.3× longer session time and 40% lower bounce rate.",
+    outcome: "Pages with our copy average 2.3x longer session time and 40% lower bounce rate.",
     timeline: "Delivered in batches · Ongoing content calendar",
+    icp: ["Clinics", "Coaches", "All Service Businesses"],
     color: "bg-primary",
-  },
-  {
-    icon: Shield,
-    tag: "SET & FORGET",
-    title: "Hosting, Maintenance & Support",
-    headline: "We keep the lights on so you never have to think about it.",
-    description:
-      "We handle all the technical infrastructure so you never have to think about it. Fast, secure hosting; regular backups; proactive security monitoring; and a support team that fixes issues before they affect your customers.",
-    includes: [
-      "Premium managed hosting with 99.9% uptime SLA",
-      "SSL, security monitoring, and automatic backups",
-      "Monthly technical updates and performance optimisation",
-      "Priority support with same-day response time",
-    ],
-    outcome: "Zero planned downtime. Same-day response time.",
-    timeline: "Always on",
-    color: "bg-purple-dark",
   },
 ];
 
@@ -227,7 +178,7 @@ export default function ServicesPage() {
         secondaryCta={{ label: "See all services", href: "#services-list" }}
         stats={[
           { value: "14 days", label: "Average launch" },
-          { value: "8", label: "Core services" },
+          { value: "5", label: "Core services" },
           { value: "3.4×", label: "Lead growth" },
           { value: "80+", label: "Clients served" },
         ]}
@@ -254,11 +205,22 @@ export default function ServicesPage() {
                 <p className="text-body font-semibold text-primary mb-md">{s.headline}</p>
                 <p className="text-body text-slate mb-xl leading-relaxed">{s.description}</p>
 
-                <div className="flex flex-wrap gap-lg text-body-sm text-slate">
+                <div className="flex flex-wrap gap-lg text-body-sm text-slate mb-lg">
                   <span className="flex items-center gap-xs">
                     <Clock className="w-3.5 h-3.5 text-primary" />
                     {s.timeline}
                   </span>
+                </div>
+
+                <div>
+                  <p className="text-eyebrow text-slate mb-sm">WHO IT&apos;S FOR</p>
+                  <div className="flex flex-wrap gap-xs">
+                    {s.icp.map((tag) => (
+                      <span key={tag} className="text-eyebrow bg-primary/10 text-primary px-sm py-xs rounded-md">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
 
