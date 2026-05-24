@@ -10,7 +10,7 @@ export default function FaqSection() {
           <span className="text-eyebrow text-primary block mb-md">FAQ</span>
           <h2 className="text-h2 text-ink">
             Honest Answers to{" "}
-            <span className="text-primary italic">Everything You're Wondering.</span>
+            <span className="text-primary italic">Everything You&apos;re Wondering.</span>
           </h2>
         </div>
 

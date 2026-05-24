@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Clock, TrendingUp, Star } from "lucide-react";
+import { ArrowRight, TrendingUp, Star } from "lucide-react";
 import PageHero from "@/components/page-hero";
 
 export const metadata: Metadata = {

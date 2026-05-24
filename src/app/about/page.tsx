@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ArrowRight, Target, Eye, Zap, Handshake } from "lucide-react";
+import { Target, Eye, Zap, Handshake } from "lucide-react";
 import PageHero from "@/components/page-hero";
 import { personSchema, schemaScript } from "@/lib/schema";
 

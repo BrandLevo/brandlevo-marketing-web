@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Mail, Phone, MessageCircle, Clock, CheckCircle, CalendarDays, ArrowRight } from "lucide-react";
 import PageHero from "@/components/page-hero";
 import { localBusinessSchema, faqSchema, schemaScript } from "@/lib/schema";

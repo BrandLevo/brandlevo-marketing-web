@@ -164,6 +164,22 @@
 }
 
 /* ─────────────────────────────────────────────────────────────
+   Dark mode token overrides — activated by <html class="dark">
+───────────────────────────────────────────────────────────────*/
+html.dark {
+  --color-bg:           #0D0D1A;
+  --color-background:   #0D0D1A;
+  --color-surface:      #13131F;
+  --color-snow:         #1A1A2E;
+  --color-fog:          rgba(255, 255, 255, 0.08);
+  --color-ink:          #F0EFFF;
+  --color-slate:        #9B9BBD;
+  --color-mist:         #4A4A6A;
+  --color-graphite:     #2E2E44;
+  --color-brand-border: rgba(255, 255, 255, 0.1);
+}
+
+/* ─────────────────────────────────────────────────────────────
    Base styles
 ───────────────────────────────────────────────────────────────*/
 @layer base {
@@ -181,6 +197,11 @@
     font-family: "Poppins", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  html.dark body {
+    background-color: #0D0D1A;
+    color: #F0EFFF;
   }
 
   button, [role="button"], summary {
@@ -445,6 +466,13 @@
     .connector-reveal {
       animation: none;
     }
+  }
+
+  /* ── Hero background texture (dark mode hero gradient) ─── */
+  .hero-texture {
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(123, 69, 245, 0.3), transparent),
+      radial-gradient(circle at 80% 50%, rgba(0, 212, 255, 0.08), transparent 60%);
   }
 
   /* ── Container max ──────────────────────────────────────── */
