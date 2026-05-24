@@ -16,14 +16,15 @@ const trust = [
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-ink">
-      <div className="relative z-10 max-w-container-max mx-auto px-md sm:px-xl">
-        <div className="grid lg:grid-cols-[1fr_400px] items-center gap-xxl pt-xxl sm:pt-xxxl pb-xxl">
+    <section className="relative overflow-hidden bg-ink min-h-[calc(100svh-6rem)] flex items-center">
+      <div className="relative z-10 w-full max-w-container-max mx-auto px-md sm:px-xl">
+        <div className="grid lg:grid-cols-[1fr_400px] items-center gap-xxl py-xl sm:py-xxl">
 
           {/* Left — Copy */}
           <div>
               <h1 className="hero-title text-[clamp(44px,5.5vw,72px)] font-extrabold tracking-tight leading-tight font-display text-white mb-lg">
-              Google ranks pages.{" "}
+              Google ranks pages.
+              <br />
               <span className="text-primary">AI cites brands.</span>
               <br />
               Which one are you?

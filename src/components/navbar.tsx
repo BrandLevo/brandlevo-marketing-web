@@ -40,12 +40,12 @@ export default function Navbar() {
         ].join(" ")}
       >
         <div className="max-w-container-max mx-auto px-md sm:px-xl">
-          <div className="h-16 flex items-center justify-between">
+          <div className="h-24 flex items-center justify-between">
 
             {/* Logo */}
             <Link href="/" onClick={close} className="shrink-0">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo.svg" alt="BrandLevo" className="h-9 w-auto" />
+              <img src="/logo-white.svg" alt="BrandLevo" className="h-14 w-auto" />
             </Link>
 
             {/* Pill nav — desktop (lg+) */}
@@ -117,7 +117,7 @@ export default function Navbar() {
         aria-modal="true"
         aria-label="Navigation menu"
         className={[
-          "fixed top-16 left-0 right-0 z-40 bg-white border-b border-fog shadow-lg lg:hidden",
+          "fixed top-24 left-0 right-0 z-40 bg-white border-b border-fog shadow-lg lg:hidden",
           "transition-all duration-300 ease-in-out origin-top",
           open ? "opacity-100 scale-y-100 translate-y-0" : "opacity-0 scale-y-95 -translate-y-2 pointer-events-none",
         ].join(" ")}
