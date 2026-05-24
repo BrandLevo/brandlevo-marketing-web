@@ -24,22 +24,24 @@ export default function PageHero({
   badge,
   variant = "dark",
 }: PageHeroProps) {
-  const isPurple = variant === "purple";
+  const isDark = variant === "dark";
 
   return (
     <section
       className={[
         "relative overflow-hidden",
-        isPurple ? "bg-purple-pale" : "bg-white",
+        isDark ? "bg-ink" : "bg-purple-pale",
       ].join(" ")}
     >
-      {/* Top-right decorative blob */}
-      <div
-        className="absolute top-0 right-0 w-[520px] h-[520px] pointer-events-none"
-        style={{
-          background: "radial-gradient(ellipse at top right, #EDE5FF 0%, transparent 65%)",
-        }}
-      />
+      {/* Decorative blob — purple variant only */}
+      {!isDark && (
+        <div
+          className="absolute top-0 right-0 w-[520px] h-[520px] pointer-events-none"
+          style={{
+            background: "radial-gradient(ellipse at top right, #EDE5FF 0%, transparent 65%)",
+          }}
+        />
+      )}
 
       {/* Content */}
       <div className="relative z-10 max-w-container-max mx-auto px-md sm:px-xl py-xxl sm:py-xxxl">
@@ -49,13 +51,13 @@ export default function PageHero({
           <div
             className={[
               "hero-badge inline-flex items-center gap-sm rounded-full px-md py-xs mb-lg border",
-              isPurple
-                ? "bg-white/70 border-primary/20"
-                : "bg-purple-pale border-purple-light/30",
+              isDark
+                ? "bg-white/10 border-white/20"
+                : "bg-white/70 border-primary/20",
             ].join(" ")}
           >
             <span className="w-1.5 h-1.5 rounded-full bg-mint animate-float" />
-            <span className="text-eyebrow text-slate">{badge}</span>
+            <span className={`text-eyebrow ${isDark ? "text-slate" : "text-slate"}`}>{badge}</span>
           </div>
         )}
 
@@ -65,7 +67,12 @@ export default function PageHero({
         </span>
 
         {/* Headline */}
-        <h1 className="hero-title text-h1 text-ink leading-tight mb-lg max-w-3xl">
+        <h1
+          className={[
+            "hero-title text-h1 leading-tight mb-lg max-w-3xl",
+            isDark ? "text-white" : "text-ink",
+          ].join(" ")}
+        >
           {title}{" "}
           {titleAccent && (
             <span className="text-primary italic">{titleAccent}</span>
@@ -92,7 +99,7 @@ export default function PageHero({
             {secondaryCta && (
               <Link
                 href={secondaryCta.href}
-                className="text-body-sm font-semibold text-slate hover:text-primary transition-colors"
+                className={`text-body-sm font-semibold transition-colors hover:text-primary ${isDark ? "text-slate" : "text-slate"}`}
               >
                 {secondaryCta.label} →
               </Link>
@@ -102,10 +109,22 @@ export default function PageHero({
 
         {/* Stats strip */}
         {stats && stats.length > 0 && (
-          <div className="hero-stats max-w-2xl grid grid-cols-2 sm:grid-cols-4 gap-px bg-fog rounded-2xl overflow-hidden border border-fog">
+          <div className={[
+            "hero-stats grid grid-cols-2 sm:grid-cols-4 gap-md",
+          ].join(" ")}>
             {stats.map((s) => (
-              <div key={s.value} className="bg-white px-lg py-md text-center">
-                <p className="text-h3 text-primary font-bold leading-none mb-xs">{s.value}</p>
+              <div
+                key={s.value}
+                className={[
+                  "rounded-2xl px-lg py-md flex flex-col gap-xs",
+                  isDark
+                    ? "bg-surface border border-white/10"
+                    : "bg-white border border-fog",
+                ].join(" ")}
+              >
+                <p className={`text-h3 font-bold leading-none ${isDark ? "text-white" : "text-primary"}`}>
+                  {s.value}
+                </p>
                 <p className="text-eyebrow text-slate">{s.label}</p>
               </div>
             ))}

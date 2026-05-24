@@ -182,7 +182,7 @@ export default function ServicesPage() {
           { value: "3.4×", label: "Lead growth" },
           { value: "80+", label: "Clients served" },
         ]}
-        variant="purple"
+        variant="dark"
       />
 
       {/* Service deep-dives */}
