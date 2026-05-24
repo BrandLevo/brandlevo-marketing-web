@@ -293,21 +293,63 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-xxl px-lg bg-primary">
-        <div className="max-w-container-max mx-auto flex flex-col md:flex-row items-center justify-between gap-xl">
-          <div>
-            <h2 className="text-h3 text-white mb-sm">Not sure which services you need?</h2>
-            <p className="text-body text-white/70">
-              Book a free 20-minute Brand Audit. We&apos;ll audit your current presence and tell you exactly what to prioritise.
-            </p>
+      <section className="py-xxxl px-lg bg-snow">
+        <div className="max-w-container-max mx-auto bg-primary rounded-3xl p-xl md:p-xxxl relative overflow-hidden">
+
+          {/* Decorative glows */}
+          <div className="absolute -right-20 -bottom-20 w-[400px] h-[400px] bg-purple-dark rounded-full opacity-40 blur-3xl pointer-events-none" />
+          <div className="absolute -left-10 -top-10 w-[200px] h-[200px] bg-purple-deeper rounded-full opacity-50 blur-2xl pointer-events-none" />
+
+          <div className="relative z-10 grid md:grid-cols-2 gap-xxl items-center">
+
+            {/* Left — copy */}
+            <div>
+              <span className="text-eyebrow text-white/70 block mb-md">NOT SURE WHERE TO START</span>
+              <h2 className="text-h2 text-white mb-lg leading-tight">
+                We&apos;ll tell you exactly<br />
+                <span className="italic">what your brand needs.</span>
+              </h2>
+              <p className="text-body-lg text-white/80 mb-xl leading-relaxed">
+                A free 20-minute Brand Audit — we review your current digital presence, check your AI and local search visibility, and give you a clear, prioritised action plan. No jargon. No obligation.
+              </p>
+              <ul className="space-y-md">
+                {[
+                  "AI visibility check across ChatGPT, Perplexity & Google",
+                  "Competitor gap analysis for your local market",
+                  "Prioritised action plan you can act on immediately",
+                  "Zero obligation — keep the plan whether you hire us or not",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-sm text-white text-body">
+                    <CheckCircle className="w-5 h-5 text-mint shrink-0 mt-0.5" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Right — action card */}
+            <div className="bg-white rounded-2xl p-xl shadow-2xl flex flex-col gap-lg">
+              <div>
+                <h3 className="text-h3 text-ink mb-xs">Book Your Free Brand Audit</h3>
+                <p className="text-body-sm text-slate flex items-center gap-xs">
+                  <Clock className="w-4 h-4 text-primary shrink-0" />
+                  20 minutes · Free · No obligation
+                </p>
+              </div>
+
+              <Link
+                href="/contact"
+                className="w-full bg-primary text-white rounded-xl py-lg font-semibold text-body hover:opacity-90 active:scale-95 transition-all inline-flex items-center justify-center gap-sm shadow-md"
+              >
+                Book a Free Brand Audit
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+
+              <p className="text-eyebrow text-slate text-center">
+                Spots are limited — we take on 4 new clients per month
+              </p>
+            </div>
           </div>
-          <Link
-            href="/contact"
-            className="shrink-0 inline-flex items-center gap-sm bg-white text-primary px-xl py-md rounded-full font-bold hover:bg-snow transition-all"
-          >
-            Book a Free Brand Audit
-            <ArrowRight className="w-4 h-4" />
-          </Link>
         </div>
       </section>
     </main>
