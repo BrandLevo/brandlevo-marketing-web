@@ -187,6 +187,9 @@ html.dark .text-fog      { color: rgba(255, 255, 255, 0.15); }
 html.dark .text-mist     { color: #4A4A6A; }
 html.dark .text-on-surface { color: #F0EFFF; }
 html.dark .text-muted-foreground { color: #9B9BBD; }
+/* #7B45F5 = 3.68:1 on dark — fails AA for small text.
+   #A97BFF = 6.39:1 — passes. Swap for text-only uses; bg-primary stays unchanged. */
+html.dark .text-primary  { color: #A97BFF; }
 
 /* Tailwind opacity-modified text variants */
 html.dark .text-slate\/40 { color: rgba(155, 155, 189, 0.4); }
