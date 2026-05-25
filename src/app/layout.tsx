@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     template: "%s | BrandLevo",
   },
   description:
-    "BrandLevo is the AI-powered digital marketing engine that lifts your brand higher with smarter campaigns, sharper insights, and unstoppable growth — all on autopilot.",
+    "BrandLevo — AI-powered websites, AEO, and local SEO for businesses in Kochi and Kerala. Get found on Google and AI search. Free audit call, results in 30 days.",
   keywords: ["AI marketing", "brand growth", "digital marketing", "local SEO", "AEO", "answer engine optimization", "brand identity"],
   alternates: {
     canonical: "/",

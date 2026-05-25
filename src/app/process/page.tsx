@@ -7,7 +7,7 @@ import { collectionPageSchema, schemaScript } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Our Process | BrandLevo",
   description:
-    "From your first call to fully visible on Google and AI search in 30 days. See BrandLevo's 4-phase process: Audit, Build, Launch, Grow — for local businesses in Kochi and Kerala.",
+    "From first call to live on Google in 30 days. BrandLevo's 4-phase process: Audit, Build, Launch, Grow — for local businesses in Kochi and Kerala.",
   alternates: {
     canonical: "/process",
   },

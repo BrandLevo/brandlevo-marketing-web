@@ -6,7 +6,7 @@ import PageHero from "@/components/page-hero";
 export const metadata: Metadata = {
   title: "Case Studies | BrandLevo",
   description:
-    "Real results for local businesses in Kochi and Kerala — clinics, wedding vendors, salons. Problem, action, and result for every engagement.",
+    "Real results for local businesses in Kochi and Kerala — clinics, wedding vendors, salons. +65% bookings, 3× walk-ins. Problem, action, result for every engagement.",
   alternates: {
     canonical: "/case-studies",
   },

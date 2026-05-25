@@ -11,12 +11,12 @@ import {
   Clock,
 } from "lucide-react";
 import PageHero from "@/components/page-hero";
-import { faqSchema, serviceSchema, schemaScript } from "@/lib/schema";
+import { faqSchema, serviceSchema, speakableSchema, schemaScript } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Services | BrandLevo",
   description:
-    "Full-stack AI-powered digital services — AEO, SEO, website development, ICP strategy, sales consultation, brand uplift, content, and hosting. Everything under one roof.",
+    "AEO, SEO, website builds, brand identity, and GBP optimisation for local businesses in Kochi and Kerala. One team, one price, results in 30 days.",
   alternates: {
     canonical: "/services",
   },
@@ -154,6 +154,7 @@ export default function ServicesPage() {
     })
   );
   const faqJson = faqSchema(servicesFaqs);
+  const speakable = speakableSchema(["#services-list", ".hero-title", ".hero-body"]);
 
   return (
     <>
@@ -167,6 +168,10 @@ export default function ServicesPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: schemaScript(faqJson) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: schemaScript(speakable) }}
       />
     <main>
       <PageHero

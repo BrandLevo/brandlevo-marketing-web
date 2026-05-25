@@ -6,7 +6,7 @@ import { personSchema, schemaScript } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "About Us | BrandLevo",
   description:
-    "Built for small businesses, by people who've run them. Meet BrandLevo — the agency that treats a two-person bakery with the same urgency as a Fortune 500.",
+    "Based in Kochi, BrandLevo is a small team with 80+ local businesses launched. We treat your growth like it's our own — no outsourcing, no waffle, no retainers.",
   alternates: {
     canonical: "/about",
   },
