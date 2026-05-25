@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Clock, ArrowLeft, ChevronRight } from "lucide-react";
+import { Clock, ArrowLeft, ChevronRight, ArrowRight } from "lucide-react";
 import { allArticles, getArticleBySlug } from "@/lib/articles";
 import {
   articleSchema,
@@ -80,6 +80,13 @@ export default async function ArticlePage({ params }: Props) {
   const ArticleContent = contentMap[slug];
   if (!ArticleContent) notFound();
 
+  const relatedArticles = allArticles
+    .filter((a) => a.slug !== slug)
+    .filter((a) => a.tag === article.tag)
+    .slice(0, 3)
+    .concat(allArticles.filter((a) => a.slug !== slug && a.tag !== article.tag))
+    .slice(0, 3);
+
   const articleJson = articleSchema({
     slug: article.slug,
     title: article.title,
@@ -102,33 +109,38 @@ export default async function ArticlePage({ params }: Props) {
 
       <main>
         {/* Breadcrumb */}
-        <nav className="bg-snow border-b border-fog px-lg py-sm" aria-label="Breadcrumb">
-          <div className="max-w-container-max mx-auto flex items-center gap-xs text-eyebrow text-slate">
-            <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+        <nav className="bg-ink border-b border-white/10 px-lg py-sm" aria-label="Breadcrumb">
+          <div className="max-w-container-max mx-auto flex items-center gap-xs text-eyebrow text-white/50">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <ChevronRight className="w-3 h-3" />
-            <Link href="/blog" className="hover:text-primary transition-colors">Blog</Link>
+            <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
             <ChevronRight className="w-3 h-3" />
-            <span className="text-ink truncate max-w-[200px] sm:max-w-none">{article.title}</span>
+            <span className="text-white/70 truncate max-w-[200px] sm:max-w-none">{article.title}</span>
           </div>
         </nav>
 
-        {/* Article header */}
-        <header className="py-xxl px-lg bg-white border-b border-fog">
-          <div className="max-w-4xl mx-auto">
+        {/* Article header — dark, consistent with page heroes */}
+        <header className="relative overflow-hidden bg-ink pt-xxl sm:pt-xxxl pb-xl sm:pb-xxl px-lg">
+          <div className="absolute -right-20 -bottom-20 w-[400px] h-[400px] bg-primary rounded-full opacity-10 blur-3xl pointer-events-none" />
+          <div className="absolute -left-10 -top-10 w-[200px] h-[200px] bg-purple-dark rounded-full opacity-15 blur-2xl pointer-events-none" />
+          <div className="relative z-10 max-w-4xl mx-auto">
             <div className="flex flex-wrap items-center gap-md mb-xl">
-              <span className={`inline-block text-eyebrow px-sm py-[3px] rounded-md ${article.accent}`}>
+              <span className="inline-block text-eyebrow bg-primary text-white px-md py-xs rounded-full font-semibold">
                 {article.tag}
               </span>
-              <span className="flex items-center gap-xs text-eyebrow text-slate">
+              <span className="flex items-center gap-xs text-eyebrow text-white/50">
                 <Clock className="w-3.5 h-3.5" />
                 {article.readTime}
               </span>
+              <span className="text-eyebrow text-white/40">{article.date}</span>
             </div>
-            <h1 className="text-h1 text-ink mb-lg leading-tight">{article.title}</h1>
-            <p className="text-body-lg text-slate leading-relaxed mb-xl">{article.excerpt}</p>
-            <div className="flex flex-wrap items-center gap-sm text-eyebrow text-slate">
-              <span>{article.date}</span>
-              <span className="w-1 h-1 rounded-full bg-fog" aria-hidden="true" />
+            <h1 className="hero-title text-[clamp(32px,4.5vw,60px)] font-extrabold tracking-tight leading-tight font-display text-white mb-lg">
+              {article.title}
+            </h1>
+            <p className="hero-body text-body-lg text-white/70 leading-relaxed mb-xl max-w-2xl">
+              {article.excerpt}
+            </p>
+            <div className="flex items-center gap-sm text-eyebrow text-white/40">
               <span>By {article.authorName}</span>
             </div>
           </div>
@@ -170,21 +182,67 @@ export default async function ArticlePage({ params }: Props) {
           </section>
         )}
 
-        {/* CTA */}
-        <section className="py-xxl px-lg bg-primary">
-          <div className="max-w-container-max mx-auto flex flex-col md:flex-row items-center justify-between gap-xl">
-            <div>
-              <h2 className="text-h3 text-white mb-sm">Ready to implement this for your business?</h2>
-              <p className="text-body text-white/70">
-                Book a free 20-minute Brand Audit. We&apos;ll review your current digital presence and tell you exactly what to do first.
-              </p>
+        {/* Related articles */}
+        {relatedArticles.length > 0 && (
+          <section className="py-xxxl px-lg bg-white border-t border-fog">
+            <div className="max-w-container-max mx-auto">
+              <span className="text-eyebrow text-primary block mb-md">KEEP READING</span>
+              <h2 className="text-h3 text-ink mb-xxl">More from the BrandLevo Blog</h2>
+              <div className="grid md:grid-cols-3 gap-lg">
+                {relatedArticles.map((post) => (
+                  <Link
+                    key={post.slug}
+                    href={`/blog/${post.slug}`}
+                    className="group flex flex-col bg-snow border border-fog rounded-2xl overflow-hidden hover:border-primary/30 transition-colors"
+                  >
+                    <div className={`h-[3px] w-full ${post.bar}`} />
+                    <div className="p-xl flex flex-col flex-1">
+                      <span className={`self-start text-eyebrow px-sm py-[3px] rounded-md mb-lg ${post.accent}`}>
+                        {post.tag}
+                      </span>
+                      <h3 className="text-h4 text-ink mb-md leading-snug flex-1 group-hover:text-primary transition-colors">
+                        {post.title}
+                      </h3>
+                      <div className="flex items-center justify-between pt-lg border-t border-fog mt-auto">
+                        <div className="flex items-center gap-xs text-eyebrow text-slate">
+                          <Clock className="w-3 h-3" />
+                          {post.readTime}
+                        </div>
+                        <span className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors">
+                          <ArrowRight className="w-3.5 h-3.5 text-primary group-hover:text-white transition-colors" />
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
             </div>
-            <Link
-              href="/contact"
-              className="shrink-0 inline-flex items-center gap-sm bg-white text-primary px-xl py-md rounded-full font-bold hover:bg-snow transition-all"
-            >
-              Book a Free Brand Audit
-            </Link>
+          </section>
+        )}
+
+        {/* CTA — matches bg-ink card pattern used across the site */}
+        <section className="py-xxxl px-lg bg-snow">
+          <div className="max-w-container-max mx-auto bg-ink rounded-3xl p-xl md:p-xxxl relative overflow-hidden">
+            <div className="absolute -right-20 -bottom-20 w-[400px] h-[400px] bg-primary rounded-full opacity-20 blur-3xl pointer-events-none" />
+            <div className="absolute -left-10 -top-10 w-[200px] h-[200px] bg-purple-dark rounded-full opacity-30 blur-2xl pointer-events-none" />
+            <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-xl">
+              <div>
+                <span className="text-eyebrow text-white/50 block mb-md">YOUR TURN</span>
+                <h2 className="text-h2 text-white mb-md leading-tight">
+                  Ready to implement this for your business?
+                </h2>
+                <p className="text-body-lg text-white/70 max-w-lg leading-relaxed">
+                  Book a free 20-minute audit call. We review your website and Google ranking live — then hand you a clear action plan. No pitch. No obligation.
+                </p>
+              </div>
+              <Link
+                href="/contact"
+                className="shrink-0 animate-pulse-ring inline-flex items-center gap-sm bg-primary text-white px-xl py-md rounded-full font-bold hover:opacity-90 transition-all shadow-lg"
+              >
+                Book a Free Audit
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
         </section>
 
