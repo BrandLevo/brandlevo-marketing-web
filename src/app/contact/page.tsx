@@ -208,44 +208,49 @@ export default function ContactPage() {
           <form className="space-y-md bg-white border border-fog rounded-2xl p-md sm:p-xl">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-md">
               <div>
-                <label className="text-eyebrow text-slate block mb-sm">FIRST NAME</label>
+                <label htmlFor="first-name" className="text-body-sm font-semibold text-slate block mb-sm">First Name</label>
                 <input
+                  id="first-name"
                   type="text"
                   placeholder="Jane"
-                  className="w-full bg-snow border border-fog rounded-xl px-md py-sm text-body text-ink placeholder:text-slate/40 focus:outline-none focus:border-primary/60 transition-colors"
+                  className="w-full bg-snow border border-fog rounded-xl px-md py-sm text-body text-ink placeholder:text-slate/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:border-primary transition-colors"
                 />
               </div>
               <div>
-                <label className="text-eyebrow text-slate block mb-sm">LAST NAME</label>
+                <label htmlFor="last-name" className="text-body-sm font-semibold text-slate block mb-sm">Last Name</label>
                 <input
+                  id="last-name"
                   type="text"
                   placeholder="Smith"
-                  className="w-full bg-snow border border-fog rounded-xl px-md py-sm text-body text-ink placeholder:text-slate/40 focus:outline-none focus:border-primary/60 transition-colors"
+                  className="w-full bg-snow border border-fog rounded-xl px-md py-sm text-body text-ink placeholder:text-slate/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:border-primary transition-colors"
                 />
               </div>
             </div>
             <div>
-              <label className="text-eyebrow text-slate block mb-sm">EMAIL</label>
+              <label htmlFor="email" className="text-body-sm font-semibold text-slate block mb-sm">Email</label>
               <input
+                id="email"
                 type="email"
                 placeholder="jane@yourbusiness.com"
-                className="w-full bg-snow border border-fog rounded-xl px-md py-sm text-body text-ink placeholder:text-slate/40 focus:outline-none focus:border-primary/60 transition-colors"
+                className="w-full bg-snow border border-fog rounded-xl px-md py-sm text-body text-ink placeholder:text-slate/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:border-primary transition-colors"
               />
             </div>
             <div>
-              <label className="text-eyebrow text-slate block mb-sm">BUSINESS NAME</label>
+              <label htmlFor="business-name" className="text-body-sm font-semibold text-slate block mb-sm">Business Name</label>
               <input
+                id="business-name"
                 type="text"
                 placeholder="Smith & Co Plumbing"
-                className="w-full bg-snow border border-fog rounded-xl px-md py-sm text-body text-ink placeholder:text-slate/40 focus:outline-none focus:border-primary/60 transition-colors"
+                className="w-full bg-snow border border-fog rounded-xl px-md py-sm text-body text-ink placeholder:text-slate/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:border-primary transition-colors"
               />
             </div>
             <div>
-              <label className="text-eyebrow text-slate block mb-sm">WHAT DO YOU NEED HELP WITH?</label>
+              <label htmlFor="message" className="text-body-sm font-semibold text-slate block mb-sm">What do you need help with?</label>
               <textarea
+                id="message"
                 rows={4}
                 placeholder="Tell us where you're at — no website yet, a site that doesn't rank, want more leads, etc."
-                className="w-full bg-snow border border-fog rounded-xl px-md py-sm text-body text-ink placeholder:text-slate/40 focus:outline-none focus:border-primary/60 transition-colors resize-none"
+                className="w-full bg-snow border border-fog rounded-xl px-md py-sm text-body text-ink placeholder:text-slate/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:border-primary transition-colors resize-none"
               />
             </div>
             <button

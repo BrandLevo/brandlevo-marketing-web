@@ -132,7 +132,7 @@ export default async function ArticlePage({ params }: Props) {
                 <Clock className="w-3.5 h-3.5" />
                 {article.readTime}
               </span>
-              <span className="text-eyebrow text-white/40">{article.date}</span>
+              <span className="text-eyebrow text-white/50">{article.date}</span>
             </div>
             <h1 className="hero-title text-[clamp(32px,4.5vw,60px)] font-extrabold tracking-tight leading-tight font-display text-white mb-lg">
               {article.title}
@@ -140,7 +140,7 @@ export default async function ArticlePage({ params }: Props) {
             <p className="hero-body text-body-lg text-white/70 leading-relaxed mb-xl max-w-2xl">
               {article.excerpt}
             </p>
-            <div className="flex items-center gap-sm text-eyebrow text-white/40">
+            <div className="flex items-center gap-sm text-eyebrow text-white/50">
               <span>By {article.authorName}</span>
             </div>
           </div>
