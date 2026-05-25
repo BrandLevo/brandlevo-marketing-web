@@ -62,7 +62,7 @@ export default function Navbar() {
                       "text-body-sm px-md py-[6px] rounded-full transition-all duration-200 whitespace-nowrap",
                       isActive
                         ? "bg-primary text-white font-semibold shadow-sm"
-                        : "text-slate font-medium hover:text-primary hover:bg-purple-xpale",
+                        : "text-slate font-medium hover:text-white hover:bg-primary/80",
                     ].join(" ")}
                   >
                     {l.label}
