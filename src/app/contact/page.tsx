@@ -6,7 +6,7 @@ import { localBusinessSchema, faqSchema, schemaScript } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Book a Free Call | BrandLevo",
   description:
-    "Book a free 20-minute discovery call. We'll audit your online presence, show you what's costing you customers, and give you a clear action plan.",
+    "Book a free 20-minute audit call with BrandLevo in Kochi. We review your website and Google ranking live, then hand you a clear action plan — no obligation.",
   alternates: {
     canonical: "/contact",
   },

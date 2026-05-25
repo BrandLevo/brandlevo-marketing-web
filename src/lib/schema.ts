@@ -190,6 +190,17 @@ export function personSchema(person: PersonData) {
   };
 }
 
+export function speakableSchema(cssSelectors: string[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: cssSelectors,
+    },
+  };
+}
+
 export function schemaScript(data: object) {
   return JSON.stringify(data);
 }

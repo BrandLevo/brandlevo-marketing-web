@@ -3,7 +3,7 @@ import { homepageFaqs } from "@/lib/faq-data";
 export default function FaqSection() {
   const faqs = homepageFaqs;
   return (
-    <section className="py-xxxl px-lg bg-surface">
+    <section id="faq" className="py-xxxl px-lg bg-surface">
       <div className="max-w-container-max mx-auto">
 
         <div className="reveal text-center max-w-xl mx-auto mb-xxl">
