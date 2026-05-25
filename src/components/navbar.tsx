@@ -6,7 +6,9 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
 const links = [
+  { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
+  { label: "Process", href: "/process" },
   { label: "Case Studies", href: "/case-studies" },
   { label: "Blog", href: "/blog" },
   { label: "Pricing", href: "/pricing" },
@@ -60,7 +62,7 @@ export default function Navbar() {
                       "text-body-sm px-md py-[6px] rounded-full transition-all duration-200 whitespace-nowrap",
                       isActive
                         ? "bg-primary text-white font-semibold shadow-sm"
-                        : "text-slate font-medium hover:text-ink hover:bg-fog/80",
+                        : "text-slate font-medium hover:text-white hover:bg-primary/80",
                     ].join(" ")}
                   >
                     {l.label}
