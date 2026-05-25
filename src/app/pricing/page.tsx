@@ -7,7 +7,7 @@ import { faqSchema, schemaScript } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Pricing | BrandLevo",
   description:
-    "Transparent, one-time pricing for local business websites and digital marketing. No retainers, no surprises, no contracts.",
+    "Transparent INR pricing for local business websites in Kochi and Kerala. ₹19,999 to ₹49,999 one-time — no retainers, no hidden fees, live in 14 days.",
   alternates: {
     canonical: "/pricing",
   },
@@ -53,7 +53,7 @@ const comparisonGroups = [
 const faqs = [
   {
     q: "Is this a one-time payment or a subscription?",
-    a: "One-time payment for the build. Hosting is $29/month after the first year (included free). No retainer, no ongoing contract — unless you want one for content or SEO management.",
+    a: "One-time payment for the build. Hosting is ₹2,499/month after the first year (included free). No retainer, no ongoing contract — unless you want one for content or SEO management.",
   },
   {
     q: "What if I need something between tiers?",
@@ -61,7 +61,7 @@ const faqs = [
   },
   {
     q: "Do you offer payment plans?",
-    a: "Yes. 50% upfront, 50% on launch is standard. For projects over $1,500, we can split into three payments with no interest or fees.",
+    a: "Yes. Every tier can be split into 2 instalments — 50% upfront, 50% on launch. No interest, no fees.",
   },
   {
     q: "What happens if I want to add services later?",
@@ -69,7 +69,7 @@ const faqs = [
   },
   {
     q: "Are there any hidden fees?",
-    a: "None. Domain registration (if needed) is billed at cost — usually $12–15/year. Stock photography, if required, is billed at cost. Everything else is in the price.",
+    a: "None. Domain registration (if needed) is billed at cost — usually ₹999–1,500/year. Stock photography, if required, is billed at cost. Everything else is in the price.",
   },
   {
     q: "What if I'm not happy with the result?",
@@ -97,10 +97,10 @@ export default function PricingPage() {
         eyebrow="TRANSPARENT PRICING"
         title="One Price. No Surprises."
         titleAccent="You Own Everything."
-        body="No retainers you don't need. No deliverables you can't measure. Pick a tier, pay once, go live in 14 days."
+        body="No retainers you don't need. No deliverables you can't measure. Pick a tier, pay once in INR, go live in 14 days."
         badge="No hidden fees · No lock-in contracts"
         stats={[
-          { value: "$799", label: "Starting price" },
+          { value: "₹19,999", label: "Starting price" },
           { value: "14 days", label: "To go live" },
           { value: "0", label: "Hidden fees" },
           { value: "100%", label: "You own it" },
@@ -114,18 +114,20 @@ export default function PricingPage() {
           {/* Get Online */}
           <div className="reveal stagger-1 bg-snow border border-fog rounded-2xl p-md sm:p-xl">
             <span className="text-eyebrow text-slate block mb-lg">GET ONLINE</span>
-            <div className="mb-xl">
-              <span className="text-h1 text-ink font-bold">$799</span>
+            <div className="mb-sm">
+              <span className="text-h1 text-ink font-bold">₹19,999</span>
               <span className="text-body text-slate ml-sm">one-time</span>
             </div>
+            <p className="text-body-sm text-primary font-medium mb-xl">Less than one month of Google Ads spend, with results that compound.</p>
             <p className="text-body text-slate mb-xl">
-              You don&apos;t have a website yet — or the one you have looks like 2009. This gets you online properly, fast.
+              For businesses with no website at all. Get a fast, mobile-first site live in 14 days — properly built, not a template throwaway.
             </p>
             <p className="text-eyebrow text-slate mb-md">BEST FOR</p>
-            <p className="text-body-sm text-ink mb-xl font-medium">Tradespeople, sole traders, new businesses needing a credible web presence.</p>
+            <p className="text-body-sm text-ink mb-xl font-medium">New businesses, sole traders, and anyone who&apos;s been putting off getting online.</p>
             <Link href="/contact" className="block text-center bg-snow border-2 border-primary text-primary px-xl py-md rounded-full font-bold hover:bg-purple-xpale transition-all">
               Get Started
             </Link>
+            <p className="text-eyebrow text-slate text-center mt-md">or pay in 2 instalments</p>
           </div>
 
           {/* Get Found — featured */}
@@ -134,35 +136,39 @@ export default function PricingPage() {
               MOST POPULAR
             </div>
             <span className="text-eyebrow text-white/60 block mb-lg">GET FOUND</span>
-            <div className="mb-xl">
-              <span className="text-h1 text-white font-bold">$1,299</span>
+            <div className="mb-sm">
+              <span className="text-h1 text-white font-bold">₹32,999</span>
               <span className="text-body text-white/60 ml-sm">one-time</span>
             </div>
+            <p className="text-body-sm text-white/80 font-medium mb-xl">Less than one month of Google Ads spend, with results that compound.</p>
             <p className="text-body text-white/80 mb-xl">
-              A full site with SEO baked in from day one, copy handled, and monthly reports so you see what&apos;s working.
+              For businesses that have a site but nobody finds it. Full SEO, copy, and monthly reports so you see exactly what&apos;s working.
             </p>
             <p className="text-eyebrow text-white/50 mb-md">BEST FOR</p>
             <p className="text-body-sm text-white font-medium mb-xl">Established local businesses actively losing customers to better-ranked competitors.</p>
             <Link href="/contact" className="block text-center bg-white text-primary px-xl py-md rounded-full font-bold hover:bg-snow transition-all">
               Get Started
             </Link>
+            <p className="text-eyebrow text-white/60 text-center mt-md">or pay in 2 instalments</p>
           </div>
 
           {/* Get Booked */}
           <div className="reveal stagger-3 bg-snow border border-fog rounded-2xl p-md sm:p-xl">
             <span className="text-eyebrow text-slate block mb-lg">GET BOOKED</span>
-            <div className="mb-xl">
-              <span className="text-h1 text-ink font-bold">$1,999</span>
+            <div className="mb-sm">
+              <span className="text-h1 text-ink font-bold">₹49,999</span>
               <span className="text-body text-slate ml-sm">one-time</span>
             </div>
+            <p className="text-body-sm text-primary font-medium mb-xl">Less than one month of Google Ads spend, with results that compound.</p>
             <p className="text-body text-slate mb-xl">
-              The full stack — including AI search visibility, lead capture, ads setup, and a social kit. Built to dominate your local category.
+              For businesses ready to dominate their local area. Full stack — AI search visibility, lead capture, ads setup, and a social kit.
             </p>
             <p className="text-eyebrow text-slate mb-md">BEST FOR</p>
             <p className="text-body-sm text-ink mb-xl font-medium">Businesses ready to invest in owning their market — not just being present in it.</p>
             <Link href="/contact" className="block text-center bg-snow border-2 border-primary text-primary px-xl py-md rounded-full font-bold hover:bg-purple-xpale transition-all">
               Get Started
             </Link>
+            <p className="text-eyebrow text-slate text-center mt-md">or pay in 2 instalments</p>
           </div>
         </div>
       </section>
@@ -183,16 +189,16 @@ export default function PricingPage() {
                   <th className="text-left py-lg px-xl w-[44%]" />
                   <th className="py-lg px-md text-center w-[18%]">
                     <span className="text-eyebrow text-slate block mb-xs">GET ONLINE</span>
-                    <span className="text-h4 font-bold text-ink">$799</span>
+                    <span className="text-h4 font-bold text-ink">₹19,999</span>
                   </th>
                   <th className="py-lg px-md text-center w-[20%] bg-primary/5 border-x border-primary/15">
                     <span className="text-eyebrow text-primary block mb-xs">GET FOUND</span>
-                    <span className="text-h4 font-bold text-primary">$1,299</span>
+                    <span className="text-h4 font-bold text-primary">₹32,999</span>
                     <span className="mt-xs inline-block bg-gold text-ink text-[10px] font-bold px-sm py-[2px] rounded-full leading-none">POPULAR</span>
                   </th>
                   <th className="py-lg px-md text-center w-[18%]">
                     <span className="text-eyebrow text-slate block mb-xs">GET BOOKED</span>
-                    <span className="text-h4 font-bold text-ink">$1,999</span>
+                    <span className="text-h4 font-bold text-ink">₹49,999</span>
                   </th>
                 </tr>
               </thead>
