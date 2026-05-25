@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import React from "react";
 import Link from "next/link";
 import { Check, CheckCircle, Minus, ArrowRight, HelpCircle, Shield } from "lucide-react";
 import PageHero from "@/components/page-hero";
@@ -109,72 +110,74 @@ export default function PricingPage() {
       />
 
       {/* Tier cards */}
-      <section className="py-xxxl px-lg bg-white">
-        <div className="max-w-container-max mx-auto grid md:grid-cols-3 gap-lg items-end">
-          {/* Get Online */}
-          <div className="reveal stagger-1 bg-snow border border-fog rounded-2xl p-md sm:p-xl">
-            <span className="text-eyebrow text-slate block mb-lg">GET ONLINE</span>
-            <div className="mb-sm">
-              <span className="text-h1 text-ink font-bold">₹19,999</span>
-              <span className="text-body text-slate ml-sm">one-time</span>
-            </div>
-            <p className="text-body-sm text-primary font-medium mb-xl">Less than one month of Google Ads spend, with results that compound.</p>
-            <p className="text-body text-slate mb-xl">
-              For businesses with no website at all. Get a fast, mobile-first site live in 14 days — properly built, not a template throwaway.
-            </p>
-            <p className="text-eyebrow text-slate mb-md">BEST FOR</p>
-            <p className="text-body-sm text-ink mb-xl font-medium">New businesses, sole traders, and anyone who&apos;s been putting off getting online.</p>
-            <Link href="/contact" className="block text-center bg-snow border-2 border-primary text-primary px-xl py-md rounded-full font-bold hover:bg-purple-xpale transition-all">
-              Get Started
-            </Link>
-            <p className="text-eyebrow text-slate text-center mt-md">or pay in 2 instalments</p>
-          </div>
+      <section className="py-xxxl px-lg bg-snow">
+        <div className="max-w-container-max mx-auto">
+          <p className="text-eyebrow text-primary text-center mb-xxl">Less than one month of Google Ads spend — with results that compound.</p>
+          <div className="grid md:grid-cols-3 gap-lg items-end">
 
-          {/* Get Found — featured */}
-          <div className="reveal stagger-2 bg-primary rounded-2xl p-md sm:p-xl relative sm:-mt-4">
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gold text-ink text-eyebrow px-md py-xs rounded-full font-bold whitespace-nowrap">
-              MOST POPULAR
+            {/* Get Online */}
+            <div className="reveal stagger-1 bg-white border border-fog rounded-2xl p-md sm:p-xl">
+              <span className="text-eyebrow text-slate block mb-lg">GET ONLINE</span>
+              <div className="mb-xl">
+                <span className="text-h1 text-ink font-bold">₹19,999</span>
+                <span className="text-body text-slate ml-sm">one-time</span>
+              </div>
+              <p className="text-body text-slate mb-xl">
+                For businesses with no website at all. Fast, mobile-first, and properly built — not a template throwaway.
+              </p>
+              <p className="text-eyebrow text-slate mb-md">BEST FOR</p>
+              <p className="text-body-sm text-ink mb-xl font-medium">New businesses, sole traders, and anyone who&apos;s been putting off getting online.</p>
+              <Link href="/contact" className="block text-center bg-white border-2 border-primary text-primary px-xl py-md rounded-full font-semibold hover:bg-primary hover:text-white transition-all">
+                Get Started
+              </Link>
+              <p className="text-eyebrow text-slate text-center mt-md">or pay in 2 instalments</p>
             </div>
-            <span className="text-eyebrow text-white/60 block mb-lg">GET FOUND</span>
-            <div className="mb-sm">
-              <span className="text-h1 text-white font-bold">₹32,999</span>
-              <span className="text-body text-white/60 ml-sm">one-time</span>
-            </div>
-            <p className="text-body-sm text-white/80 font-medium mb-xl">Less than one month of Google Ads spend, with results that compound.</p>
-            <p className="text-body text-white/80 mb-xl">
-              For businesses that have a site but nobody finds it. Full SEO, copy, and monthly reports so you see exactly what&apos;s working.
-            </p>
-            <p className="text-eyebrow text-white/50 mb-md">BEST FOR</p>
-            <p className="text-body-sm text-white font-medium mb-xl">Established local businesses actively losing customers to better-ranked competitors.</p>
-            <Link href="/contact" className="block text-center bg-white text-primary px-xl py-md rounded-full font-bold hover:bg-snow transition-all">
-              Get Started
-            </Link>
-            <p className="text-eyebrow text-white/60 text-center mt-md">or pay in 2 instalments</p>
-          </div>
 
-          {/* Get Booked */}
-          <div className="reveal stagger-3 bg-snow border border-fog rounded-2xl p-md sm:p-xl">
-            <span className="text-eyebrow text-slate block mb-lg">GET BOOKED</span>
-            <div className="mb-sm">
-              <span className="text-h1 text-ink font-bold">₹49,999</span>
-              <span className="text-body text-slate ml-sm">one-time</span>
+            {/* Get Found — featured */}
+            <div className="reveal stagger-2 bg-ink rounded-2xl p-md sm:p-xl relative sm:-mt-6">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white text-eyebrow px-md py-xs rounded-full font-bold whitespace-nowrap shadow-md">
+                MOST POPULAR
+              </div>
+              <span className="text-eyebrow text-white/50 block mb-lg">GET FOUND</span>
+              <div className="mb-xl">
+                <span className="text-h1 text-white font-bold">₹32,999</span>
+                <span className="text-body text-white/50 ml-sm">one-time</span>
+              </div>
+              <p className="text-body text-white/75 mb-xl">
+                For businesses that have a site but nobody finds it. Full SEO, copy, and monthly reports so you see exactly what&apos;s working.
+              </p>
+              <p className="text-eyebrow text-white/40 mb-md">BEST FOR</p>
+              <p className="text-body-sm text-white font-medium mb-xl">Established local businesses actively losing customers to better-ranked competitors.</p>
+              <Link href="/contact" className="block text-center bg-primary text-white px-xl py-md rounded-full font-semibold hover:opacity-90 transition-all shadow-md">
+                Get Started
+              </Link>
+              <p className="text-eyebrow text-white/40 text-center mt-md">or pay in 2 instalments</p>
             </div>
-            <p className="text-body-sm text-primary font-medium mb-xl">Less than one month of Google Ads spend, with results that compound.</p>
-            <p className="text-body text-slate mb-xl">
-              For businesses ready to dominate their local area. Full stack — AI search visibility, lead capture, ads setup, and a social kit.
-            </p>
-            <p className="text-eyebrow text-slate mb-md">BEST FOR</p>
-            <p className="text-body-sm text-ink mb-xl font-medium">Businesses ready to invest in owning their market — not just being present in it.</p>
-            <Link href="/contact" className="block text-center bg-snow border-2 border-primary text-primary px-xl py-md rounded-full font-bold hover:bg-purple-xpale transition-all">
-              Get Started
-            </Link>
-            <p className="text-eyebrow text-slate text-center mt-md">or pay in 2 instalments</p>
+
+            {/* Get Booked */}
+            <div className="reveal stagger-3 bg-white border border-fog rounded-2xl p-md sm:p-xl">
+              <span className="text-eyebrow text-slate block mb-lg">GET BOOKED</span>
+              <div className="mb-xl">
+                <span className="text-h1 text-ink font-bold">₹49,999</span>
+                <span className="text-body text-slate ml-sm">one-time</span>
+              </div>
+              <p className="text-body text-slate mb-xl">
+                For businesses ready to dominate their local area. Full stack — AI search, lead capture, ads, and a social kit.
+              </p>
+              <p className="text-eyebrow text-slate mb-md">BEST FOR</p>
+              <p className="text-body-sm text-ink mb-xl font-medium">Businesses ready to invest in owning their market — not just being present in it.</p>
+              <Link href="/contact" className="block text-center bg-white border-2 border-primary text-primary px-xl py-md rounded-full font-semibold hover:bg-primary hover:text-white transition-all">
+                Get Started
+              </Link>
+              <p className="text-eyebrow text-slate text-center mt-md">or pay in 2 instalments</p>
+            </div>
+
           </div>
         </div>
       </section>
 
       {/* Comparison table */}
-      <section className="py-xxxl px-lg bg-snow">
+      <section className="py-xxxl px-lg bg-white">
         <div className="max-w-container-max mx-auto">
           <div className="reveal mb-xxl">
             <span className="text-eyebrow text-primary block mb-md">WHAT&apos;S INCLUDED</span>
@@ -191,10 +194,10 @@ export default function PricingPage() {
                     <span className="text-eyebrow text-slate block mb-xs">GET ONLINE</span>
                     <span className="text-h4 font-bold text-ink">₹19,999</span>
                   </th>
-                  <th className="py-lg px-md text-center w-[20%] bg-primary/5 border-x border-primary/15">
-                    <span className="text-eyebrow text-primary block mb-xs">GET FOUND</span>
-                    <span className="text-h4 font-bold text-primary">₹32,999</span>
-                    <span className="mt-xs inline-block bg-gold text-ink text-[10px] font-bold px-sm py-[2px] rounded-full leading-none">POPULAR</span>
+                  <th className="py-lg px-md text-center w-[20%] bg-ink/5 border-x border-ink/10">
+                    <span className="text-eyebrow text-ink block mb-xs">GET FOUND</span>
+                    <span className="text-h4 font-bold text-ink">₹32,999</span>
+                    <span className="mt-xs inline-block bg-primary text-white text-[10px] font-bold px-sm py-[2px] rounded-full leading-none">POPULAR</span>
                   </th>
                   <th className="py-lg px-md text-center w-[18%]">
                     <span className="text-eyebrow text-slate block mb-xs">GET BOOKED</span>
@@ -205,9 +208,9 @@ export default function PricingPage() {
 
               <tbody>
                 {comparisonGroups.map((group) => (
-                  <>
+                  <React.Fragment key={group.category}>
                     {/* Category header row */}
-                    <tr key={group.category} className="bg-snow border-t border-b border-fog">
+                    <tr className="bg-snow border-t border-b border-fog">
                       <td colSpan={4} className="px-xl py-sm">
                         <span className="text-eyebrow text-slate">{group.category.toUpperCase()}</span>
                       </td>
@@ -226,7 +229,7 @@ export default function PricingPage() {
                           <td
                             key={j}
                             className={`text-center py-md px-md ${
-                              j === 1 ? "bg-primary/5 border-x border-primary/10" : ""
+                              j === 1 ? "bg-ink/5 border-x border-ink/10" : ""
                             }`}
                           >
                             {val === true ? (
@@ -238,7 +241,7 @@ export default function PricingPage() {
                                 <Minus className="w-3.5 h-3.5 text-fog" strokeWidth={2} />
                               </span>
                             ) : (
-                              <span className={`text-body-sm font-medium ${j === 1 ? "text-primary" : "text-slate"}`}>
+                              <span className={`text-body-sm font-medium ${j === 1 ? "text-ink font-semibold" : "text-slate"}`}>
                                 {val}
                               </span>
                             )}
@@ -246,7 +249,7 @@ export default function PricingPage() {
                         ))}
                       </tr>
                     ))}
-                  </>
+                  </React.Fragment>
                 ))}
 
                 {/* CTA row */}
@@ -260,10 +263,10 @@ export default function PricingPage() {
                       Get Started
                     </Link>
                   </td>
-                  <td className="py-lg px-md text-center bg-primary/5 border-x border-primary/15">
+                  <td className="py-lg px-md text-center bg-ink/5 border-x border-ink/10">
                     <Link
                       href="/contact"
-                      className="inline-flex items-center justify-center bg-primary text-white px-lg py-sm rounded-full text-body-sm font-bold hover:opacity-90 transition-all shadow-sm"
+                      className="inline-flex items-center justify-center bg-ink text-white px-lg py-sm rounded-full text-body-sm font-bold hover:bg-primary transition-all shadow-sm"
                     >
                       Get Started
                     </Link>
