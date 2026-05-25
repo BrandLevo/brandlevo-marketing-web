@@ -6,7 +6,16 @@ import { usePathname } from "next/navigation";
 export default function ScrollReveal() {
   const pathname = usePathname();
 
+  // Disable browser scroll restoration so refresh always starts at the top
   useEffect(() => {
+    if (typeof window !== "undefined") {
+      history.scrollRestoration = "manual";
+    }
+  }, []);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+
     // Small delay so the new page's DOM is ready after route change
     const timer = setTimeout(() => {
       const obs = new IntersectionObserver(
