@@ -115,7 +115,7 @@ export default async function ArticlePage({ params }: Props) {
             <ChevronRight className="w-3 h-3" />
             <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
             <ChevronRight className="w-3 h-3" />
-            <span className="text-white/70 truncate max-w-[200px] sm:max-w-none">{article.title}</span>
+            <span className="text-white/70 truncate max-w-[200px] sm:max-w-none" title={article.title}>{article.title}</span>
           </div>
         </nav>
 

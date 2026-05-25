@@ -196,7 +196,7 @@ export default function PricingPage() {
                   <th className="py-lg px-md text-center w-[20%] bg-ink/5 border-x border-ink/10">
                     <span className="text-eyebrow text-ink block mb-xs">GET FOUND</span>
                     <span className="text-h4 font-bold text-ink">₹32,999</span>
-                    <span className="mt-xs inline-block bg-primary text-white text-[10px] font-bold px-sm py-[2px] rounded-full leading-none">POPULAR</span>
+                    <span className="mt-xs inline-block bg-primary text-white text-eyebrow font-bold px-sm py-[2px] rounded-full leading-none">POPULAR</span>
                   </th>
                   <th className="py-lg px-md text-center w-[18%]">
                     <span className="text-eyebrow text-slate block mb-xs">GET BOOKED</span>

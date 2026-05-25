@@ -177,10 +177,11 @@ export default function BlogPage() {
                 <div className="flex flex-col sm:flex-row gap-sm">
                   <input
                     type="email"
+                    aria-label="Email address for weekly tips"
                     placeholder="you@yourbusiness.com"
                     className="flex-1 min-w-0 bg-white/10 border border-white/20 rounded-full px-lg py-sm text-body-sm text-white placeholder:text-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:border-primary transition-colors"
                   />
-                  <button className="shrink-0 bg-primary text-white px-lg py-[10px] rounded-full text-body-sm font-semibold hover:opacity-90 transition-all active:scale-95">
+                  <button className="shrink-0 bg-primary text-white px-lg py-sm rounded-full text-body-sm font-semibold hover:opacity-90 transition-all active:scale-95">
                     Subscribe
                   </button>
                 </div>
