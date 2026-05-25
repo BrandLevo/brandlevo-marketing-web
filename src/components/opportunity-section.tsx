@@ -26,7 +26,7 @@ export default function OpportunitySection() {
         <div className="reveal grid grid-cols-1 sm:grid-cols-2 gap-md mb-xxl">
           {stats.map((s) => (
             <div key={s.value} className="flex items-start gap-lg bg-white/5 border border-white/10 rounded-2xl px-xl py-lg">
-              <p className="text-[48px] font-bold text-primary leading-none shrink-0 font-display">{s.value}</p>
+              <p className="text-h1 font-bold text-primary leading-none shrink-0">{s.value}</p>
               <p className="text-body text-mist leading-relaxed pt-1">{s.label}</p>
             </div>
           ))}

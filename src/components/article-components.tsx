@@ -100,7 +100,7 @@ export function TD({ children }: { children: ReactNode }) {
 
 export function CodeInline({ children }: { children: ReactNode }) {
   return (
-    <code className="bg-primary/8 text-primary text-body-sm px-sm py-[2px] rounded font-mono">
+    <code className="bg-primary/10 text-primary text-body-sm px-sm py-[2px] rounded font-mono">
       {children}
     </code>
   );
