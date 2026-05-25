@@ -30,7 +30,7 @@ export default function PageHero({
       className={[
         "relative overflow-hidden",
         isDark
-          ? "bg-ink min-h-[calc(100svh-6rem)] flex items-center"
+          ? "bg-ink min-h-[calc(100svh-6rem)] flex items-start"
           : "bg-purple-pale",
       ].join(" ")}
     >
@@ -47,7 +47,7 @@ export default function PageHero({
       <div className="relative z-10 w-full max-w-container-max mx-auto px-md sm:px-xl">
         <div
           className={[
-            "py-xl sm:py-xxl",
+            "pt-xxl sm:pt-xxxl pb-xl sm:pb-xxl",
             isDark && hasStats
               ? "grid lg:grid-cols-[1fr_400px] items-center gap-xxl"
               : "",
