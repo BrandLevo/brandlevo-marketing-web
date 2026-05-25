@@ -97,7 +97,7 @@ export default function BlogPage() {
 
                   <div className="flex items-center justify-between mt-xl pt-lg border-t border-fog">
                     <span className="text-eyebrow text-slate">BrandLevo Insights</span>
-                    <span className="inline-flex items-center gap-sm bg-primary text-white px-lg py-[9px] rounded-full text-body-sm font-semibold">
+                    <span className="inline-flex items-center gap-sm bg-primary text-white px-lg py-sm rounded-full text-body-sm font-semibold">
                       Read Article
                       <ArrowRight className="w-4 h-4" />
                     </span>
@@ -178,7 +178,7 @@ export default function BlogPage() {
                   <input
                     type="email"
                     placeholder="you@yourbusiness.com"
-                    className="flex-1 min-w-0 bg-white/10 border border-white/20 rounded-full px-lg py-[10px] text-body-sm text-white placeholder:text-white/30 focus:outline-none focus:border-primary/60 transition-colors"
+                    className="flex-1 min-w-0 bg-white/10 border border-white/20 rounded-full px-lg py-sm text-body-sm text-white placeholder:text-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:border-primary transition-colors"
                   />
                   <button className="shrink-0 bg-primary text-white px-lg py-[10px] rounded-full text-body-sm font-semibold hover:opacity-90 transition-all active:scale-95">
                     Subscribe

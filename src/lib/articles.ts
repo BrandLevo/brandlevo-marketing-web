@@ -205,8 +205,8 @@ export const allArticles: Article[] = [
   {
     slug: "90-day-digital-blueprint",
     tag: "STRATEGY",
-    accent: "bg-purple-pale text-purple-700",
-    bar: "bg-purple-500",
+    accent: "bg-purple-xpale text-purple-dark",
+    bar: "bg-purple-dark",
     title: "The 90-Day Digital Blueprint for New Local Businesses",
     excerpt:
       "Month one: get found. Month two: get trusted. Month three: get booked. A week-by-week action plan for any local business starting from scratch online.",
@@ -395,8 +395,8 @@ export const allArticles: Article[] = [
   {
     slug: "aeo-vs-seo-differences",
     tag: "STRATEGY",
-    accent: "bg-purple-pale text-purple-700",
-    bar: "bg-purple-500",
+    accent: "bg-purple-xpale text-purple-dark",
+    bar: "bg-purple-dark",
     title:
       "AEO vs SEO: What's the Difference and Which Does Your Business Need?",
     excerpt:

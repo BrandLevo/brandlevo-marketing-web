@@ -63,7 +63,7 @@ export default function CaseStudiesSection() {
                 </span>
               </div>
 
-              <h4 className="text-h4 text-ink mb-xs">{c.title}</h4>
+              <h3 className="text-h4 text-ink mb-xs">{c.title}</h3>
 
               <div className="flex items-center gap-sm mb-md">
                 <span className="w-2 h-2 rounded-full bg-mint" />
