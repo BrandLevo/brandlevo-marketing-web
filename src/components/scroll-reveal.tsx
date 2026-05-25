@@ -14,7 +14,7 @@ export default function ScrollReveal() {
   }, []);
 
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 
     // Small delay so the new page's DOM is ready after route change
     const timer = setTimeout(() => {
