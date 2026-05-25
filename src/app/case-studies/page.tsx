@@ -94,7 +94,6 @@ export default function CaseStudiesPage() {
         title="Real Brands."
         titleAccent="Unstoppable Growth."
         body="80+ businesses transformed. Full case studies with analytics screenshots, client interviews, and honest timelines — no padding, no spin."
-        badge="Full case studies coming Q3 2025"
         cta={{ label: "Get Similar Results", href: "/contact" }}
         stats={[
           { value: "80+", label: "Brands launched" },

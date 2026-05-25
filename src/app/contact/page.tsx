@@ -75,9 +75,14 @@ export default function ContactPage() {
         title="20 Minutes."
         titleAccent="A Plan You Can Use Today."
         body="We audit your online presence live — Google ranking, website, local SEO — and hand you a clear action plan. No pitch deck. No obligation. Ever."
-        badge="Next slot available within 48 hours"
-        cta={{ label: "Schedule on Calendly", href: "#contact-form" }}
-        secondaryCta={{ label: "Or scroll down to call us", href: "#contact-form" }}
+        cta={{ label: "Book a Free Audit Call", href: "#contact-form" }}
+        secondaryCta={{ label: "Or send us a message", href: "#contact-form" }}
+        stats={[
+          { value: "20 min", label: "Free audit call" },
+          { value: "48 hrs", label: "Next available slot" },
+          { value: "4–6", label: "New clients/month" },
+          { value: "0", label: "Obligation" },
+        ]}
         variant="dark"
       />
 

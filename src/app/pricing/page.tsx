@@ -99,7 +99,6 @@ export default function PricingPage() {
         title="One Price. No Surprises."
         titleAccent="You Own Everything."
         body="No retainers you don't need. No deliverables you can't measure. Pick a tier, pay once in INR, go live in 14 days."
-        badge="No hidden fees · No lock-in contracts"
         stats={[
           { value: "₹19,999", label: "Starting price" },
           { value: "14 days", label: "To go live" },

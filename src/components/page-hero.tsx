@@ -9,7 +9,6 @@ type PageHeroProps = {
   cta?: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
   stats?: { value: string; label: string }[];
-  badge?: string;
   variant?: "dark" | "purple";
 };
 
@@ -21,7 +20,6 @@ export default function PageHero({
   cta,
   secondaryCta,
   stats,
-  badge,
   variant = "dark",
 }: PageHeroProps) {
   const isDark = variant === "dark";
@@ -36,51 +34,36 @@ export default function PageHero({
           : "bg-purple-pale",
       ].join(" ")}
     >
-      {/* Decorative blob — purple variant only */}
       {!isDark && (
         <div
           className="absolute top-0 right-0 w-[520px] h-[520px] pointer-events-none"
           style={{
-            background: "radial-gradient(ellipse at top right, #EDE5FF 0%, transparent 65%)",
+            background:
+              "radial-gradient(ellipse at top right, #EDE5FF 0%, transparent 65%)",
           }}
         />
       )}
 
-      {/* Content */}
       <div className="relative z-10 w-full max-w-container-max mx-auto px-md sm:px-xl">
         <div
           className={[
+            "py-xl sm:py-xxl",
             isDark && hasStats
-              ? "grid lg:grid-cols-[1fr_400px] items-center gap-xxl py-xl sm:py-xxl"
-              : "py-xxl sm:py-xxxl",
-          ].join(" ")}
+              ? "grid lg:grid-cols-[1fr_400px] items-center gap-xxl"
+              : "",
+          ]
+            .filter(Boolean)
+            .join(" ")}
         >
-          {/* Left / main copy */}
+          {/* Left — copy */}
           <div>
-            {/* Badge */}
-            {badge && (
-              <div
-                className={[
-                  "hero-badge inline-flex items-center gap-sm rounded-full px-md py-xs mb-lg border",
-                  isDark
-                    ? "bg-white/10 border-white/20"
-                    : "bg-white/70 border-primary/20",
-                ].join(" ")}
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-mint animate-float" />
-                <span className="text-eyebrow text-slate">{badge}</span>
-              </div>
-            )}
-
-            {/* Eyebrow */}
             <span className="hero-eyebrow text-eyebrow text-primary font-semibold uppercase tracking-widest block mb-md">
               {eyebrow}
             </span>
 
-            {/* Headline */}
             <h1
               className={[
-                "hero-title text-[clamp(44px,5.5vw,72px)] font-extrabold tracking-tight leading-tight font-display mb-lg max-w-3xl",
+                "hero-title text-[clamp(44px,5.5vw,72px)] font-extrabold tracking-tight leading-tight font-display mb-lg",
                 isDark ? "text-white" : "text-ink",
               ].join(" ")}
             >
@@ -90,14 +73,12 @@ export default function PageHero({
               )}
             </h1>
 
-            {/* Body */}
             <p className="hero-body text-body-lg text-slate max-w-xl mb-xl leading-relaxed">
               {body}
             </p>
 
-            {/* CTAs */}
             {(cta || secondaryCta) && (
-              <div className="hero-cta flex flex-wrap items-center gap-md">
+              <div className="hero-cta flex flex-wrap items-center gap-md mb-xl">
                 {cta && (
                   <Link
                     href={cta.href}
@@ -110,7 +91,10 @@ export default function PageHero({
                 {secondaryCta && (
                   <Link
                     href={secondaryCta.href}
-                    className={`text-body-sm font-semibold transition-colors hover:text-primary ${isDark ? "text-slate" : "text-slate"}`}
+                    className={[
+                      "text-body-sm font-semibold transition-colors hover:text-primary",
+                      isDark ? "text-white/70" : "text-slate",
+                    ].join(" ")}
                   >
                     {secondaryCta.label} →
                   </Link>
@@ -118,15 +102,17 @@ export default function PageHero({
               </div>
             )}
 
-            {/* Stats strip — purple variant only (dark puts them on the right) */}
+            {/* Stats strip — purple variant (dark puts them on the right) */}
             {!isDark && hasStats && (
-              <div className="hero-stats grid grid-cols-2 sm:grid-cols-4 gap-md mt-xxl">
+              <div className="hero-stats grid grid-cols-2 sm:grid-cols-4 gap-md">
                 {stats.map((s) => (
                   <div
                     key={s.value}
                     className="rounded-2xl px-lg py-md flex flex-col gap-xs bg-white border border-fog"
                   >
-                    <p className="text-h3 font-bold leading-none text-primary">{s.value}</p>
+                    <p className="text-h3 font-bold leading-none text-primary">
+                      {s.value}
+                    </p>
                     <p className="text-eyebrow text-slate">{s.label}</p>
                   </div>
                 ))}
@@ -134,7 +120,7 @@ export default function PageHero({
             )}
           </div>
 
-          {/* Right — stats grid (dark variant only) */}
+          {/* Right — stats grid (dark variant) */}
           {isDark && hasStats && (
             <div className="hero-image grid grid-cols-2 gap-md">
               {stats.map((s) => (
@@ -142,7 +128,9 @@ export default function PageHero({
                   key={s.value}
                   className="bg-surface border border-white/10 rounded-2xl p-lg flex flex-col gap-xs"
                 >
-                  <span className="text-h2 font-bold text-white leading-none">{s.value}</span>
+                  <span className="text-h2 font-bold text-white leading-none">
+                    {s.value}
+                  </span>
                   <span className="text-body-sm text-slate">{s.label}</span>
                 </div>
               ))}
