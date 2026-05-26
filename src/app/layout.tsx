@@ -109,13 +109,6 @@ export default function RootLayout({
         {children}
         <Footer />
         <ScrollReveal />
-        <script
-          id="hs-script-loader"
-          type="text/javascript"
-          src="https://js-na2.hs-scripts.com/246165066.js"
-          async
-          defer
-        />
       </body>
     </html>
   );
