@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Mail, Phone, MessageCircle, Clock, CheckCircle, CalendarDays, ArrowRight } from "lucide-react";
+import { Mail, Phone, MessageCircle, Clock, CheckCircle, CalendarDays } from "lucide-react";
 import PageHero from "@/components/page-hero";
+import ContactForm from "@/components/contact-form";
 import { localBusinessSchema, faqSchema, schemaScript } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -118,9 +119,10 @@ export default function ContactPage() {
               </p>
             </div>
 
-            {/* TODO: Replace href with real Calendly link once set up */}
             <a
-              href="#contact-form"
+              href="https://calendly.com/devops-brandlevo/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="block w-full text-center bg-primary text-white px-xl py-md rounded-full font-bold hover:opacity-90 transition-all mb-lg"
             >
               Book a Free Call
@@ -170,7 +172,7 @@ export default function ContactPage() {
       {/* What happens next */}
       <section className="py-xxxl px-lg bg-white">
         <div className="max-w-container-max mx-auto">
-          <span className="text-eyebrow text-primary block mb-md">WHAT TO EXPECT</span>
+          <span className="text-eyebrow text-primary block mb-md">WHAT HAPPENS NEXT</span>
           <h2 className="text-h2 text-ink mb-xxl max-w-xl">Here&apos;s exactly what happens after you book.</h2>
           <div className="grid md:grid-cols-3 gap-lg">
             {steps.map((s) => (
@@ -205,62 +207,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <form className="space-y-md bg-white border border-fog rounded-2xl p-md sm:p-xl">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-md">
-              <div>
-                <label htmlFor="first-name" className="text-body-sm font-semibold text-slate block mb-sm">First Name</label>
-                <input
-                  id="first-name"
-                  type="text"
-                  placeholder="Jane"
-                  className="w-full bg-snow border border-fog rounded-xl px-md py-sm text-body text-ink placeholder:text-slate/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:border-primary transition-colors"
-                />
-              </div>
-              <div>
-                <label htmlFor="last-name" className="text-body-sm font-semibold text-slate block mb-sm">Last Name</label>
-                <input
-                  id="last-name"
-                  type="text"
-                  placeholder="Smith"
-                  className="w-full bg-snow border border-fog rounded-xl px-md py-sm text-body text-ink placeholder:text-slate/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:border-primary transition-colors"
-                />
-              </div>
-            </div>
-            <div>
-              <label htmlFor="email" className="text-body-sm font-semibold text-slate block mb-sm">Email</label>
-              <input
-                id="email"
-                type="email"
-                placeholder="jane@yourbusiness.com"
-                className="w-full bg-snow border border-fog rounded-xl px-md py-sm text-body text-ink placeholder:text-slate/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:border-primary transition-colors"
-              />
-            </div>
-            <div>
-              <label htmlFor="business-name" className="text-body-sm font-semibold text-slate block mb-sm">Business Name</label>
-              <input
-                id="business-name"
-                type="text"
-                placeholder="Smith & Co Plumbing"
-                className="w-full bg-snow border border-fog rounded-xl px-md py-sm text-body text-ink placeholder:text-slate/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:border-primary transition-colors"
-              />
-            </div>
-            <div>
-              <label htmlFor="message" className="text-body-sm font-semibold text-slate block mb-sm">What do you need help with?</label>
-              <textarea
-                id="message"
-                rows={4}
-                placeholder="Tell us where you're at — no website yet, a site that doesn't rank, want more leads, etc."
-                className="w-full bg-snow border border-fog rounded-xl px-md py-sm text-body text-ink placeholder:text-slate/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:border-primary transition-colors resize-none"
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full inline-flex items-center justify-center gap-sm bg-primary text-white px-xl py-md rounded-full font-bold hover:opacity-90 transition-all"
-            >
-              Send Message
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </form>
+          <ContactForm />
         </div>
       </section>
 

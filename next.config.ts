@@ -1,10 +1,7 @@
 import type { NextConfig } from "next";
 
 const config: NextConfig = {
-  output: "export",
   images: {
-    unoptimized: true,
-    // Required in Next.js 16: restrict which quality values are allowed
     qualities: [75, 90],
     remotePatterns: [
       {
