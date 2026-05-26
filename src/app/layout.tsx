@@ -97,6 +97,9 @@ export default function RootLayout({
       className={`${nunitoSans.variable} ${poppins.variable} scroll-smooth dark`}
       data-scroll-behavior="smooth"
     >
+      <head>
+        <link rel="preload" href="/logo-white.svg" as="image" type="image/svg+xml" />
+      </head>
       <body className="antialiased min-h-screen font-body text-on-surface">
         <script
           type="application/ld+json"
