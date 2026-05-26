@@ -75,8 +75,7 @@ export const metadata: Metadata = {
     description: "Where intelligence meets elevation. AI-driven marketing that delivers precision, growth, and measurable impact at every touchpoint.",
     images: ["/og-default.jpg"],
   },
-  // TODO [TRACKING]: Uncomment and replace with real GSC verification token after adding site to Google Search Console
-  // verification: { google: "PLACEHOLDER_GSC_VERIFICATION_TOKEN" },
+  verification: { google: "ceTObIbOAH6mPYs3eqwAeM9qg_v2uxjdrB82Pzxfxjc" },
 };
 
 export default function RootLayout({
