@@ -27,6 +27,7 @@ const services = [
     icon: Cpu,
     tag: "NEW ERA",
     title: "AEO — Answer Engine Optimisation",
+    answerCapsule: "BrandLevo's AEO service gets local businesses in Kochi and Kerala cited by ChatGPT, Perplexity, and Google AI Overviews within 90 days — using structured schema, FAQ optimisation, and entity authority building.",
     headline: "Be the answer ChatGPT, Perplexity, and Google AI give for your category.",
     description:
       "When a potential customer asks ChatGPT, Perplexity, or Google AI who's the best in your city, your brand should be the answer. We engineer your content, schema, and digital authority so AI engines cite you as the trusted source.",
@@ -45,6 +46,7 @@ const services = [
     icon: Search,
     tag: "FOUNDATION",
     title: "SEO & Local Search",
+    answerCapsule: "BrandLevo delivers local SEO for Kochi and Kerala businesses — Google Maps ranking, local pack visibility, and Google Business Profile optimisation. Most clients see first-page movement within 60–90 days.",
     headline: "Dominate Google Maps, the local pack, and the AI overview above it.",
     description:
       "Traditional search is the foundation every AI answer is built on. We combine technical SEO, keyword strategy, local SEO, and Google Business Profile optimisation so you rank on the page and in the AI overview above it.",
@@ -63,6 +65,7 @@ const services = [
     icon: Globe,
     tag: "MOST POPULAR",
     title: "Website Design & Development",
+    answerCapsule: "BrandLevo builds websites for local businesses in Kochi starting from ₹19,999 — mobile-first, SEO-ready, live in 14 days. Full copywriting included. Designed to convert visitors into enquiries from day one.",
     headline: "A fast, mobile-first site that converts visitors into enquiries from day one.",
     description:
       "Your website is your most important salesperson. We build and revamp sites that load fast, look exceptional on every device, convert visitors into enquiries, and are technically structured for AI and search engine discovery from day one.",
@@ -81,6 +84,7 @@ const services = [
     icon: Sparkles,
     tag: "PERCEPTION SHIFT",
     title: "Brand Identity & Uplift",
+    answerCapsule: "BrandLevo's brand identity service rebuilds logos, messaging, and visual systems for local businesses in Kochi — signalling trust and authority before a word is read. Delivered in 2–4 weeks.",
     headline: "A brand that signals authority and trust before a single word is read.",
     description:
       "Your brand is what people feel before they read a single word. We refresh or rebuild your visual identity, messaging framework, and brand voice so that every touchpoint communicates authority, trust, and premium value — built for your market and your customers.",
@@ -99,6 +103,7 @@ const services = [
     icon: PenLine,
     tag: "ALWAYS ON",
     title: "Content & AEO Writing",
+    answerCapsule: "BrandLevo writes AEO-structured content for local businesses — blog posts, service pages, and FAQs engineered to earn AI citations on ChatGPT and Perplexity. Pages average 2.3× longer session time.",
     headline: "Local, specific, structured content that earns AI citations and converts readers.",
     description:
       "Great content is the fuel that powers AEO, SEO, and brand authority simultaneously. We write every word — landing pages, service pages, blogs, and social content — in a voice that is local, specific, and structured for AI discovery.",
@@ -207,6 +212,10 @@ export default function ServicesPage() {
                   <span className="text-eyebrow text-primary">{s.tag}</span>
                 </div>
                 <h2 className="text-h2 text-ink mb-sm">{s.title}</h2>
+                {/* Answer capsule — 40-word direct answer for AI citation */}
+                <p className="text-body-sm bg-primary/5 border-l-2 border-primary text-ink px-md py-sm rounded-r-lg mb-md leading-relaxed italic">
+                  {s.answerCapsule}
+                </p>
                 <p className="text-body font-semibold text-primary mb-md">{s.headline}</p>
                 <p className="text-body text-slate mb-xl leading-relaxed">{s.description}</p>
 
