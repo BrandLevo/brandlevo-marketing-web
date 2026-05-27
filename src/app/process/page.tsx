@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Search, Hammer, Rocket, TrendingUp, CheckCircle, ArrowRight } from "lucide-react";
 import PageHero from "@/components/page-hero";
-import { collectionPageSchema, schemaScript } from "@/lib/schema";
+import { collectionPageSchema, speakableSchema, schemaScript } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Our Process | BrandLevo",
+  title: "How We Work — 30-Day Launch Process",
   description:
     "From first call to live on Google in 30 days. BrandLevo's 4-phase process: Audit, Build, Launch, Grow — for local businesses in Kochi and Kerala.",
   alternates: {
@@ -80,14 +80,38 @@ export default function ProcessPage() {
   const schema = collectionPageSchema(
     "BrandLevo's 4-Phase Process",
     "From first call to fully visible in 30 days — Audit, Build, Launch, Grow.",
-    "https://brandlevo.com/process",
+    "https://www.brandlevo.com/process",
   );
+
+  const howTo = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "How BrandLevo Gets Your Business Found on Google and AI Search",
+    description: "A 4-phase process to take a local business from invisible to generating leads within 30 days.",
+    totalTime: "P30D",
+    step: phases.map((p) => ({
+      "@type": "HowToStep",
+      name: `Phase ${p.number}: ${p.phase}`,
+      text: p.body,
+      position: parseInt(p.number),
+    })),
+  };
+
+  const speakable = speakableSchema([".hero-title", ".hero-body"]);
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: schemaScript(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: schemaScript(howTo) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: schemaScript(speakable) }}
       />
       <main>
         <PageHero

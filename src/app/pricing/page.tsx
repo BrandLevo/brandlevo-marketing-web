@@ -3,10 +3,10 @@ import React from "react";
 import Link from "next/link";
 import { Check, CheckCircle, Minus, ArrowRight, HelpCircle, Shield } from "lucide-react";
 import PageHero from "@/components/page-hero";
-import { faqSchema, schemaScript } from "@/lib/schema";
+import { faqSchema, speakableSchema, schemaScript } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Pricing | BrandLevo",
+  title: "Pricing — Websites, SEO & AEO Packages",
   description:
     "Transparent INR pricing for local business websites in Kochi and Kerala. ₹19,999 to ₹49,999 one-time — no retainers, no hidden fees, live in 14 days.",
   alternates: {
@@ -87,11 +87,16 @@ const guarantee = [
 
 export default function PricingPage() {
   const schema = faqSchema(faqs);
+  const speakable = speakableSchema([".hero-title", ".hero-body"]);
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: schemaScript(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: schemaScript(speakable) }}
       />
     <main>
       <PageHero

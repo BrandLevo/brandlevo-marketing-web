@@ -5,7 +5,7 @@ import ContactForm from "@/components/contact-form";
 import { localBusinessSchema, faqSchema, schemaScript } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Book a Free Call | BrandLevo",
+  title: "Book a Free Brand Audit Call",
   description:
     "Book a free 20-minute audit call with BrandLevo in Kochi. We review your website and Google ranking live, then hand you a clear action plan — no obligation.",
   alternates: {

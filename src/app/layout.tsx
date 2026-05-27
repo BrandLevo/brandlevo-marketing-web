@@ -4,7 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import ScrollReveal from "@/components/scroll-reveal";
-import { organizationSchema, schemaScript } from "@/lib/schema";
+import { organizationSchema, localBusinessSchema, schemaScript } from "@/lib/schema";
 
 const nunitoSans = Nunito_Sans({
   subsets: ["latin"],
@@ -42,7 +42,7 @@ const poppins = Poppins({
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://brandlevo.com"),
+  metadataBase: new URL("https://www.brandlevo.com"),
   title: {
     default: "BrandLevo | AI-Powered Brand Growth Partner",
     template: "%s | BrandLevo",
@@ -92,7 +92,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
+  <html
       lang="en"
       className={`${nunitoSans.variable} ${poppins.variable} scroll-smooth dark`}
       data-scroll-behavior="smooth"
@@ -104,6 +104,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: schemaScript(organizationSchema()) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: schemaScript(localBusinessSchema()) }}
         />
         <Navbar />
         {children}

@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { Target, Eye, Zap, Handshake } from "lucide-react";
 import PageHero from "@/components/page-hero";
-import { personSchema, schemaScript } from "@/lib/schema";
+import { personSchema, speakableSchema, schemaScript } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "About Us | BrandLevo",
+  title: "About Us",
   description:
-    "Based in Kochi, BrandLevo is a small team with 80+ local businesses launched. We treat your growth like it's our own — no outsourcing, no waffle, no retainers.",
+    "Based in Kochi, BrandLevo has launched 80+ local businesses. We treat your growth like our own — no outsourcing, no waffle, no retainers. Meet the team.",
   alternates: {
     canonical: "/about",
   },
@@ -87,9 +87,11 @@ export default function AboutPage() {
     personSchema({
       name: member.name,
       jobTitle: member.role,
-      url: "https://brandlevo.com/about",
+      url: "https://www.brandlevo.com/about",
     })
   );
+
+  const speakable = speakableSchema([".hero-title", ".hero-body"]);
 
   return (
     <>
@@ -100,6 +102,7 @@ export default function AboutPage() {
           dangerouslySetInnerHTML={{ __html: schemaScript(schema) }}
         />
       ))}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaScript(speakable) }} />
     <main>
       <PageHero
         eyebrow="ABOUT BRANDLEVO"

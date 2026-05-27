@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, TrendingUp } from "lucide-react";
 import PageHero from "@/components/page-hero";
+import { speakableSchema, schemaScript } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Case Studies | BrandLevo",
+  title: "Case Studies",
   description:
-    "Real results for local businesses in Kochi and Kerala — clinics, wedding vendors, salons. +65% bookings, 3× walk-ins. Problem, action, result for every engagement.",
+    "Real results for local businesses in Kochi and Kerala — clinics, wedding vendors, salons. +65% bookings, 3× walk-ins. Every engagement, fully documented.",
   alternates: {
     canonical: "/case-studies",
   },
@@ -132,7 +133,26 @@ const testimonials = [
 ];
 
 export default function CaseStudiesPage() {
+  const aggregateRating = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "BrandLevo",
+    url: "https://www.brandlevo.com",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "80",
+      bestRating: "5",
+      worstRating: "1",
+    },
+  };
+
+  const speakable = speakableSchema([".hero-title", ".hero-body"]);
+
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaScript(aggregateRating) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaScript(speakable) }} />
     <main>
       <PageHero
         eyebrow="CLIENT RESULTS"
@@ -295,5 +315,6 @@ export default function CaseStudiesPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

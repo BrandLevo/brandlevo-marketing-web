@@ -1,6 +1,6 @@
 import type { Faq } from "./faq-data";
 
-const SITE_URL = "https://brandlevo.com";
+const SITE_URL = "https://www.brandlevo.com";
 const SITE_NAME = "BrandLevo";
 // TODO: Export a PNG version of the logo at /public/logo.png (112×112px min, square)
 // Google Rich Results requires PNG/JPEG for Organization logo schema — SVG is not supported
@@ -41,13 +41,33 @@ export function localBusinessSchema() {
     logo: LOGO_URL,
     image: `${SITE_URL}/og-default.jpg`,
     description:
-      "BrandLevo is an AI-powered digital marketing agency specialising in AEO, SEO, website development, and brand growth for local businesses.",
+      "BrandLevo is an AI-powered digital marketing agency specialising in AEO, SEO, website development, and brand growth for local businesses in Kochi and Kerala.",
     email: "sales@brandlevo.com",
+    telephone: "+91-98958-83315",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Kochi",
+      addressRegion: "Kerala",
+      addressCountry: "IN",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 9.9312,
+      longitude: 76.2673,
+    },
+    priceRange: "₹₹",
     sameAs: [
       "https://twitter.com/brandlevo",
       "https://linkedin.com/company/brandlevo",
     ],
-    areaServed: ["UK", "US", "Canada", "Australia", "UAE"],
+    areaServed: [
+      { "@type": "City", name: "Kochi" },
+      { "@type": "State", name: "Kerala" },
+      { "@type": "Country", name: "India" },
+      { "@type": "Country", name: "United Kingdom" },
+      { "@type": "Country", name: "United States" },
+      { "@type": "Country", name: "UAE" },
+    ],
     knowsAbout: [
       "Answer Engine Optimization",
       "SEO",
@@ -56,6 +76,12 @@ export function localBusinessSchema() {
       "Brand Identity",
       "Content Marketing",
     ],
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      opens: "09:00",
+      closes: "18:00",
+    },
   };
 }
 

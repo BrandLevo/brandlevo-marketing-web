@@ -6,7 +6,7 @@ import { collectionPageSchema, schemaScript } from "@/lib/schema";
 import PageHero from "@/components/page-hero";
 
 export const metadata: Metadata = {
-  title: "Blog | BrandLevo",
+  title: "AEO & SEO Blog for Local Businesses",
   description:
     "Practical AEO, SEO, and web design insights for local businesses in Kochi and Kerala. No agency waffle — actionable the same day you read it.",
   alternates: {

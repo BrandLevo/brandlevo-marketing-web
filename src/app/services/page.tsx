@@ -14,7 +14,7 @@ import PageHero from "@/components/page-hero";
 import { faqSchema, serviceSchema, speakableSchema, schemaScript } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Services | BrandLevo",
+  title: "AEO, SEO & Web Design Services",
   description:
     "AEO, SEO, website builds, brand identity, and GBP optimisation for local businesses in Kochi and Kerala. One team, one price, results in 30 days.",
   alternates: {
