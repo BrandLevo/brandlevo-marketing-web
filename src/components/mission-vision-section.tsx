@@ -1,8 +1,8 @@
 const stats = [
-  { value: "80+", label: "Businesses Launched" },
-  { value: "14 days", label: "Avg Launch Time" },
-  { value: "3.4×", label: "Lead Growth / 90 Days" },
-  { value: "4.9★", label: "Client Rating" },
+  { value: "14 days", label: "Website Launch Guarantee" },
+  { value: "90 days", label: "Results Timeline" },
+  { value: "0", label: "Lock-in Contracts" },
+  { value: "INR", label: "Transparent Pricing" },
 ];
 
 const differentiators = [

@@ -1,89 +1,86 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, TrendingUp } from "lucide-react";
+import { ArrowRight, TrendingUp, Clock, Rocket, MapPin } from "lucide-react";
 import PageHero from "@/components/page-hero";
 import { speakableSchema, schemaScript } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Case Studies",
   description:
-    "Real results for local businesses in Kochi and Kerala — clinics, wedding vendors, salons. +65% bookings, 3× walk-ins. Every engagement, fully documented.",
+    "BrandLevo is actively onboarding its first clients in Kochi and Kerala. See the industries we serve, what our process delivers, and how to be our first success story.",
   alternates: {
     canonical: "/case-studies",
   },
 };
 
-const caseStudies = [
+const whatWeDeliver = [
   {
     industry: "HEALTHCARE",
-    type: "Dental Clinic — Kochi",
-    metric: "+65%",
-    metricLabel: "appointment bookings in 90 days",
+    type: "Clinics & Dental Practices — Kochi",
     accentBg: "bg-primary",
+    deliverable: "AI-ready local visibility",
     problem:
-      "A well-reviewed dental clinic was invisible online. Their GBP listing was incomplete, their website hadn't been touched in four years, and competitors with weaker reputations were ranking above them for every local search.",
+      "Most clinics have decent reviews but rank poorly because their website is outdated, GBP is incomplete, and AI tools have no structured data to cite them from.",
     action:
-      "We rebuilt the website from scratch — mobile-first, fast, and AEO-ready. We completed and optimised their GBP profile, built local citations across health directories, and added FAQ and LocalBusiness schema so AI tools could cite them by service and location.",
-    result:
-      "Within 90 days the clinic appeared in the top 3 local map results for their primary search terms. Monthly appointment enquiries increased by approximately 65%. They now appear in Google AI Overviews for Kochi dental queries.",
+      "We rebuild the website with LocalBusiness schema, optimise GBP with correct categories, hours and photos, build local citations across health directories, and add FAQ schema so ChatGPT and Perplexity can cite the clinic by service and location.",
+    expected:
+      "Top 3 local map results within 60–90 days. AI citation for primary service queries within 90 days. Monthly enquiries traceable to new organic sources.",
   },
   {
     industry: "WEDDING & EVENTS",
-    type: "Photography Studio — Kerala",
-    metric: "0 → 12",
-    metricLabel: "online enquiries per month",
+    type: "Photographers & Vendors — Kerala",
     accentBg: "bg-purple-dark",
+    deliverable: "Portfolio-first conversion site",
     problem:
-      "A talented wedding photographer with a strong portfolio and word-of-mouth reputation had no website and no digital presence. Every booking came through personal referrals, capping growth and leaving them invisible to couples actively searching online.",
+      "Wedding vendors rely on referrals but lose couples who search Google and find a competitor with a better-presented site and more reviews.",
     action:
-      "We built a portfolio-focused website with a clear enquiry flow, wrote SEO copy targeting Kerala wedding photography keywords, and set up a review strategy to build their Google presence. Brand identity was refreshed to reflect the premium positioning their work deserved.",
-    result:
-      "Within 60 days of launch the studio was receiving 10–12 online enquiries per month from Google search alone. Within 4 months they were booked out 6 months ahead — a first in the studio's history.",
+      "We build a portfolio-first website targeting Kerala wedding photography keywords, set up a review generation strategy, and add schema markup for service + location so AI tools can surface the business in wedding planning queries.",
+    expected:
+      "10–15 inbound enquiries per month from Google search within 60 days. AI citation for location-specific wedding vendor queries within 90 days.",
   },
   {
     industry: "BEAUTY & WELLNESS",
-    type: "Hair Salon — Ernakulam",
-    metric: "3×",
-    metricLabel: "increase in new client walk-ins",
+    type: "Salons & Spas — Ernakulam & Kochi",
     accentBg: "bg-primary",
+    deliverable: "GBP + AI citation domination",
     problem:
-      "A busy salon with loyal regulars had a stagnant new-client pipeline. Their Google Maps listing had outdated hours, no photos, and a handful of old reviews. AI tools were recommending competitors. They had no content strategy and no schema markup.",
+      "Salons often rank poorly despite strong word-of-mouth because their GBP has incomplete categories, no posts, and no FAQ content for AI tools to cite.",
     action:
-      "We overhauled their GBP profile — updated categories, added 40+ photos, set up a review response system, and built a weekly GBP post schedule. We added speakable and LocalBusiness schema to their website, and published AEO-structured FAQ content targeting their top service queries.",
-    result:
-      "New client walk-ins from online sources roughly tripled over 3 months. The salon now appears in AI-generated answers for salon queries in Ernakulam. Review count increased from 18 to 80+ with an average of 4.8 stars.",
+      "We overhaul GBP with correct categories, 40+ photos, a review response system, and weekly post schedule. We add speakable and LocalBusiness schema, and publish AEO-structured FAQ content targeting top service queries.",
+    expected:
+      "2–3× new client enquiries from online within 90 days. Appearance in AI-generated answers for local salon queries. Significant review growth from a systematic ask-and-respond process.",
   },
 ];
 
-const results = [
+const processGuarantees = [
   {
-    metric: "+420%",
-    label: "organic traffic",
-    context: "Family plumbing business, 4 months",
+    metric: "14 days",
+    label: "website live",
+    context: "Guaranteed or 10% back",
     bg: "bg-primary",
     text: "text-white",
     sub: "text-white/70",
   },
   {
-    metric: "14 days",
-    label: "average launch",
-    context: "Across all client builds",
+    metric: "60–90 days",
+    label: "measurable results",
+    context: "Rankings, enquiries, or AI citations",
     bg: "bg-white border border-fog",
     text: "text-primary",
     sub: "text-slate",
   },
   {
-    metric: "3.4×",
-    label: "more leads",
-    context: "Average at 90 days post-launch",
+    metric: "0",
+    label: "lock-in contracts",
+    context: "Month-to-month, 30-day notice",
     bg: "bg-white border border-fog",
     text: "text-primary",
     sub: "text-slate",
   },
   {
-    metric: "6 weeks",
-    label: "to fully booked",
-    context: "Interior design studio from zero web presence",
+    metric: "100%",
+    label: "yours to keep",
+    context: "You own every asset we build",
     bg: "bg-white border border-fog",
     text: "text-primary",
     sub: "text-slate",
@@ -99,82 +96,34 @@ const industries = [
   { name: "Education & Coaching", examples: "Tutors, coaches, training providers" },
 ];
 
-const testimonials = [
-  {
-    quote:
-      "We went from 2 calls a week to booked out a full month ahead. The team sorted everything — we didn't touch a thing.",
-    name: "Marcus Reilly",
-    role: "Reilly Plumbing & Heating",
-    location: "Manchester, UK",
-    result: "Booked out a full month ahead",
-    initials: "MR",
-    bg: "bg-primary",
-  },
-  {
-    quote:
-      "23 new clients in 60 days after launch. I'd been putting off building a website for 7 years. Should have done it sooner.",
-    name: "Priya Shah",
-    role: "Sunrise Tax Consultancy",
-    location: "Austin, TX",
-    result: "23 new clients in 60 days",
-    initials: "PS",
-    bg: "bg-purple-dark",
-  },
-  {
-    quote:
-      "Enquiries up 180% in 90 days. And I never felt stupid asking questions — they explained everything like I was a person, not a client.",
-    name: "Linda Okafor",
-    role: "Bella's Hair Studio",
-    location: "Lagos, NG",
-    result: "+180% enquiries in 90 days",
-    initials: "LO",
-    bg: "bg-graphite",
-  },
-];
-
 export default function CaseStudiesPage() {
-  const aggregateRating = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: "BrandLevo",
-    url: "https://www.brandlevo.com",
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "80",
-      bestRating: "5",
-      worstRating: "1",
-    },
-  };
-
   const speakable = speakableSchema([".hero-title", ".hero-body"]);
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaScript(aggregateRating) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaScript(speakable) }} />
     <main>
       <PageHero
-        eyebrow="CLIENT RESULTS"
-        title="Real Brands."
-        titleAccent="Unstoppable Growth."
-        body="80+ businesses transformed across Kochi, Kerala, and beyond. Here's what the work actually looks like."
-        cta={{ label: "Get Similar Results", href: "/contact" }}
+        eyebrow="WHAT WE DELIVER"
+        title="First Clients."
+        titleAccent="Launching Now."
+        body="We're actively onboarding our first clients in Kochi and Kerala. Here's exactly what we build, how we build it, and what results you can hold us to."
+        cta={{ label: "Book Your Free Audit", href: "/contact" }}
         stats={[
-          { value: "80+", label: "Brands launched" },
-          { value: "+420%", label: "Best traffic growth" },
-          { value: "3.4×", label: "Avg lead increase" },
-          { value: "4.9★", label: "Client rating" },
+          { value: "14 days", label: "Launch guarantee" },
+          { value: "90 days", label: "Results timeline" },
+          { value: "0", label: "Lock-in contracts" },
+          { value: "Kochi", label: "Based in" },
         ]}
         variant="dark"
       />
 
-      {/* Results strip */}
+      {/* Process guarantees strip */}
       <section className="py-xxl px-lg bg-snow">
         <div className="max-w-container-max mx-auto">
-          <span className="text-eyebrow text-primary block mb-xl">NUMBERS SO FAR</span>
+          <span className="text-eyebrow text-primary block mb-xl">OUR COMMITMENTS</span>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-md">
-            {results.map((r, i) => (
+            {processGuarantees.map((r, i) => (
               <div key={r.metric} className={`reveal stagger-${i + 1} rounded-2xl p-xl ${r.bg}`}>
                 <p className={`text-h2 font-bold leading-none mb-xs ${r.text}`}>{r.metric}</p>
                 <p className={`text-body-sm font-semibold mb-xs ${r.text}`}>{r.label}</p>
@@ -185,24 +134,26 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      {/* Micro case studies */}
+      {/* What we deliver by industry */}
       <section className="py-xxxl px-lg bg-white">
         <div className="max-w-container-max mx-auto">
           <div className="reveal mb-xxl">
             <span className="text-eyebrow text-primary block mb-md">HOW IT PLAYS OUT</span>
             <h2 className="text-h2 text-ink max-w-xl">
-              Three businesses.{" "}
-              <span className="text-primary italic">Three transformations.</span>
+              What our first clients{" "}
+              <span className="text-primary italic">will achieve.</span>
             </h2>
+            <p className="text-body text-slate mt-md max-w-2xl">
+              No fabricated numbers. These are the outcomes we are committed to delivering — based on our methodology, not invented testimonials.
+            </p>
           </div>
 
           <div className="space-y-lg">
-            {caseStudies.map((cs, i) => (
+            {whatWeDeliver.map((cs, i) => (
               <div
                 key={cs.type}
                 className={`reveal stagger-${i + 1} bg-snow border border-fog rounded-3xl overflow-hidden`}
               >
-                {/* Header */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-md px-xl pt-xl pb-lg border-b border-fog">
                   <div className="flex items-center gap-md">
                     <span className={`${cs.accentBg} text-white text-eyebrow px-md py-xs rounded-full font-semibold`}>
@@ -212,24 +163,22 @@ export default function CaseStudiesPage() {
                   </div>
                   <div className="flex items-center gap-sm">
                     <TrendingUp className="w-4 h-4 text-primary" />
-                    <span className="text-h3 font-bold text-primary leading-none">{cs.metric}</span>
-                    <span className="text-body-sm text-slate">{cs.metricLabel}</span>
+                    <span className="text-body-sm font-semibold text-primary">{cs.deliverable}</span>
                   </div>
                 </div>
 
-                {/* Body — problem / action / result */}
                 <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-fog">
                   <div className="p-xl">
-                    <p className="text-eyebrow text-slate mb-md">THE PROBLEM</p>
+                    <p className="text-eyebrow text-slate mb-md">THE TYPICAL PROBLEM</p>
                     <p className="text-body-sm text-slate leading-relaxed">{cs.problem}</p>
                   </div>
                   <div className="p-xl">
-                    <p className="text-eyebrow text-primary mb-md">WHAT WE DID</p>
+                    <p className="text-eyebrow text-primary mb-md">WHAT WE DO</p>
                     <p className="text-body-sm text-slate leading-relaxed">{cs.action}</p>
                   </div>
                   <div className="p-xl">
-                    <p className="text-eyebrow text-slate mb-md">THE RESULT</p>
-                    <p className="text-body-sm text-slate leading-relaxed">{cs.result}</p>
+                    <p className="text-eyebrow text-slate mb-md">EXPECTED OUTCOME</p>
+                    <p className="text-body-sm text-slate leading-relaxed">{cs.expected}</p>
                   </div>
                 </div>
               </div>
@@ -241,9 +190,9 @@ export default function CaseStudiesPage() {
       {/* Industries */}
       <section className="py-xxxl px-lg bg-snow">
         <div className="max-w-container-max mx-auto">
-          <span className="text-eyebrow text-primary block mb-md">WHO WE&apos;VE HELPED</span>
+          <span className="text-eyebrow text-primary block mb-md">WHO WE WORK WITH</span>
           <h2 className="text-h2 text-ink mb-xxl max-w-xl">
-            We work across every local business category.
+            Every local business category in Kochi and Kerala.
           </h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-md">
             {industries.map((ind) => (
@@ -259,50 +208,28 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Be first CTA */}
       <section className="py-xxxl px-lg bg-white">
-        <div className="max-w-container-max mx-auto">
-          <span className="text-eyebrow text-primary block mb-md">WHAT CLIENTS SAY</span>
-          <h2 className="text-h2 text-ink mb-xxl max-w-xl">
-            In their words, not ours.
-          </h2>
-          <div className="grid md:grid-cols-3 gap-lg">
-            {testimonials.map((t) => (
-              <div key={t.name} className="reveal bg-snow border border-fog rounded-2xl p-md sm:p-xl flex flex-col">
-                <p className="text-body text-ink leading-relaxed mb-xl flex-1">&ldquo;{t.quote}&rdquo;</p>
-                <div className="border-t border-fog pt-lg flex items-center gap-md">
-                  <div className={`w-10 h-10 rounded-full ${t.bg} flex items-center justify-center shrink-0`}>
-                    <span className="text-white font-bold text-body-sm">{t.initials}</span>
-                  </div>
-                  <div>
-                    <p className="text-body-sm font-semibold text-ink">{t.name}</p>
-                    <p className="text-eyebrow text-slate">{t.role} · {t.location}</p>
-                  </div>
-                </div>
-                <div className="mt-md bg-primary/5 border border-primary/20 rounded-xl px-md py-sm">
-                  <p className="text-eyebrow text-primary flex items-center gap-xs">
-                    <TrendingUp className="w-3 h-3" />
-                    {t.result}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-xxxl px-lg bg-snow">
         <div className="max-w-container-max mx-auto bg-ink rounded-3xl p-xl md:p-xxxl relative overflow-hidden">
           <div className="absolute -right-20 -bottom-20 w-[400px] h-[400px] bg-primary rounded-full opacity-20 blur-3xl pointer-events-none" />
           <div className="absolute -left-10 -top-10 w-[200px] h-[200px] bg-purple-dark rounded-full opacity-30 blur-2xl pointer-events-none" />
           <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-xl">
             <div>
-              <span className="text-eyebrow text-white/50 block mb-md">YOUR TURN</span>
-              <h2 className="text-h2 text-white mb-md leading-tight">Want to be our next case study?</h2>
+              <div className="flex items-center gap-sm mb-md">
+                <Rocket className="w-5 h-5 text-primary" />
+                <span className="text-eyebrow text-white/50">BE FIRST</span>
+              </div>
+              <h2 className="text-h2 text-white mb-md leading-tight flex items-center gap-sm flex-wrap">
+                Want to be our first Kochi success story?
+                <MapPin className="w-6 h-6 text-primary" />
+              </h2>
               <p className="text-body-lg text-white/70 max-w-lg leading-relaxed">
-                Book a free call. We audit your online presence live, show you the gap, and map a plan to close it.
+                We&apos;re actively taking on our first clients. Free 30-minute audit — we audit your online presence live, show you the gap, and map a plan to close it. No pitch. Just clarity.
               </p>
+              <div className="flex items-center gap-sm mt-md">
+                <Clock className="w-4 h-4 text-white/50" />
+                <span className="text-body-sm text-white/50">30 minutes · Free · No obligation</span>
+              </div>
             </div>
             <Link
               href="/contact"

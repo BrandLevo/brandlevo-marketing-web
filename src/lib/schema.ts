@@ -16,13 +16,8 @@ export function organizationSchema() {
       "@type": "ImageObject",
       url: LOGO_URL,
     },
-    // TODO [SOCIAL]: Replace with real profile URLs — must match footer.tsx social links
-    sameAs: [
-      "https://twitter.com/brandlevo", // TODO: verify handle
-      "https://linkedin.com/company/brandlevo", // TODO: verify handle
-      "https://facebook.com/brandlevo", // TODO: verify handle
-      "https://instagram.com/brandlevo", // TODO: verify handle
-    ],
+    // sameAs: add real social URLs here once accounts are created (LinkedIn, Instagram, X, YouTube)
+    sameAs: [],
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
@@ -56,10 +51,7 @@ export function localBusinessSchema() {
       longitude: 76.2673,
     },
     priceRange: "₹₹",
-    sameAs: [
-      "https://twitter.com/brandlevo",
-      "https://linkedin.com/company/brandlevo",
-    ],
+    sameAs: [],
     areaServed: [
       { "@type": "City", name: "Kochi" },
       { "@type": "State", name: "Kerala" },

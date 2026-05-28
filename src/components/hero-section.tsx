@@ -2,10 +2,10 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle } from "lucide-react";
 
 const stats = [
-  { value: "80+",      label: "Brands Elevated" },
-  { value: "3.4×",    label: "Avg Lead Growth" },
-  { value: "4.9★",    label: "Client Satisfaction" },
-  { value: "14 Days", label: "Average Launch" },
+  { value: "14 Days", label: "Website Launch Guarantee" },
+  { value: "90 Days", label: "Results Timeline" },
+  { value: "0",       label: "Lock-in Contracts" },
+  { value: "100%",    label: "You Own Everything" },
 ];
 
 const trust = [

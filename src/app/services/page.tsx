@@ -187,10 +187,10 @@ export default function ServicesPage() {
         cta={{ label: "Book a Free Brand Audit", href: "/contact" }}
         secondaryCta={{ label: "See all services", href: "#services-list" }}
         stats={[
-          { value: "14 days", label: "Average launch" },
+          { value: "14 days", label: "Launch guarantee" },
           { value: "5", label: "Core services" },
-          { value: "3.4×", label: "Lead growth" },
-          { value: "80+", label: "Clients served" },
+          { value: "90 days", label: "Results timeline" },
+          { value: "0", label: "Lock-in contracts" },
         ]}
         variant="dark"
       />

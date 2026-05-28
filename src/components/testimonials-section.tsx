@@ -1,53 +1,38 @@
-import { Star, Quote } from "lucide-react";
+import { ArrowRight, CheckCircle2, Clock, Zap, Shield } from "lucide-react";
+import Link from "next/link";
 
-const testimonials = [
+const guarantees = [
   {
-    result: "+340% inbound enquiries in 90 days",
-    quote:
-      "We'd been invisible on Google for years. BrandLevo rebuilt our site, sorted our AEO strategy, and within three months ChatGPT was recommending us when people asked about accountants in our city. The ROI has been extraordinary.",
-    name: "Priya Shah",
-    role: "Owner, Sunrise Tax Consultancy",
-    location: "Austin, TX",
-    initials: "PS",
-    avatarBg: "bg-primary",
-    avatarText: "text-white",
-    rating: 5,
+    icon: Clock,
+    stat: "14 days",
+    label: "Website live",
+    detail: "From kick-off call to live site. Or we refund 10% — in writing.",
+    iconBg: "bg-primary",
+    iconText: "text-white",
   },
   {
-    result: "44% close rate (up from 18%) in 90 days",
-    quote:
-      "The ICP strategy work alone was worth every penny. We'd been targeting the wrong customers for two years. BrandLevo redefined our ideal client, rewrote our positioning, and our close rate went from 18% to 44% in the first quarter.",
-    name: "Marcus Reilly",
-    role: "Director, Reilly Plumbing & Heating",
-    location: "Manchester, UK",
-    initials: "MR",
-    avatarBg: "bg-purple-deeper",
-    avatarText: "text-white",
-    rating: 5,
+    icon: Zap,
+    stat: "60–90 days",
+    label: "Results you can measure",
+    detail: "Meaningful improvement in enquiries, rankings, or AI citations. Not vibes — numbers.",
+    iconBg: "bg-purple-deeper",
+    iconText: "text-white",
   },
   {
-    result: "3× average deal size within 6 months",
-    quote:
-      "I was sceptical about the brand uplift package — I thought it was just a logo change. It wasn't. The new identity, messaging, and positioning completely transformed how prospects perceive us. We now win contracts we couldn't even get meetings for before.",
-    name: "Linda Okafor",
-    role: "Owner, Bella's Hair Studio",
-    location: "Lagos, NG",
-    initials: "LO",
-    avatarBg: "bg-mint",
-    avatarText: "text-ink",
-    rating: 5,
+    icon: Shield,
+    stat: "No lock-in",
+    label: "Cancel any time",
+    detail: "Month-to-month for all ongoing services. 30 days' notice is all it takes.",
+    iconBg: "bg-mint",
+    iconText: "text-ink",
   },
   {
-    result: "2× revenue in 8 months",
-    quote:
-      "BrandLevo didn't just build us a website — they built us a sales machine. The site, the SEO, the sales consultation, and the content strategy all work together. We've doubled revenue in eight months.",
-    name: "Daniel Hartmann",
-    role: "Founder, Hartmann Legal Advisory",
-    location: "Berlin, DE",
-    initials: "DH",
-    avatarBg: "bg-graphite",
-    avatarText: "text-white",
-    rating: 5,
+    icon: CheckCircle2,
+    stat: "You own it",
+    label: "Everything, forever",
+    detail: "Your website, your domain, your content. We build it. You keep it.",
+    iconBg: "bg-graphite",
+    iconText: "text-white",
   },
 ];
 
@@ -57,60 +42,58 @@ export default function TestimonialsSection() {
       <div className="max-w-container-max mx-auto">
 
         <div className="reveal text-center max-w-xl mx-auto mb-xxl">
-          <span className="text-eyebrow text-primary block mb-md">CLIENT RESULTS</span>
+          <span className="text-eyebrow text-primary block mb-md">OUR PROMISE</span>
           <h2 className="text-h2 text-ink mb-md">
-            Real Businesses. Real Numbers.{" "}
-            <span className="text-primary italic">No Fluff.</span>
+            No fake numbers.{" "}
+            <span className="text-primary italic">Just guarantees.</span>
           </h2>
           <p className="text-body text-slate">
-            Don&apos;t take our word for it — take theirs.
+            We&apos;re building our client list right now — and we&apos;d love you to be one of
+            our first. Here&apos;s exactly what we commit to, in writing.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-lg">
-          {testimonials.map((t, i) => (
-            <div
-              key={t.name}
-              className={`reveal stagger-${i + 1} bg-snow border border-fog rounded-2xl p-xl flex flex-col bento-card hover:border-mist hover:shadow-md transition-all`}
-            >
-              {/* Result pill at top */}
-              <div className="bg-purple-xpale rounded-lg px-md py-sm mb-lg w-fit">
-                <span className="text-eyebrow text-primary font-semibold">{t.result}</span>
-              </div>
-
-              {/* Stars */}
-              <div className="flex gap-xs mb-md">
-                {[...Array(t.rating)].map((_, j) => (
-                  <Star key={j} className="w-4 h-4 fill-gold text-gold" />
-                ))}
-              </div>
-
-              <Quote className="w-7 h-7 text-fog mb-md shrink-0" />
-
-              <p className="text-body text-ink mb-xl flex-grow leading-relaxed italic">
-                &ldquo;{t.quote}&rdquo;
-              </p>
-
-              {/* Author row with avatar */}
-              <div className="border-t border-fog pt-lg flex items-center gap-md">
-                <div
-                  className={[
-                    "w-12 h-12 rounded-full flex items-center justify-center font-bold text-body shrink-0",
-                    t.avatarBg,
-                    t.avatarText,
-                  ].join(" ")}
-                >
-                  {t.initials}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-lg mb-xxl">
+          {guarantees.map((g, i) => {
+            const Icon = g.icon;
+            return (
+              <div
+                key={g.stat}
+                className={`reveal stagger-${i + 1} bg-snow border border-fog rounded-2xl p-xl flex flex-col bento-card hover:border-mist hover:shadow-md transition-all`}
+              >
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-lg shrink-0 ${g.iconBg}`}>
+                  <Icon className={`w-6 h-6 ${g.iconText}`} />
                 </div>
-                <div>
-                  <p className="font-semibold text-ink text-body-sm">{t.name}</p>
-                  <p className="text-body-sm text-slate">{t.role}</p>
-                  <p className="text-eyebrow text-slate mt-xs">{t.location}</p>
+                <div className="bg-purple-xpale rounded-lg px-md py-sm mb-md w-fit">
+                  <span className="text-eyebrow text-primary font-semibold">{g.stat}</span>
                 </div>
+                <p className="font-semibold text-ink text-h4 mb-sm">{g.label}</p>
+                <p className="text-body text-slate leading-relaxed">{g.detail}</p>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
+
+        {/* CTA to be first client */}
+        <div className="reveal bg-gradient-to-br from-primary/10 to-purple-deeper/10 border border-primary/20 rounded-2xl p-xxxl text-center max-w-2xl mx-auto">
+          <span className="text-eyebrow text-primary block mb-md">BE FIRST</span>
+          <h3 className="text-h3 text-ink mb-md">
+            Want your results on this page?
+          </h3>
+          <p className="text-body text-slate mb-xl">
+            We&apos;re actively onboarding our first clients in Kochi and Kerala.
+            Book a free 30-minute audit — we&apos;ll show you exactly where you&apos;re
+            losing visibility and what it would take to fix it. No pitch. Just clarity.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-sm px-xl py-md bg-primary text-white rounded-full font-semibold text-body hover:bg-primary/90 transition-colors"
+          >
+            Book Your Free Audit
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+
       </div>
     </section>
   );

@@ -6,7 +6,7 @@ import { personSchema, speakableSchema, schemaScript } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Based in Kochi, BrandLevo has launched 80+ local businesses. We treat your growth like our own — no outsourcing, no waffle, no retainers. Meet the team.",
+    "BrandLevo is a digital marketing agency based in Kochi, Kerala — specialising in AEO, SEO, and website development for local businesses. No lock-in. Results in 90 days.",
   alternates: {
     canonical: "/about",
   },
@@ -36,50 +36,26 @@ const values = [
 ];
 
 const milestones = [
-  { year: "2019", event: "Founded — first 3 clients were local trades businesses in the US South." },
-  { year: "2020", event: "Expanded to UK market. Helped 18 businesses survive the pandemic with emergency online pivots." },
-  { year: "2021", event: "Launched AEO service offering — one of the first agencies to optimise specifically for AI search engines." },
-  { year: "2022", event: "Crossed 50 active clients. Hired dedicated SEO and content specialists." },
-  { year: "2023", event: "Expanded to AU and NG markets. Average client lead growth hit 3.4× in 90 days." },
-  { year: "2024", event: "80+ businesses launched. 4.9★ average satisfaction rating across all clients." },
+  { year: "2026", event: "Founded in Kochi — built on the belief that local businesses deserve the same digital presence that big brands take for granted." },
+  { year: "2026", event: "Launched website and dedicated AEO service — one of the first agencies in Kerala to optimise specifically for ChatGPT, Perplexity, and Google AI Overviews." },
+  { year: "Now", event: "Actively onboarding our first clients in Kochi and Kerala. Ready to make you our first success story." },
 ];
 
 const team = [
   {
-    initials: "JR",
-    name: "James R.",
-    role: "Founder & Strategy",
+    initials: "BL",
+    name: "BrandLevo",
+    role: "Founder-Led Agency",
     bg: "bg-primary",
-    bio: "Grew up watching his dad's electrical business lose jobs to competitors who showed up on Google first. Built BrandLevo to fix that for the next generation of local business owners.",
-  },
-  {
-    initials: "SC",
-    name: "Sara C.",
-    role: "Head of SEO & AEO",
-    bg: "bg-purple-dark",
-    bio: "8 years ranking local businesses. Formerly agency-side at a 200-person firm. Joined BrandLevo because she wanted to see the businesses she helped — not just the spreadsheets.",
-  },
-  {
-    initials: "TN",
-    name: "Tom N.",
-    role: "Lead Developer",
-    bg: "bg-graphite",
-    bio: "Builds every site like it's going to be his own business. Obsessive about Core Web Vitals, accessibility, and making sure nothing breaks on a Tuesday night.",
-  },
-  {
-    initials: "AM",
-    name: "Aisha M.",
-    role: "Content & Copywriting",
-    bg: "bg-primary",
-    bio: "Ex-journalist. Writes copy that sounds like the owner, not a marketing robot. Every word earns its place — no filler, no buzzwords.",
+    bio: "A small, founder-led team based in Kochi. We handle strategy, design, development, content, and SEO/AEO — all under one roof, all with one point of contact.",
   },
 ];
 
 const stats = [
-  { value: "80+", label: "Local Businesses Launched" },
-  { value: "4.9★", label: "Average Client Rating" },
-  { value: "4", label: "Continents Served" },
-  { value: "14 days", label: "Average Launch Time" },
+  { value: "14 days", label: "Website Launch Guarantee" },
+  { value: "90 days", label: "Results Timeline" },
+  { value: "0", label: "Lock-in Contracts" },
+  { value: "Kochi", label: "Based In" },
 ];
 
 export default function AboutPage() {
@@ -168,7 +144,7 @@ export default function AboutPage() {
           <h2 className="text-h2 text-ink mb-xxl max-w-xl">
             Small enough to care. Experienced enough to deliver.
           </h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-lg">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-lg max-w-xl">
             {team.map((t, i) => (
               <div key={t.name} className={`reveal stagger-${i + 1} bg-snow border border-fog rounded-2xl p-lg`}>
                 <div className={`w-14 h-14 rounded-2xl ${t.bg} flex items-center justify-center mb-lg`}>
@@ -187,7 +163,7 @@ export default function AboutPage() {
       <section className="py-xxxl px-lg bg-snow">
         <div className="max-w-container-max mx-auto">
           <span className="text-eyebrow text-primary block mb-md">OUR STORY</span>
-          <h2 className="text-h2 text-ink mb-xxl max-w-xl">Six years of helping local businesses compete online.</h2>
+          <h2 className="text-h2 text-ink mb-xxl max-w-xl">How BrandLevo started.</h2>
           <div className="relative">
             <div className="absolute left-0 top-0 bottom-0 w-px bg-fog ml-[11px] hidden md:block" />
             <div className="space-y-xl">
