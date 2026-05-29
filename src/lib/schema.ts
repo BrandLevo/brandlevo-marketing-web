@@ -84,10 +84,11 @@ export function localBusinessSchema() {
   };
 }
 
-export function faqSchema(faqs: Faq[]) {
+export function faqSchema(faqs: Faq[], name = "Frequently Asked Questions") {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    name,
     mainEntity: faqs.map((faq) => ({
       "@type": "Question",
       name: faq.q,
