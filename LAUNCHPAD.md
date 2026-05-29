@@ -1,15 +1,15 @@
 # BrandLevo — Maximum Visibility Launchpad
 
 > Full plan: ICP · Trust audit · SEO tools · GBP setup · Social strategy · Content calendar · Execution checklists
-> Last updated: 28 May 2026
+> Last updated: 29 May 2026
 
 ---
 
 ## PENDING ACTIONS
 
 - [ ] **GBP verification** — Postcard sent to mailing address. When it arrives (5–14 days): business.google.com → Verify → Enter the 5-digit code from postcard
-- [x] **Social accounts (partial)** — LinkedIn (`linkedin.com/company/brandlevo`) and Instagram (`instagram.com/brandlevo`) are live. Still needed: X (@brandlevo), YouTube (@brandlevo), Facebook (brandlevo)
-- [x] **Update schema.ts sameAs** — LinkedIn + Instagram URLs added to `src/lib/schema.ts` (both `organizationSchema` and `localBusinessSchema`). Re-update when X/YouTube/Facebook are created.
+- [x] **Social accounts (partial)** — LinkedIn, Instagram, YouTube (`@brandlevo`) are live. Still needed: X (@brandlevo), Facebook (brandlevo)
+- [x] **Update schema.ts sameAs** — LinkedIn, Instagram, YouTube added to both `organizationSchema` and `localBusinessSchema`. Re-update when X and Facebook are created.
 
 ---
 
@@ -17,38 +17,20 @@
 
 The site is live and indexed on Google. Three technical bugs are hurting performance and search visibility right now. Fix these before any promotion.
 
-### Fix A — OG Image Corrupted (Causing Performance Drop 96 → 89/87)
+### ~~Fix A — OG Image Corrupted~~ ✅ DONE
+Regenerated as proper branded JPEG 1200×630 (`commit 635ae6b`).
 
-`public/og-default.jpg` is actually a **PNG file** renamed to .jpg. It's 889×697px at 72KB instead of the correct 1200×630 JPEG at ~60KB. This causes LCP regression because the browser detects the format mismatch.
+### ~~Fix B — No Favicon Appearing in Google Results~~ ✅ DONE
+`android-chrome-192x192.png` added to favicon metadata in `layout.tsx` (`commit 635ae6b`). Google will show site icon within 1–2 weeks.
 
-- **Action**: Re-export as a true JPEG 1200×630 and replace `public/og-default.jpg`
-- **Expected result**: Performance score returns to 95+
+### ~~Fix C — Remove Fake Content~~ ✅ DONE
+All placeholder testimonials, fake stats, and fictional case studies removed. Replaced with honest "be our first client" CTAs and process promises (`commit 635ae6b`).
 
-### Fix B — No Favicon Appearing in Google Results (Blog Logo Missing)
+### ~~Fix D — Founding Year in llms.txt~~ ✅ DONE
+`llms.txt` updated to founding year 2026, unverifiable stats removed (`commit 635ae6b`).
 
-Only 16×16 and 32×32 favicon sizes are declared in metadata. **Google requires 48×48 minimum** to display a site icon next to search results. The 192×192 icon already exists at `public/android-chrome-192x192.png` — it just isn't declared in `src/app/layout.tsx`.
-
-- **Action**: Add `{ url: "/android-chrome-192x192.png", sizes: "192x192", type: "image/png" }` to the `icons.icon` array in `src/app/layout.tsx`
-- **Expected result**: Site icon appears next to all Google results within 1–2 weeks
-
-### Fix C — Remove Fake Content Before Any Outreach
-
-The site currently has placeholder testimonials (Priya Shah, Marcus Reilly, Linda Okafor, Daniel Hartmann), unverified stats (80+, 3.4×, 4.9★), and fictional case studies. These are placeholders. Since BrandLevo has no clients yet, replace with honest empty states.
-
-- **Action**: See Section 2 below for exact content replacements
-- **Why urgent**: The site is already indexed. Anyone searching "BrandLevo" will see these claims. If investigated, they destroy credibility before you've started.
-
-### Fix D — Founding Year in llms.txt
-
-`public/llms.txt` says `Founded: 2024` but the website copy says founded 2019. These contradict each other — AI crawlers will flag the inconsistency.
-
-- **Action**: Update `llms.txt` to match the real founding year (update `Founded:` line)
-
-### Fix E — Dead 52KB Asset
-
-`public/logo-black.png` (52KB) was added but is not used anywhere in the codebase.
-
-- **Action**: Delete `public/logo-black.png`
+### ~~Fix E — Dead 52KB Asset~~ ✅ DONE
+`public/logo-black.png` deleted (`commit 635ae6b`).
 
 ---
 
@@ -442,28 +424,28 @@ We fix that.
 
 ## 11. Master Execution Checklist
 
-### Phase 1 — Fix Trust Signals (Do This First, Before Any Promotion)
+### Phase 1 — Fix Trust Signals ✅ COMPLETE
 
-- [ ] Fix `llms.txt` founding year — must match website copy
-- [ ] Fix or remove unverified testimonials (Priya Shah, Marcus Reilly, Linda Okafor, Daniel Hartmann)
-- [ ] Verify or reduce stats (80+, 3.4×, 4.9★) to what's actually real
+- [x] Fix `llms.txt` founding year (`commit 635ae6b`)
+- [x] Remove fake testimonials — replaced with honest "be our first client" CTA (`commit 635ae6b`)
+- [x] Remove fake stats — replaced with process promises (`commit 635ae6b`)
 - [ ] Get at least 1 real client's permission to use their name/results
 - [ ] Add real team headshots and LinkedIn links to the About page
-- [ ] Test OG image on opengraph.xyz — confirm it looks good on shares
+- [x] OG image fixed — proper 1200×630 JPEG (`commit 635ae6b`)
 
 ### Phase 2 — Accounts & GBP (Week 1)
 
 - [ ] Create GBP at business.google.com (service-area — no address needed)
 - [ ] Verify GBP via phone/email/video
 - [ ] Complete all GBP fields (see Section 5 checklist)
-- [ ] Create LinkedIn company page (brandlevo)
-- [ ] Create Instagram account (@brandlevo)
+- [x] Create LinkedIn company page — `linkedin.com/company/brandlevo`
+- [x] Create Instagram account — `instagram.com/brandlevo`
 - [ ] Create X account (@brandlevo)
-- [ ] Create YouTube channel (@brandlevo)
+- [x] Create YouTube channel — `youtube.com/@brandlevo`
 - [ ] Create Facebook page (brandlevo)
 - [ ] Set up WhatsApp Business (+91 98958 83315)
-- [ ] Update `src/lib/schema.ts` → `sameAs` array with all real social URLs
-- [ ] Deploy updated schema
+- [x] Update `src/lib/schema.ts` → `sameAs` — LinkedIn, Instagram, YouTube added (`commit fb5953f`)
+- [x] Deploy updated schema — pushed to main
 
 ### Phase 3 — GSC & Indexing (Week 1)
 
