@@ -16,8 +16,10 @@ export function organizationSchema() {
       "@type": "ImageObject",
       url: LOGO_URL,
     },
-    // sameAs: add real social URLs here once accounts are created (LinkedIn, Instagram, X, YouTube)
-    sameAs: [],
+    sameAs: [
+      "https://www.linkedin.com/company/brandlevo/",
+      "https://www.instagram.com/brandlevo/",
+    ],
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
@@ -51,7 +53,10 @@ export function localBusinessSchema() {
       longitude: 76.2673,
     },
     priceRange: "₹₹",
-    sameAs: [],
+    sameAs: [
+      "https://www.linkedin.com/company/brandlevo/",
+      "https://www.instagram.com/brandlevo/",
+    ],
     areaServed: [
       { "@type": "City", name: "Kochi" },
       { "@type": "State", name: "Kerala" },
