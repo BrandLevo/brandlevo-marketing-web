@@ -19,6 +19,7 @@ export function organizationSchema() {
     sameAs: [
       "https://www.linkedin.com/company/brandlevo/",
       "https://www.instagram.com/brandlevo/",
+      "https://www.youtube.com/@brandlevo",
     ],
     contactPoint: {
       "@type": "ContactPoint",
@@ -56,6 +57,7 @@ export function localBusinessSchema() {
     sameAs: [
       "https://www.linkedin.com/company/brandlevo/",
       "https://www.instagram.com/brandlevo/",
+      "https://www.youtube.com/@brandlevo",
     ],
     areaServed: [
       { "@type": "City", name: "Kochi" },
