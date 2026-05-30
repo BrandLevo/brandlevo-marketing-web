@@ -20,12 +20,11 @@ const company = [
   { label: "Contact", href: "/contact" },
 ];
 
-// TODO [SOCIAL]: Replace "#" hrefs with real profile URLs before launch
-// Also update Organization schema sameAs in src/lib/schema.ts to match
+// Update "#" hrefs with real profile URLs when created
 const socials = [
   { icon: Hash, href: "#", label: "X (Twitter)" },       // TODO: https://twitter.com/brandlevo
-  { icon: Globe, href: "#", label: "LinkedIn" },          // TODO: https://linkedin.com/company/brandlevo
-  { icon: AtSign, href: "#", label: "Instagram" },        // TODO: https://instagram.com/brandlevo
+  { icon: Globe, href: "https://www.linkedin.com/company/brandlevo/", label: "LinkedIn" },
+  { icon: AtSign, href: "https://www.instagram.com/brandlevo/", label: "Instagram" },
   { icon: Share2, href: "#", label: "Facebook" },         // TODO: https://facebook.com/brandlevo
 ];
 
