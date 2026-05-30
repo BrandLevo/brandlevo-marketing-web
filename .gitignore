@@ -40,3 +40,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# antigravity & seo checklist
+.antigravitycli/
+SEO-CHECKLIST.md
+

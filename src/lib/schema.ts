@@ -44,8 +44,10 @@ export function localBusinessSchema() {
     telephone: "+91-98958-83315",
     address: {
       "@type": "PostalAddress",
+      streetAddress: "Kakkanad, near Infopark",
       addressLocality: "Kochi",
       addressRegion: "Kerala",
+      postalCode: "682042",
       addressCountry: "IN",
     },
     geo: {
