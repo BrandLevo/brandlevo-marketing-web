@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Hash, Globe, AtSign, Share2, Mail, Phone } from "lucide-react";
+import { Hash, Globe, AtSign, Share2, Mail, Phone, Play } from "lucide-react";
 
 const services = [
   { label: "AEO — AI Search", href: "/services" },
@@ -22,9 +22,10 @@ const company = [
 
 // Update "#" hrefs with real profile URLs when created
 const socials = [
-  { icon: Hash, href: "#", label: "X (Twitter)" },       // TODO: https://twitter.com/brandlevo
   { icon: Globe, href: "https://www.linkedin.com/company/brandlevo/", label: "LinkedIn" },
   { icon: AtSign, href: "https://www.instagram.com/brandlevo/", label: "Instagram" },
+  { icon: Play, href: "https://www.youtube.com/@brandlevo", label: "YouTube" },
+  { icon: Hash, href: "#", label: "X (Twitter)" },       // TODO: https://twitter.com/brandlevo
   { icon: Share2, href: "#", label: "Facebook" },         // TODO: https://facebook.com/brandlevo
 ];
 
