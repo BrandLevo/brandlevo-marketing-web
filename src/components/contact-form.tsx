@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 type State = "idle" | "loading" | "success" | "error";
 
@@ -103,6 +104,13 @@ export default function ContactForm() {
         {state === "loading" ? "Sending…" : "Send Message"}
         {state !== "loading" && <ArrowRight className="w-4 h-4" />}
       </button>
+
+      <p className="text-body-sm text-slate/60 text-center">
+        We only use your details to respond to your enquiry.{" "}
+        <Link href="/privacy" className="underline hover:text-primary transition-colors">
+          Privacy Policy
+        </Link>
+      </p>
     </form>
   );
 }

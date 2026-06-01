@@ -104,8 +104,8 @@ export default function Footer() {
           <p className="text-body-sm text-slate">© 2026 BrandLevo. All rights reserved.</p>
 
           <div className="flex items-center gap-lg">
-            <a href="#" className="text-body-sm text-slate hover:text-primary transition-colors">Privacy Policy</a>
-            <a href="#" className="text-body-sm text-slate hover:text-primary transition-colors">Terms</a>
+            <Link href="/privacy" className="text-body-sm text-slate hover:text-primary transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="text-body-sm text-slate hover:text-primary transition-colors">Terms</Link>
           </div>
 
           <div className="flex items-center gap-sm">
